@@ -2,7 +2,7 @@
 
 const Events = () => {
   return (
-    <div>
+    <div className="main">
       <h1>Våra Event</h1>
     </div>
 )};

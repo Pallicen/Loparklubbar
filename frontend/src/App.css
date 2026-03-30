@@ -3,6 +3,11 @@
   padding: 0%;
 }
 
+.main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 
 .navbar {
   background-color: rgb(199, 208, 199);
@@ -53,4 +58,67 @@
 
 .btnLinkHome:hover:after, .btnLinkRunclub:hover:after, .btnLinkEvent:hover:after {
   transform: scaleX(1);
+}
+
+
+
+/* MENY / HEM */
+
+.meny-header {
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.meny-home-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 30rem;
+  flex-wrap: nowrap;
+}
+
+.menyPageImg {
+  width: 100%;
+  min-width: 18rem;
+  max-width: 24rem;
+  border-radius: 10px;
+}
+
+.p-header-meny-home {
+  font-size: 1.3rem;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.p-text-meny-home {
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.meny-home-img, .meny-home-text {
+  flex: 1 1 0;
+}
+
+.meny-home-text {
+  min-width: 18rem;
+  max-width: 24rem;
+}
+
+@media (max-width: 650px) {
+  .meny-home-page {
+    flex-direction: column;
+  }
+
+  .many-home-img {
+    justify-content: center;
+  }
+
+  .meny-home-text {
+    text-align: left;
+  }
 }

@@ -2,7 +2,7 @@
 
 const Runclubs = () => {
   return (
-    <div>
+    <div className="main">
         <h1>Sprinklubbar</h1>
     </div>
   )
