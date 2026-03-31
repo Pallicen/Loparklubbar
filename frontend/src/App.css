@@ -110,14 +110,6 @@ main {
   border-radius: 4px;
 }
 
-/* .hamburger div {
-  background-color: rgb(199, 208, 199);
-  height: 5px;
-  width: 100%;
-  border-radius: 5px;
-  transition: all 0.3 ease;
-} */
-
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -175,7 +167,7 @@ main {
   text-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: 2.6rem;
 }
 
 .meny-home-page {
@@ -231,6 +223,7 @@ main {
   .meny-home-text {
     min-width: 100%;
     flex: none;
+    margin-bottom: 1rem;
   }
 
   .p-header-meny-home {
@@ -242,6 +235,25 @@ main {
   }
 }
 
+/* EVENT, CARDS */
+
+.cards {
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  height: 8rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 /* FOOTER */
 
 footer {
@@ -250,4 +262,5 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
 }

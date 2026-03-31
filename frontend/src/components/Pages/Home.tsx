@@ -5,7 +5,7 @@ const Home = () => {
   <div className="main">
 
       <div className="meny-header">
-          <h2>Spring tillsammans - Väx tillsammans</h2>
+          <p>Spring tillsammans - Väx tillsammans</p>
       </div>
 
       <div className="meny-home-page">

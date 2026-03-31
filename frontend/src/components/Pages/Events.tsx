@@ -1,9 +1,10 @@
+import Card from "../Card";
 
 
 const Events = () => {
   return (
     <div className="main">
-      <h1>Våra Event</h1>
+      <Card title={""} description={""} link={""} />
     </div>
 )};
 
