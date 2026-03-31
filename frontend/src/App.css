@@ -16,6 +16,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 5px;
 }
 
 .btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
@@ -51,7 +52,6 @@ main {
   width: 100%;
   height: 0.8px;
   background-color: black;
-
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.4s ease;
@@ -61,9 +61,112 @@ main {
   transform: scaleX(1);
 }
 
+.desktop-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.desktop-menu a {
+  font-size: 1.6rem;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.desktop-menu a:hover {
+  color: black;
+}
 
 
-/* MENY / HEM */
+/* MENY FÖR MOBIL */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2002;
+}
+
+.hamburger .bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.8rem;
+  width: 2.5rem;
+  border-radius: 4px;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.hamburger .bar {
+  background-color: #333;
+  height: 4px;
+  width: 2.5rem;
+  border-radius: 4px;
+}
+
+/* .hamburger div {
+  background-color: rgb(199, 208, 199);
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3 ease;
+} */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(199, 208, 199);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.mobile-menu a:hover {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .btnLinkHome, .btnLinkRunclub, .btnLinkEvent {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* HEM */
 
 .meny-header {
   display: flex;
@@ -83,7 +186,7 @@ main {
   gap: 2rem;
 }
 
-.many-home-img {
+.meny-home-img {
   flex: 1;
   max-width: 50%;
 }
@@ -91,6 +194,7 @@ main {
 .menyPageImg {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 .meny-home-text {
@@ -100,7 +204,6 @@ main {
 
 .p-header-meny-home {
   font-size: 2rem;
-  text-align: center;
 }
 
 .p-text-meny-home {
@@ -112,15 +215,21 @@ main {
 
 
 @media (max-width: 768px) {
+
+
+
+  .meny-header {
+    margin-top: 1rem;
+
+  }
   .meny-home-page {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
-  .many-home-img,
+  .meny-home-img,
   .meny-home-text {
-    max-width: 100%;
+    min-width: 100%;
     flex: none;
   }
 
