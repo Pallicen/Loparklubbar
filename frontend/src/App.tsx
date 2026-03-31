@@ -9,14 +9,22 @@ function App() {
 
   return (
     <div>
-      <Meny />
+      <header>
+          <Meny />
+      </header>
 
-      <Routes>
-          <Route path='/' element={<Home /> }></Route>
-          <Route path='/Events' element={<Events />}></Route>
-          <Route path='/Runclubs' element={<Runclubs />}></Route>
-          <Route path="*" element={<h1>404 Not Found</h1>}></Route>
-      </Routes>
+      <main>
+        <Routes>
+            <Route path='/' element={<Home /> }></Route>
+            <Route path='/Events' element={<Events />}></Route>
+            <Route path='/Runclubs' element={<Runclubs />}></Route>
+            <Route path="*" element={<h1>404 Not Found</h1>}></Route>
+        </Routes>
+      </main>
+
+      <footer>
+        <p>© 2026 Löparplattformen. Alla rättigheter reserverade.</p>
+      </footer>
     </div>
   )
 }

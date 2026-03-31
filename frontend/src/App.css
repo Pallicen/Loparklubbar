@@ -3,29 +3,30 @@
   padding: 0%;
 }
 
-.main {
-  margin-left: 1rem;
-  margin-right: 1rem;
+main {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  min-height: 100vh;
 }
 
 
 .navbar {
   background-color: rgb(199, 208, 199);
-  height: 4rem;
+  height: 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
-  color: rgb(38, 38, 38);
+  color: #333;
   text-decoration: none;
   letter-spacing: 1px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   justify-content: center;
   align-items: center;
   padding: 5px;
-  width: 3.5rem;
+  width: 5rem;
   display: flex;
   position: relative;
   border: none;
@@ -34,7 +35,7 @@
 }
 
 .btnLinkRunclub {
-  width: 6.5rem;
+  width: 10.5rem;
 }
 
 .btnLinkHome:hover, .btnLinkRunclub:hover, .btnLinkEvent:hover {
@@ -66,59 +67,78 @@
 
 .meny-header {
   display: flex;
-  height: 6rem;
+  height: 10rem;
   justify-content: center;
+  text-align: center;
   align-items: center;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 .meny-home-page {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
   gap: 2rem;
-  height: 30rem;
-  flex-wrap: nowrap;
+}
+
+.many-home-img {
+  flex: 1;
+  max-width: 50%;
 }
 
 .menyPageImg {
   width: 100%;
-  min-width: 18rem;
-  max-width: 24rem;
-  border-radius: 10px;
-}
-
-.p-header-meny-home {
-  font-size: 1.3rem;
-  width: 100%;
-  max-width: 25rem;
-}
-
-.p-text-meny-home {
-  font-size: 0.8rem;
-  width: 100%;
-  max-width: 25rem;
-}
-
-.meny-home-img, .meny-home-text {
-  flex: 1 1 0;
+  height: auto;
 }
 
 .meny-home-text {
-  min-width: 18rem;
-  max-width: 24rem;
+  flex: 2; 
+  max-width: 50%;
 }
 
-@media (max-width: 650px) {
+.p-header-meny-home {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.p-text-meny-home {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
   .meny-home-page {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .many-home-img {
-    justify-content: center;
-  }
-
+  .many-home-img,
   .meny-home-text {
-    text-align: left;
+    max-width: 100%;
+    flex: none;
   }
+
+  .p-header-meny-home {
+    font-size: 1.5rem;
+  }
+
+  .p-text-meny-home {
+    font-size: 1rem;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  height: 25rem;
+  background-color: rgb(187, 183, 175);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
