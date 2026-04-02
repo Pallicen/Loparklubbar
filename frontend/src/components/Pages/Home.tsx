@@ -10,7 +10,7 @@ const Home = () => {
 
       <div className="meny-home-page">
           <div className="meny-home-img">
-              <img src={ image } alt="Meny Page" className="menyPageImg"></img>
+              <img src={ image } alt="MenyPage" className="menyPageImg"></img>
           </div>
 
           <div className="meny-home-text">
