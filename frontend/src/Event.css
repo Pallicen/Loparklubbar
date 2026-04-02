@@ -1,0 +1,61 @@
+/* EVENT, CARDS*/
+
+.eventTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 10rem;
+  font-size: 2.6rem;
+}
+
+.EventCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.EventCard {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 12rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+  .EventCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .EventCard {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+}
+
+.partnership {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  font-weight: 600;
+  text-decoration: underline;
+  gap: 2rem;
+  font-size: 1.2rem;
+
+  img {
+    width: 8rem;
+  }
+}

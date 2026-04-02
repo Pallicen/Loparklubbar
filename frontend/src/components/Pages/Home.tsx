@@ -2,7 +2,7 @@ import image from "/src/assets/menyPage.png";
 
 const Home = () => {
   return (
-  <div className="main">
+  <div>
 
       <div className="meny-header">
           <p>Spring tillsammans - Väx tillsammans</p>
@@ -10,7 +10,7 @@ const Home = () => {
 
       <div className="meny-home-page">
           <div className="meny-home-img">
-              <img src={ image } alt="MenyPage" className="menyPageImg"></img>
+              <img src={ image } alt="MenyPage" className="menyPageImg" />
           </div>
 
           <div className="meny-home-text">

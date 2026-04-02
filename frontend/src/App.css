@@ -3,20 +3,32 @@
   padding: 0%;
 }
 
+.main-container {
+  background-color: rgb(234, 234, 234);
+}
+
 main {
   margin-left: 2rem;
   margin-right: 2rem;
   min-height: 100vh;
 }
 
+/* MENY */
 
 .navbar {
-  background-color: rgb(199, 208, 199);
-  height: 6rem;
+  background-color: rgb(162, 177, 162);
+  height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 5px;
+}
+
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+
 }
 
 .btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
@@ -155,272 +167,6 @@ main {
   .hamburger {
     display: flex;
   }
-}
-
-
-/* HEM */
-
-.meny-header {
-  display: flex;
-  height: 10rem;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 2.6rem;
-}
-
-.meny-home-page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  gap: 2rem;
-}
-
-.meny-home-img {
-  flex: 1;
-  max-width: 50%;
-}
-
-.menyPageImg {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.meny-home-text {
-  flex: 2; 
-  max-width: 50%;
-}
-
-.p-header-meny-home {
-  font-size: 2rem;
-}
-
-.p-text-meny-home {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-align: left;
-  color: #333;
-}
-
-
-@media (max-width: 768px) {
-
-  .meny-header {
-    margin-top: 1rem;
-
-  }
-  .meny-home-page {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .meny-home-img,
-  .meny-home-text {
-    min-width: 100%;
-    flex: none;
-    margin-bottom: 1rem;
-  }
-
-  .p-header-meny-home {
-    font-size: 1.5rem;
-  }
-
-  .p-text-meny-home {
-    font-size: 1rem;
-  }
-}
-
-/* EVENT, CARDS, RUNCLUB /CARDS*/
-
-.runclub-container {
-  display: flex;
-}
-
-.eventTitle, .runclubTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 10rem;
-  font-size: 2.6rem;
-}
-
-.EventCards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.EventCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
-  min-height: 12rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-}
-
-.RunclubCards {
-  display: grid;
-  grid-template-columns: 1fr;
-  border-left: 2px solid #333;
-  gap: 2rem;
-  padding-left: 2rem;
-}
-
-.RunclubCard {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  min-height: 18rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  gap: 6rem;
-}
-
-.RunclubDescriptionInCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.RunClubImageInCard {
-  display: flex;
-
-  img {
-    width: 100%;
-    width: 15rem;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .EventCards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .EventCard {
-    width: 100%;
-    padding: 1rem;
-    margin: 0;
-  }
-
-  .RunclubCards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1rem;
-    padding-top: 2rem;
-    border-top: 2px solid #333;
-    border-left: none;
-  }
-
-  .RunclubDescriptionInCard {
-   gap: 1rem;
-  }
-  
-  .RunclubCard {
-    display: grid;
-    padding: 1rem;
-    margin: 0;
-    justify-content: space-between;
-    gap: 2rem;
-    box-sizing: border-box;
-  }
-
-  .runclub-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-}
-
-
-/* FILTER */
-
-.runclub-container {
-  display: flex;
-}
-
-.filter-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  width: 14rem;
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  margin-top: 2rem;
-}
-
-.selectWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 8rem;
-}
-
-.selectWrapper select {
-  height: 45px;
-  padding: 0 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-
-label {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-    .filter {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .filter-container {
-    display: flex;
-    margin-bottom: 4rem;
-  }
-
-  .selectWrapper select {
-  height: 40px;
-  width: 8rem;
-}
-
-.checkboxLabel {
-  font-size: 1.2rem;
-}
-
 }
 
 

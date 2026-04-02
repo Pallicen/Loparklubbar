@@ -1,10 +1,9 @@
 import RunclubCard from "../RunclubCard";
 
 
-
 const Runclubs = () => {
   return (
-    <div className="main">
+    <div>
 
       <div className="runclubTitle">
         <p>Löparklubbar</p>
