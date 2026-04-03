@@ -10,6 +10,15 @@
   font-size: 2.6rem;
 }
 
+.affärsplan-sammanfattning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  height: 25rem;
+}
+
 .meny-home-page {
   display: flex;
   justify-content: space-between;

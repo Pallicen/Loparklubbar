@@ -1,4 +1,4 @@
-import image from "/src/assets/menyPage.png";
+import image from "/src/assets/3.png";
 
 const Home = () => {
   return (
@@ -6,6 +6,20 @@ const Home = () => {
 
       <div className="meny-header">
           <p>Spring tillsammans - Väx tillsammans</p>
+      </div>
+
+      <div className="affärsplan-sammanfattning">
+        <p>RunWithUs är en digital plattform som samlar Sveriges löparklubbar på ett och samma ställe. Plattformen gör
+det enkelt för privatpersoner att hitta, jämföra och ansluta sig till löparklubbar i sin stad. Idag är löparklubbar
+utspridda över sociala medier eller lokala forum som gör dem svåra att hitta, speciellt för nyinflyttade eller
+personer som vill börja springa men saknar nätverk. Samtidigt ökar ensamheten och stillasittandet i Sverige.
+På RunWithUs ska löparklubbar kunna registrera sig och marknadsföra sitt team, användare ska enkelt kunna
+filtrera klubbar baserat på stad och nivå, event ska kunna skapas både av administratör och av löparklubbar och
+samarbeten med andra lopp ska även ge en ökad synlighet. Detta ska bli ett levande community.
+Intäkter genereras genom profiler för löparklubbar, annonsering för lopp och arrangörer, partnerskap och
+sponsring och eventavgifter.
+Visionen är att RunWithUs ska bli Sveriges ledande plattform för löpargemenskap. Vi vill bidra till ökad fysisk
+aktivitet, gemenskap och minskad ensamhet.</p>
       </div>
 
       <div className="meny-home-page">

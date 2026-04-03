@@ -59,21 +59,6 @@ const RunclubCard: React.FC<CardPropsRunclub> = ({ title, description, city, lev
             </div>
         </div>
 
-        <div className="RunclubCard">
-          <div className='RunclubDescriptionInCard'>
-                <h3>{title} Titel på löparklubb</h3>
-                <p>{description} Beskrivning</p>
-                <p>Stad: {city}</p>
-                <p>Nivå: {level}</p>
-                <p>Dag & Tid: {when}</p>
-                <p>Social Media: <a href={socialMediaLink}>Länk</a></p>
-           </div>
-            <div className='RunClubImageInCard'>
-                <img src={image} alt='BILD'></img>
-            </div>
-        </div>
-
-
     </div>
   );
 };
