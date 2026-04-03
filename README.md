@@ -5,7 +5,7 @@ En plattform för Sveriges löparklubbar och lopp att synliggöra sig
 RunWithUs
 
 ## Beskrivning
-Detta är en React-applikation byggd med Vite. Applikationen är en prototyp som visar ...?
+Detta är en React-applikation byggd med Vite och Typescript. Applikationen är en prototyp på delar av produktidén som visar grunden på hur designen kommer se ut och huvudsyftet med vad applikationen kommer användas för. I början av de tre sidorna finns en beskirvande text av affärsidén.
 
 ## Funktioner
 - Visar en prototyp på hemsidan
