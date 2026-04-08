@@ -13,7 +13,7 @@ interface CardPropsRunclub {
   image: string;
 }
 
-const RunclubCard: React.FC<CardPropsRunclub> = ({ title, description, city, level, when, socialMediaLink, image }) => {
+const RunclubCard: React.FC<CardPropsRunclub> = ({ title, description, city, level, when, socialMediaLink }) => {
   return (
     <div className='RunclubCards'>
 
