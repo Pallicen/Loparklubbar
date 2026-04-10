@@ -1,25 +1,19 @@
 
+import LoginMeny from "../LoginMeny";
 import Meny from "../Meny";
 import image1 from "/src/assets/3.png";
-// import image2 from "/src/assets/6.png";
 
 const Home = () => {
   return (
   <div className="home1">
 
+
+    {/* FIRST STARTPAGE */}
       <div className="home-page1">
 
               <div className="overlay">
 
-                <div className="login-menu">
-                    <div>
-                        <p className="logo">RunWithUs</p>
-                    </div>
-                    <div className="account-buttons">
-                        <button className="loginBtn">Logga in</button>
-                        <button className="createAccountBtn">Skapa konto</button>
-                    </div>
-                </div>
+                <LoginMeny />
 
                 <div className="text-overlay">
                     <h1 className="title">Sveriges Löparklubbar</h1>
@@ -29,9 +23,13 @@ const Home = () => {
              </div>
       </div>
 
+      {/* MENU-NAVIGATION */}
+
       <header>
           <Meny />
         </header>
+
+    {/* SECOND STARTPAGE */}
 
     <div className="home">
 

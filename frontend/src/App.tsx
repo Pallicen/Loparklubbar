@@ -8,6 +8,8 @@ import Events from './components/Pages/Events'
 import Runclubs from './components/Pages/Runclubs'
 import Meny from './components/Meny'
 import ScrollToTop from './components/ScrollToTop'
+import LoginForm from './components/Pages/LoginForm'
+import RegisterForm from './components/Pages/RegisterForm'
 
 function App() {
 
@@ -19,6 +21,13 @@ function App() {
     <div className='main-container'>
 
       <ScrollToTop />
+
+      <main>
+        <Routes>
+            <Route path='/LoginForm' element={<LoginForm /> }></Route>
+            <Route path='/RegisterForm' element={<RegisterForm />}></Route>
+        </Routes>
+      </main>
 
       {!isHome && (
         <header className="header">
