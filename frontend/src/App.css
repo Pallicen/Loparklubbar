@@ -1,35 +1,37 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
 
 .main-container {
   background-color: rgb(234, 234, 234);
 }
 
-main {
+.home, .event, .runclub, .login-menu, .text-overlay {
   margin-left: 2rem;
   margin-right: 2rem;
-  min-height: 100vh;
 }
 
 /* MENY */
 
 .navbar {
   background-color: rgb(162, 177, 162);
-  height: 5rem;
+  height: 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 5px;
 }
 
+
 header {
   position: sticky;
   z-index: 1000;
   top: 0;
-
 }
+
+
+
 
 .btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
   color: #333;
@@ -167,6 +169,13 @@ header {
   .hamburger {
     display: flex;
   }
+}
+
+@media (max-width: 768px) {
+  .home, .event, .runclub, .login-menu, .text-overlay {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 }
 
 

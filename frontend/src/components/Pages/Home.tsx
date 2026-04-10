@@ -1,30 +1,47 @@
-import image from "/src/assets/3.png";
+
+import Meny from "../Meny";
+import image1 from "/src/assets/3.png";
+// import image2 from "/src/assets/6.png";
 
 const Home = () => {
   return (
-  <div>
+  <div className="home1">
+
+      <div className="home-page1">
+
+              <div className="overlay">
+
+                <div className="login-menu">
+                    <div>
+                        <p className="logo">RunWithUs</p>
+                    </div>
+                    <div className="account-buttons">
+                        <button className="loginBtn">Logga in</button>
+                        <button className="createAccountBtn">Skapa konto</button>
+                    </div>
+                </div>
+
+                <div className="text-overlay">
+                    <h1 className="title">Sveriges Löparklubbar</h1>
+                    <p className="p-loparminnen">Skapa löparminnen du aldrig glömmer.</p>
+                    <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
+                </div>
+             </div>
+      </div>
+
+      <header>
+          <Meny />
+        </header>
+
+    <div className="home">
 
       <div className="meny-header">
           <p>Spring tillsammans - Väx tillsammans</p>
       </div>
 
-      <div className="affärsplan-sammanfattning">
-        <p>RunWithUs är en digital plattform som samlar Sveriges löparklubbar på ett och samma ställe. Plattformen gör
-det enkelt för privatpersoner att hitta, jämföra och ansluta sig till löparklubbar i sin stad. Idag är löparklubbar
-utspridda över sociala medier eller lokala forum som gör dem svåra att hitta, speciellt för nyinflyttade eller
-personer som vill börja springa men saknar nätverk. Samtidigt ökar ensamheten och stillasittandet i Sverige.
-På RunWithUs ska löparklubbar kunna registrera sig och marknadsföra sitt team, användare ska enkelt kunna
-filtrera klubbar baserat på stad och nivå, event ska kunna skapas både av administratör och av löparklubbar och
-samarbeten med andra lopp ska även ge en ökad synlighet. Detta ska bli ett levande community.
-Intäkter genereras genom profiler för löparklubbar, annonsering för lopp och arrangörer, partnerskap och
-sponsring och eventavgifter.
-Visionen är att RunWithUs ska bli Sveriges ledande plattform för löpargemenskap. Vi vill bidra till ökad fysisk
-aktivitet, gemenskap och minskad ensamhet.</p>
-      </div>
-
       <div className="meny-home-page">
           <div className="meny-home-img">
-              <img src={ image } alt="MenyPage" className="menyPageImg" />
+              <img src={ image1 } alt="MenyPage" className="menyPageImg" />
           </div>
 
           <div className="meny-home-text">
@@ -35,6 +52,9 @@ aktivitet, gemenskap och minskad ensamhet.</p>
               Målet är att sänka tröskeln till organiserad löpning, stärka lokala löparcommunities och göra det lättare för människor att ta steget från att springa ensamma till att bli en del av något större.</p>
           </div>
       </div>
+
+    </div>
+
 
   </div>
 );};

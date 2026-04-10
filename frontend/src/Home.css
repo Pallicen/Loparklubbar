@@ -1,22 +1,60 @@
 /* HEM */
 
+.login-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  box-sizing: border-box;
+  width: 12.5rem;
+  height: 3rem;
+  padding: 1.6rem;
+  background-color: white;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+}
+
+.loginBtn {
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1.2rem;
+  border: 0.5px solid #333;
+  color: white;
+  background-color: rgb(16, 71, 16);
+  font-size: 1.4rem;
+}
+
+.createAccountBtn {
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1.2rem;
+  border: 0.5px solid #333;
+  color: white;
+  background-color: black;
+  font-size: 1.4rem;
+}
+
 .meny-header {
   display: flex;
-  height: 10rem;
+  height: 14rem;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: 1rem;
   font-size: 2.6rem;
 }
 
-.affärsplan-sammanfattning {
+.account-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.2rem;
-  height: 25rem;
+  gap: 2rem;
 }
 
 .meny-home-page {
@@ -25,6 +63,7 @@
   align-items: center;
   padding: 20px;
   gap: 2rem;
+  height: 60vh;
 }
 
 .meny-home-img {
@@ -80,4 +119,72 @@
   .p-text-meny-home {
     font-size: 1rem;
   }
+}
+
+.home-page1 {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url('/src/assets/6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(25, 25, 25, 0.45);
+}
+
+.text-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 1rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  max-width: 50rem;
+  max-height: 40rem;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.p-loparminnen {
+  font-size: 2.4rem;
+}
+
+@media (max-width: 768px) {
+
+.title {
+  font-size: 2.4rem;
+}
+
+.p-loparminnen {
+  font-size: 1.8rem;
+}
+
+.logo {
+  width: 10rem;
+  font-size: 1.6rem;
+}
+
+.login-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 12rem;
+  gap: 1.6rem;
+}
+
+.account-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 }

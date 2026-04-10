@@ -4,7 +4,7 @@ import imageNike from "/src/assets/nikeLog.png";
 
 const Events = () => {
   return (
-    <div>
+    <div className="event">
 
       <div className="eventTitle">
         <p>Kommande Lopp & Events</p>
