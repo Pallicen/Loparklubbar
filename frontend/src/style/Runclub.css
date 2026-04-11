@@ -2,6 +2,8 @@
 
 .runclub-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .runclubTitle {
@@ -126,35 +128,40 @@
   cursor: pointer;
 }
 
-
 label {
   margin-top: 2rem;
   font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-    .filter {
+  
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    width: 100%
+  }
+
+  .filter {
     display: flex;
     gap: 10px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
-  .filter-container {
+  .freeCheckbox {
     display: flex;
-    margin-bottom: 4rem;
-  }
-
-  .selectWrapper select {
-    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 12rem;
   }
 
   .checkboxLabel {
     font-size: 1.2rem;
+    margin-left: 16rem;
   }
 
 }
