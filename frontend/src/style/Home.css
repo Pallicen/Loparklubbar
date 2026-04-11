@@ -181,7 +181,10 @@
 }
 
 .logodiv {
-  width: 20.6rem;
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  gap: 1.6rem;
 }
 
 .logo {
@@ -192,14 +195,16 @@
 .login-menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 12rem;
+  justify-content: space-between;
+  height: 10rem;
+  margin-bottom: 1rem;
   gap: 1.6rem;
 }
 
 .account-buttons {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 }
