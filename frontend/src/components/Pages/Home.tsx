@@ -18,7 +18,7 @@ const Home = () => {
                 <div className="text-overlay">
                     <h1 className="title">Sveriges Löparklubbar</h1>
                     <p className="p-loparminnen">Skapa löparminnen du aldrig glömmer.</p>
-                    <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
+                    <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar & lopp på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
                 </div>
              </div>
       </div>

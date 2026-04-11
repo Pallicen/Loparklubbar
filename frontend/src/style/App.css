@@ -172,7 +172,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  .home, .event, .runclub, .login-menu, .text-overlay {
+  .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
   padding-left: 1rem;
   padding-right: 1rem;
 }
