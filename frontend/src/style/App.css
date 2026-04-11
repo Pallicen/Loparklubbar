@@ -7,9 +7,9 @@
   background-color: rgb(234, 234, 234);
 }
 
-.home, .event, .runclub, .login-menu, .text-overlay {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* MENY */

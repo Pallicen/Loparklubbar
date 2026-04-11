@@ -6,7 +6,7 @@ const LoginMeny = () => {
   return (
 
     <nav className="login-menu">
-      <div>
+      <div className="logodiv">
           <p className="logo">RunWithUs</p>
       </div>
       <div className="account-buttons">

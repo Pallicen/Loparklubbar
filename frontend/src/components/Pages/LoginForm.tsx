@@ -6,6 +6,7 @@ const LoginForm = () => {
     <div className="loginPage">
 
       <div className="loginform">
+
         <div className="loginTitle">
             <h1>Logga in</h1>
         </div>

@@ -2,10 +2,11 @@
 
 const RegisterForm = () => {
   return (
-        <div className="loginPage">
 
-      <div className="loginform">
-        <div className="loginTitle">
+    <div className="registerPage">
+
+      <div className="registerform">
+        <div className="registerTitle">
             <h1>Registrera konto</h1>
         </div>
 
@@ -26,7 +27,7 @@ const RegisterForm = () => {
 
       </div>
 
-    </div>
+  </div>
 )};
 
 export default RegisterForm;

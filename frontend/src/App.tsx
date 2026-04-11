@@ -39,7 +39,7 @@ function App() {
             <Route path='/Events' element={<Events />}></Route>
             <Route path='/Runclubs' element={<Runclubs />}></Route>
             <Route path="/LoginForm" element={<LoginForm />} />
-          <Route path="/RegisterForm" element={<RegisterForm />} />
+            <Route path="/RegisterForm" element={<RegisterForm />} />
             <Route path="*" element={<h1>404 Not Found</h1>}></Route>
         </Routes>
       </main>
