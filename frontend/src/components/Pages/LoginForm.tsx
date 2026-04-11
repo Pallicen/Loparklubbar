@@ -25,7 +25,7 @@ const LoginForm = () => {
 
         <div className="loginFormP">
             <p>Saknar du konto? Registrera ett konto </p> 
-            <Link to="./RegisterForm">HÄR</Link>
+            <Link to="/RegisterForm">HÄR</Link>
         </div>
 
       </div>
