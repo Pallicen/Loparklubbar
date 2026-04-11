@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -24,7 +25,7 @@ const LoginForm = () => {
 
         <div className="loginFormP">
             <p>Saknar du konto? Registrera ett konto </p> 
-            <a href="./RegisterForm">HÄR</a>
+            <Link to="./RegisterForm">HÄR</Link>
         </div>
 
       </div>
