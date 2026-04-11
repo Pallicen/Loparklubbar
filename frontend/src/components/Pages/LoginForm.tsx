@@ -23,7 +23,8 @@ const LoginForm = () => {
         </div>
 
         <div className="loginFormP">
-            <p>Saknar du konto? Registrera ett konto <a href="./RegisterForm">här</a></p>
+            <p>Saknar du konto? Registrera ett konto </p> 
+            <a href="./RegisterForm">HÄR</a>
         </div>
 
       </div>
