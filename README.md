@@ -19,6 +19,9 @@ Detta är en React-applikation byggd med Vite och Typescript. Applikationen är 
 3. Installera dependencies:
    npm install
 
+## Bygg projektet
+npm run build
+
 ## Starta projektet
 npm run dev
 
