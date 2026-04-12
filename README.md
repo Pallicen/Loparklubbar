@@ -28,4 +28,4 @@ npm run dev
 - Vite
 
 # Live-App
-https://loparklubb-app-kbj78.ondigitalocean.app
+https://loparklubb-app-kbj78.ondigitalocean.app/
