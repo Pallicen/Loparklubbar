@@ -1,0 +1,211 @@
+/* HEM */
+
+.login-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  box-sizing: border-box;
+  width: 12.5rem;
+  height: 3rem;
+  padding: 1.6rem;
+  background-color: white;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+}
+
+.loginBtn, .createAccountBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1.2rem;
+  border: 0.5px solid #333;
+  color: white;
+  background-color: rgb(16, 71, 16);
+  font-size: 1.4rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.createAccountBtn {
+  background-color: black;
+}
+
+.loginBtn:hover {
+  transition: all 0.3s ease;
+  background-color: rgb(10, 50, 10);
+}
+
+.createAccountBtn:hover {
+  transition: all 0.3s ease;
+  background-color: rgb(30, 30, 30);
+}
+
+
+.meny-header {
+  display: flex;
+  height: 14rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 2.6rem;
+}
+
+.account-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.meny-home-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 2rem;
+  height: 100vh;
+}
+
+.meny-home-img {
+  flex: 1;
+  max-width: 50%;
+}
+
+.menyPageImg {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.meny-home-text {
+  flex: 2; 
+  max-width: 50%;
+  margin-bottom: 2rem;
+}
+
+.p-header-meny-home {
+  font-size: 2rem;
+}
+
+.p-text-meny-home {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+
+  .meny-header {
+    margin-top: 1rem;
+  }
+
+  .meny-home-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meny-home-img,
+  .meny-home-text {
+    min-width: 100%;
+    flex: none;
+    margin-bottom: 1rem;
+  }
+
+  .p-header-meny-home {
+    font-size: 1.5rem;
+  }
+
+  .p-text-meny-home {
+    font-size: 1rem;
+  }
+}
+
+.home-page1 {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url('/src/assets/6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(25, 25, 25, 0.45);
+}
+
+.text-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 1rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  max-width: 50rem;
+  max-height: 40rem;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.p-loparminnen {
+  font-size: 2.4rem;
+}
+
+@media (max-width: 768px) {
+
+.title {
+  font-size: 2.4rem;
+}
+
+.p-loparminnen {
+  font-size: 1.8rem;
+}
+
+.logodiv {
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  gap: 1.6rem;
+}
+
+.logo {
+  width: 10rem;
+  font-size: 1.6rem;
+}
+
+.login-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+  margin-bottom: 1rem;
+  gap: 1.6rem;
+}
+
+.account-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+}

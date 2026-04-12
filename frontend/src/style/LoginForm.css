@@ -1,0 +1,76 @@
+.loginPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50rem;
+  min-width: 40rem;
+  max-height: 35rem;
+  padding: 4rem;
+  background-color: rgb(209, 214, 209);
+  border-radius: 10px;
+}
+
+.loginInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24rem;
+  height: 15rem;
+}
+
+input {
+  width: 24rem;
+  height: 2.4rem;
+  border-radius: 10px;
+  border: 0.8px solid rgb(10, 50, 10);
+}
+
+.loginFormBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+}
+
+.loginFormP {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  width: 24rem;
+}
+
+.loginTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 24rem;
+}
+
+@media (max-width: 768px) {
+  .loginform {
+    min-width: 14rem;
+  }
+
+  .loginFormP {
+    width: 18rem;
+  }
+
+  .loginInputs {
+    width: 18rem;
+  }
+
+  input {
+    width: 18rem;
+  }
+}
