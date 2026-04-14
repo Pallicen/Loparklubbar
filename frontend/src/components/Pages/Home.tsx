@@ -9,6 +9,7 @@ const Home = () => {
 
 
     {/* FIRST STARTPAGE */}
+    <div className="home-page">
       <div className="home-page1">
 
               <div className="overlay">
@@ -22,12 +23,13 @@ const Home = () => {
                 </div>
              </div>
       </div>
-
+      </div>
+      
       {/* MENU-NAVIGATION */}
+          <header>
+            <Meny />
+          </header>
 
-      <header>
-          <Meny />
-        </header>
 
     {/* SECOND STARTPAGE */}
 
