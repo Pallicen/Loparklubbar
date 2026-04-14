@@ -10,8 +10,8 @@ const LoginMeny = () => {
           <p className="logo">RunWithUs</p>
       </div>
       <div className="account-buttons">
-          <Link className="loginBtn" to="/LoginForm">Logga in</Link>
           <Link className="createAccountBtn" to="/RegisterForm">Skapa konto</Link>
+          <Link className="loginBtn" to="/LoginForm">Logga in</Link>
       </div>
     </nav>
   );

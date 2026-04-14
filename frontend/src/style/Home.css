@@ -134,7 +134,7 @@
 }
 
 .home-page {
-  height: 88vh;
+  height: 87vh;
   position: relative;
   overflow: visible;
 }
@@ -149,7 +149,7 @@
 }
 
 .overlay {
-  height: 88vh;
+  height: 90vh;
   width: 100%;
   background-color: rgba(25, 25, 25, 0.45);
 }
@@ -169,7 +169,7 @@
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 4.6rem;
 }
 
 .p-loparminnen {
