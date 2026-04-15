@@ -7,6 +7,10 @@
   background-color: rgb(234, 234, 234);
 }
 
+main {
+  margin-bottom: 6rem;
+}
+
 .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
   padding-left: 2rem;
   padding-right: 2rem;

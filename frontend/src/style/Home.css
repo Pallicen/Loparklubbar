@@ -3,8 +3,16 @@
 .login-menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 8rem;
   gap: 10px;
+}
+
+.logodiv {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .logo {
@@ -22,7 +30,7 @@
   border-bottom-left-radius: 1.2rem;
 }
 
-.loginBtn, .createAccountBtn {
+.loginBtn, .logoutBtn, .createAccountBtn {
   position: relative;
   display: flex;
   justify-content: center;
@@ -33,7 +41,7 @@
   border: 0.5px solid #333;
   color: white;
   background-color: rgb(16, 71, 16);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-decoration: none;
   overflow: hidden;
 }
@@ -42,7 +50,7 @@
   background-color: black;
 }
 
-.loginBtn:hover {
+.loginBtn:hover, .logoutBtn:hover {
   transition: all 0.3s ease;
   background-color: rgb(10, 50, 10);
 }
@@ -64,7 +72,7 @@
 
 .account-buttons {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .meny-home-page {
@@ -169,6 +177,7 @@
 
 .title {
   font-size: 4.6rem;
+  margin-top: 2rem;
 }
 
 .p-loparminnen {
@@ -187,11 +196,9 @@
 
 .logodiv {
   display: flex;
-  align-items: flex-start;
-  width: 50%;
+  width: 100%;
   margin-top: 2rem;
-  gap: 1.6rem;
-  background-color: #333;
+  gap: 1rem;
 }
 
 .logo {
@@ -212,9 +219,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
+  width: 100%;
   align-items: flex-end;
-  height: 12rem;
-  background-color: aqua;
 }
 
 }

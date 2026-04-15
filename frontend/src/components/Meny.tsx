@@ -26,6 +26,7 @@ const Meny = () => {
           <Link className="btnLinkHome" onClick={toggleMenu} to="/">Hem</Link>
           <Link className="btnLinkRunclub" onClick={toggleMenu} to="/Runclubs">Löparklubbar</Link>
           <Link className="btnLinkEvent" onClick={toggleMenu} to="/Events">Event</Link>
+          
       </div>
 
       <div className="desktop-menu">
