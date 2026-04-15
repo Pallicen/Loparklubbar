@@ -12,12 +12,14 @@ import Meny from './components/Meny'
 import ScrollToTop from './components/ScrollToTop'
 import LoginForm from './components/Pages/LoginForm'
 import RegisterForm from './components/Pages/RegisterForm'
+import CreateEvent from './components/Pages/CreateEvent'
+import CreateRunClub from './components/Pages/CreateRunClub'
 
 function App() {
 
   const location = useLocation();
 
-  const hideMain = location.pathname === "/LoginForm" || "/RegisterForm";
+  const hideMain = location.pathname === "/LoginForm" || location.pathname === "/RegisterForm";
 
   const isHome = location.pathname === "/";
 
@@ -40,6 +42,8 @@ function App() {
             <Route path='/Runclubs' element={<Runclubs />}></Route>
             <Route path="/LoginForm" element={<LoginForm />} />
             <Route path="/RegisterForm" element={<RegisterForm />} />
+            <Route path='/CreateEvent' element={<CreateEvent /> } />
+            <Route path='/CreateRunClub' element={<CreateRunClub />} />
             <Route path="*" element={<h1>404 Not Found</h1>}></Route>
         </Routes>
       </main>

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../auth/context";
 
 const LoginMeny = () => {
-    
+
+  const { session, logout } = useAuth();
+  const isLoggedIn = !!session;
 
   return (
 
@@ -10,8 +13,18 @@ const LoginMeny = () => {
           <p className="logo">RunWithUs</p>
       </div>
       <div className="account-buttons">
-          <Link className="createAccountBtn" to="/RegisterForm">Skapa konto</Link>
-          <Link className="loginBtn" to="/LoginForm">Logga in</Link>
+        {isLoggedIn ? (
+          <>
+            <Link className="createRunClubBtn" to="/CreateRunClub">Lägg till löparklubb</Link>
+            <Link className="createEventBtn" to="/CreateEvent">Lägg till lopp</Link>
+            <button className="loginBtn" onClick={logout}>Logga ut</button>
+          </>
+        ) : (
+          <>
+            <Link className="loginBtn" to="/LoginForm">Logga in</Link>
+            <Link className="createAccountBtn" to="/RegisterForm">Skapa konto</Link>
+          </>
+        )}
       </div>
     </nav>
   );
