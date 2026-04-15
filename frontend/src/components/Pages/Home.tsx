@@ -1,6 +1,5 @@
 
 import LoginMeny from "../LoginMeny";
-import Meny from "../Meny";
 import image1 from "/src/assets/3.png";
 
 const Home = () => {
@@ -22,13 +21,8 @@ const Home = () => {
                     <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar & lopp på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
                 </div>
              </div>
-      </div>
-      </div>
-      
-      {/* MENU-NAVIGATION */}
-          <header>
-            <Meny />
-          </header>
+        </div>
+    </div>
 
 
     {/* SECOND STARTPAGE */}

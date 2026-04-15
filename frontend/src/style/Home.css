@@ -3,7 +3,6 @@
 .login-menu {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   height: 8rem;
   gap: 10px;
 }
@@ -187,10 +186,12 @@
 }
 
 .logodiv {
-  width: 100%;
   display: flex;
+  align-items: flex-start;
+  width: 50%;
   margin-top: 2rem;
   gap: 1.6rem;
+  background-color: #333;
 }
 
 .logo {
@@ -210,7 +211,14 @@
 .account-buttons {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  height: 12rem;
+  background-color: aqua;
 }
 
+}
+
+.home {
+  height: 120vh;
 }

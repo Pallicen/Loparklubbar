@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './style/App.css'
 import './style/Home.css'
 import './style/Runclub.css'
@@ -17,23 +17,16 @@ import CreateRunClub from './components/Pages/CreateRunClub'
 
 function App() {
 
-  const location = useLocation();
-
-  const hideMain = location.pathname === "/LoginForm" || location.pathname === "/RegisterForm";
-
-  const isHome = location.pathname === "/";
-
   return (
     <div className='main-container'>
 
       <ScrollToTop />
       
-
-      {!hideMain || !isHome && (
         <header className="header">
           <Meny />
         </header>
-      )}
+
+
 
       <main>
         <Routes>
@@ -47,10 +40,6 @@ function App() {
             <Route path="*" element={<h1>404 Not Found</h1>}></Route>
         </Routes>
       </main>
-
-      <footer>
-        <p>© 2026 Löparplattformen. Alla rättigheter reserverade.</p>
-      </footer>
 
     </div>
   )
