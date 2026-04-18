@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr;
   border-left: 2px solid #333;
-  gap: 2rem;
+  gap: 1rem;
   padding-left: 2rem;
 }
 
@@ -36,7 +36,7 @@
   box-sizing: border-box;
   background-color: white;
   gap: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .RunclubDescriptionInCard {
@@ -125,7 +125,6 @@
 .selectWrapper select {
   height: 45px;
   padding: 0 12px;
-  border-radius: 8px;
   border: 1px solid #ccc;
   background-color: white;
   font-size: 16px;
@@ -193,4 +192,110 @@ label {
 .createRunClubBtn:hover {
   transition: all 0.3s ease;
   background-color: rgb(30, 30, 30);
+}
+
+/* RunclubForm */
+
+.runclubFormPage {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.runclubform {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  min-width: 40rem;
+  max-height: 30rem;
+  padding: 3rem;
+  background-color: rgb(209, 214, 209);
+  border-radius: 10px;
+}
+
+.splitForm {
+  display: flex;
+  gap: 4rem;
+}
+
+.runclubInputsLeft, .runclubInputsRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formDesciption {
+  height: 6rem;
+}
+
+
+.runclubFormBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.runclubBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1.2rem;
+  border: 0.5px solid #333;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.runclubBtn:hover {
+  transition: all 0.3s ease;
+  background-color: rgb(65, 65, 65);
+}
+
+.runclubFormP {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  width: 24rem;
+}
+
+.runclubFormTitle {
+  display: flex;
+  height: 8rem;
+  font-size: 1rem;
+  width: 20rem;
+}
+
+@media (max-width: 768px) {
+
+  .runclubFormTitle {
+    font-size: 0.8rem;
+  }
+
+  .runclubform {
+    min-width: 10rem;
+    max-width: 16rem;
+  }
+
+  .runclubFormP {
+    width: 18rem;
+  }
+
+  .runclubInputs {
+    width: 18rem;
+  }
+
+  .formDesciption {
+    width: 18rem;
+  }
 }

@@ -8,7 +8,7 @@
 }
 
 main {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 
 .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
@@ -19,8 +19,8 @@ main {
 /* MENY */
 
 .navbar {
-  background-color: rgb(162, 177, 162);
-  height: 6rem;
+  background-color: rgb(191, 200, 191);
+  height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;

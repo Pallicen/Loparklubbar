@@ -40,7 +40,7 @@
   border-radius: 1.2rem;
   border: 0.5px solid #333;
   color: white;
-  background-color: rgb(16, 71, 16);
+  background-color: rgb(76, 102, 76);
   font-size: 1.2rem;
   text-decoration: none;
   overflow: hidden;
@@ -57,7 +57,7 @@
 
 .createAccountBtn:hover {
   transition: all 0.3s ease;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(65, 65, 65);
 }
 
 

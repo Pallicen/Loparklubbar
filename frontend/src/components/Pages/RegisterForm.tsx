@@ -37,7 +37,7 @@ const RegisterForm = () => {
 
         <form onSubmit={onSubmit}>
           <div className="loginInputs">
-            <label>Användarnamn</label>
+            <label>E-post</label>
             <input
               type="text"
               className="username"

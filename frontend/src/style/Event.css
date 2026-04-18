@@ -80,3 +80,110 @@
   transition: all 0.3s ease;
   background-color: rgb(30, 30, 30);
 }
+
+/* EventForm */
+
+.eventFormPage {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50rem;
+  min-width: 40rem;
+  max-height: 30rem;
+  padding: 3rem;
+  background-color: rgb(209, 214, 209);
+  border-radius: 10px;
+}
+
+.eventInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24rem;
+  height: 20rem;
+}
+
+.formDesciption {
+  height: 6rem;
+}
+
+
+.eventFormBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.eventFormP {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  width: 24rem;
+}
+
+.eventFormTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30rem;
+  height: 10rem;
+  font-size: 1rem;
+}
+
+.eventBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1.2rem;
+  border: 0.5px solid #333;
+  color: white;
+  background-color: rgb(76, 102, 76);
+  font-size: 1.2rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.eventBtn:hover {
+  transition: all 0.3s ease;
+  background-color: rgb(10, 50, 10);
+}
+
+@media (max-width: 768px) {
+
+  .eventFormTitle {
+    font-size: 0.8rem;
+  }
+
+  .eventform {
+    min-width: 10rem;
+    max-width: 16rem;
+  }
+
+  .eventFormP {
+    width: 18rem;
+  }
+
+  .eventInputs {
+    width: 18rem;
+  }
+
+  .formDesciption {
+    width: 18rem;
+  }
+}
