@@ -153,7 +153,7 @@
   border-radius: 1.2rem;
   border: 0.5px solid #333;
   color: white;
-  background-color: rgb(76, 102, 76);
+  background-color: black;
   font-size: 1.2rem;
   text-decoration: none;
   overflow: hidden;
@@ -161,7 +161,7 @@
 
 .eventBtn:hover {
   transition: all 0.3s ease;
-  background-color: rgb(10, 50, 10);
+  background-color: rgb(41, 41, 41);
 }
 
 @media (max-width: 768px) {

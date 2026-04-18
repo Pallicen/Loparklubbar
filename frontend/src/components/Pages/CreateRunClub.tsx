@@ -87,24 +87,23 @@ return (
             <img
             src={preview}
             alt='Preview'
-            style={{ width: "200px", marginTop: "10px" }}
+            style={{ width: "200px", marginTop: "10px", marginBottom: "10px" }}
             />
           )}
 
-
           </div>
           
-            <div className="runclubFormBtn">
-              <button className="runclubBtn" type="submit">
-                Lägg till
-              </button>
-            </div>
           </div>
         </div>
 
         </form>
 
       </div>
+          <div className='runclubBtnDiv'>
+              <button className="runclubBtn" type="submit">
+                Lägg till klubb
+              </button>
+            </div>
     </div>
   )
 }
