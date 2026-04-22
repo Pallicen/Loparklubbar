@@ -1,8 +1,15 @@
 
+import { Link } from "react-router-dom";
 import LoginMeny from "../LoginMeny";
 import image1 from "/src/assets/3.png";
+import { useAuth } from "../../auth/context";
 
 const Home = () => {
+
+  const { session } = useAuth();
+  const isLoggedIn = !!session;
+
+
   return (
   <div className="home1">
 
@@ -20,8 +27,8 @@ const Home = () => {
                     <p className="p-loparminnen">Skapa löparminnen du aldrig glömmer.</p>
                     <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar & lopp på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
                 </div>
-             </div>
-        </div>
+              </div>
+          </div>
     </div>
 
 

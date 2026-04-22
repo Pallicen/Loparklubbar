@@ -8,30 +8,29 @@ const LoginMeny = () => {
 
   return (
 
+    <div>
+
     <nav className="login-menu">
-      <div className="logodiv">
         <div>
-        <p className="logo">RunWithUs</p>
+          <p className="logo">RunWithUs</p>
         </div>
       {isLoggedIn ? (
         <>
-        <div>
       <div className="account-buttons">
-            <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
-            <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
-      <button className="logoutBtn" onClick={logout}>
-        Logga ut
-      </button>
-          </div>
-      </div>
-          </>
+          <button className="logoutBtn" onClick={logout}>
+            Logga ut
+          </button>
+        </div>
+       </>
     ) : (
       <Link className="loginBtn" to="/LoginForm">
         Logga in
       </Link>
     )}
-     </div>
     </nav>
+
+  </div>
+
   );
 };
 

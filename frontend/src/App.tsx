@@ -14,6 +14,7 @@ import LoginForm from './components/Pages/LoginForm'
 import RegisterForm from './components/Pages/RegisterForm'
 import CreateEvent from './components/Pages/CreateEvent'
 import CreateRunClub from './components/Pages/CreateRunClub'
+import MyAccount from './components/Pages/MyAccount'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/RegisterForm" element={<RegisterForm />} />
             <Route path='/CreateEvent' element={<CreateEvent /> } />
             <Route path='/CreateRunClub' element={<CreateRunClub />} />
+            <Route path='/MyAccount' element={<MyAccount />} />
             <Route path="*" element={<h1>404 Not Found</h1>}></Route>
         </Routes>
       </main>
