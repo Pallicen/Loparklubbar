@@ -24,6 +24,14 @@ const LoginForm = () => {
 
   return (
     <div className="loginPage">
+
+      <div className="registerBtnLoginForm">
+      <div>
+          <p className="logo">RunWithUs</p>
+      </div>
+      <Link className="registerBtn" to="/RegisterForm">Registrera konto</Link>
+      </div>
+
       <div className="loginform">
         <div className="loginTitle">
           <h1>Logga in</h1>

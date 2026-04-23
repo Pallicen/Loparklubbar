@@ -34,7 +34,7 @@ const Home = () => {
 
     {/* SECOND STARTPAGE */}
 
-    <div className="home">
+    <div className="home2">
 
       <div className="meny-header">
           <p>Spring tillsammans - Väx tillsammans</p>

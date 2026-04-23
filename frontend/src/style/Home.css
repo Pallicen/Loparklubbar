@@ -23,7 +23,7 @@
   border-bottom-left-radius: 1.2rem;
 }
 
-.loginBtn, .logoutBtn, .createAccountBtn {
+.loginBtn, .logoutBtn {
   position: relative;
   display: flex;
   justify-content: center;
@@ -39,9 +39,6 @@
   overflow: hidden;
 }
 
-.createAccountBtn {
-  background-color: black;
-}
 
 .loginBtn:hover, .logoutBtn:hover {
   transition: all 0.3s ease;
@@ -218,6 +215,6 @@
 
 }
 
-.home {
-  height: 120vh;
+.home2 {
+  height: 140vh;
 }
