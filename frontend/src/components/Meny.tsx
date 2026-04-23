@@ -53,10 +53,8 @@ const Meny = () => {
           <Link className="btnLinkRunclub" to="/Runclubs">Löparklubbar</Link>
           <Link className="btnLinkEvent" to="/Events">Event</Link>
           <Link className="btnLinkMyAccount" to="/MyAccount">Profil</Link>
-          <div className="createBtns">
-              <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
-              <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
-          </div>
+          <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
+          <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
         </div>
       </>
       ) : (
