@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/context";
+import LoginMeny from "../LoginMeny";
 
 const RegisterForm = () => {
   const { register } = useAuth();
@@ -26,6 +27,16 @@ const RegisterForm = () => {
 
   return (
     <div className="registerPage">
+
+      <div className="loginBtnRegisterForm">
+       <div>
+          <p className="logo">RunWithUs</p>
+        </div>
+        <Link className="loginBtn" to="/LoginForm">
+          Logga in
+        </Link>
+      </div>
+
       <div className="registerform">
         <div className="registerTitle">
           <h1>Registrera konto</h1>
@@ -65,6 +76,7 @@ const RegisterForm = () => {
           {message && <p className="authMessage">{message}</p>}
         </form>
       </div>
+
     </div>
   );
 };

@@ -183,26 +183,6 @@ label {
 
 }
 
-.createRunClubBtn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 10rem;
-  border-radius: 1.2rem;
-  border: 0.5px solid #333;
-  color: white;
-  background-color: rgb(0, 0, 0);
-  font-size: 1.2rem;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.createRunClubBtn:hover {
-  transition: all 0.3s ease;
-  background-color: rgb(30, 30, 30);
-}
 
 /* RunclubForm */
 
