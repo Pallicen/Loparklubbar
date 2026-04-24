@@ -11,7 +11,7 @@ main {
   margin-bottom: 5rem;
 }
 
-.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
+.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage {
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -192,7 +192,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
+  .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage {
   padding-left: 1rem;
   padding-right: 1rem;
 }
