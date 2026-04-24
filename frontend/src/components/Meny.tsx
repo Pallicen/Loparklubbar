@@ -52,9 +52,9 @@ const Meny = () => {
           <Link className="btnLinkHome" to="/">Hem</Link>
           <Link className="btnLinkRunclub" to="/Runclubs">Löparklubbar</Link>
           <Link className="btnLinkEvent" to="/Events">Event</Link>
-          <Link className="btnLinkMyAccount" to="/MyAccount">Profil</Link>
           <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
           <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
+          <Link className="btnLinkMyAccount" to="/MyAccount">Profil</Link>
         </div>
       </>
       ) : (

@@ -188,7 +188,7 @@ label {
 
 .runclubFormPage {
   display: flex;
-  min-height: 100vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -235,7 +235,7 @@ label {
   justify-content: center;
   align-items: center;
   height: 3rem;
-  width: 10rem;
+  width: 8rem;
   border-radius: 1.2rem;
   border: 0.5px solid #333;
   color: white;
