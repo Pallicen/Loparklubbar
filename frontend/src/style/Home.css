@@ -1,68 +1,7 @@
 /* HEM */
 
-.login-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 8rem;
-  gap: 10px;
-}
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  box-sizing: border-box;
-  width: 16rem;
-  height: 2.6rem;
-  padding: 1.6rem;
-  color: rgb(147, 172, 147);
-  background-color: rgb(255, 255, 255);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 3.5rem;
-  border-bottom-right-radius: 3.5rem;
-  border-bottom-left-radius: 4px;
-  font-family: "Faster One", system-ui;
-}
-
-.loginBtn, .logoutBtn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 10rem;
-  border-radius: 1.2rem;
-  border: 0.5px solid #333;
-  color: white;
-  background-color: rgb(76, 102, 76);
-  font-size: 1.2rem;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-
-.loginBtn:hover, .logoutBtn:hover {
-  transition: all 0.3s ease;
-  background-color: rgb(10, 50, 10);
-}
-
-.createAccountBtn:hover {
-  transition: all 0.3s ease;
-  background-color: rgb(65, 65, 65);
-}
-
-.createBtns {
-  display: flex;
-  height: 12rem;
-  justify-content: end;
-  align-items: end;
-}
-
-
-
-.meny-header {
+.run-together-header {
   display: flex;
   height: 14rem;
   justify-content: center;
@@ -116,8 +55,13 @@
 
 @media (max-width: 768px) {
 
-  .meny-header {
+  .run-together-header {
     margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
   }
 
   .meny-home-page {
@@ -150,7 +94,7 @@
 .home-page1 {
   display: flex;
   width: 100%;
-  background-image: url('/src/assets/6.png');
+  background-image: url('/src/assets/startPage.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -195,13 +139,6 @@
   font-size: 1.8rem;
 }
 
-
-.logo {
-  width: 12rem;
-  font-size: 1.4rem;
-  height: 1.6rem;
-}
-
 .account-buttons {
   display: flex;
   justify-content: space-between;
@@ -220,5 +157,5 @@
 }
 
 .home2 {
-  height: 140vh;
+  height: 120vh;
 }

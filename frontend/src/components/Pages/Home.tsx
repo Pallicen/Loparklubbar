@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import LoginMeny from "../LoginMeny";
 import image1 from "/src/assets/3.png";
 import { useAuth } from "../../auth/context";
@@ -12,7 +11,6 @@ const Home = () => {
 
   return (
   <div className="home1">
-
 
     {/* FIRST STARTPAGE */}
     <div className="home-page">
@@ -36,7 +34,7 @@ const Home = () => {
 
     <div className="home2">
 
-      <div className="meny-header">
+      <div className="run-together-header">
           <p>Spring tillsammans - Väx tillsammans</p>
       </div>
 

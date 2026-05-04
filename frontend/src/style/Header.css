@@ -1,0 +1,64 @@
+.login-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  gap: 10px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.4rem;
+  color: rgb(21, 43, 21);
+  font-family: "Faster One", system-ui;
+  width: auto;
+  white-space: nowrap;
+}
+
+
+.loginBtn, 
+.logoutBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3rem;
+  padding: 0 3rem;
+  border-radius: 1.2rem;
+
+  border: 0.5px solid #333;
+  color: white;
+  background-color: rgb(76, 102, 76);
+
+  font-size: 1.4rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.loginBtn:hover, 
+.logoutBtn:hover {
+  transition: all 0.3s ease;
+  background-color: rgb(10, 50, 10);
+}
+
+@media (max-width: 768px) {
+
+  .login-menu {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .loginBtn, 
+  .logoutBtn {
+    font-size: 1rem;
+    padding: 0.6rem 2.2rem;
+  }
+}

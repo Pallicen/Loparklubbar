@@ -23,54 +23,64 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="loginPage">
+    <div className="registerPage">
 
-      <div className="registerBtnLoginForm">
-      <div>
-          <p className="logo">RunWithUs</p>
-      </div>
-      <Link className="registerBtn" to="/RegisterForm">Registrera konto</Link>
+      <div className="login-menu">
+        <p className="logo">RunWithUs</p>
+        <Link className="loginBtn" to="/RegisterForm">
+          Skapa konto
+        </Link>
       </div>
 
-      <div className="loginform">
-        <div className="loginTitle">
-          <h1>Logga in</h1>
+      <div className="registerContainer">
+
+        <div className="registerIntro">
+          <h1>Välkommen</h1>
+          <p>
+            Logga in för att hantera din löparklubb, skapa events och hitta nya löpare.
+          </p>
         </div>
 
-        <form onSubmit={onSubmit}>
-          <div className="loginInputs">
-            <label>E-post</label>
-            <input
-              type="text"
-              className="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              autoComplete="username"
-            />
 
-            <label>Lösenord</label>
-            <input
-              type="password"
-              className="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="current-password"
-            />
-          </div>
+        <div className="registerCard">
+          <form onSubmit={onSubmit}>
 
-          <div className="loginFormBtn">
-            <button className="loginBtn" type="submit">
+            <div className="formGroup">
+              <label>E-post</label>
+              <input
+                type="email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                autoComplete="username"
+                required
+              />
+            </div>
+
+            <div className="formGroup">
+              <label>Lösenord</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                required
+              />
+            </div>
+
+            <button className="createAccountBtn" type="submit">
               Logga in
             </button>
-          </div>
 
-          {message && <p className="authMessage">{message}</p>}
-        </form>
+            {message && <p className="authMessage">{message}</p>}
 
-        <div className="loginFormP">
-          <p>Saknar du konto? Registrera ett konto </p>
-          <Link to="/RegisterForm">HÄR</Link>
+            <div className="switchAuth">
+              <p>Saknar du konto?</p>
+              <Link to="/RegisterForm">Registrera dig</Link>
+            </div>
+
+          </form>
         </div>
+
       </div>
     </div>
   );

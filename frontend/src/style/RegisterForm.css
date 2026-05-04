@@ -1,58 +1,96 @@
 
-
 .registerPage {
-  height: 90vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf3);
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 
-.loginBtnRegisterForm {
+.registerContainer {
+  flex: 1;
   display: flex;
-  align-items: top;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.registerIntro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.registerIntro p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+.registerCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   width: 100%;
-  height: 8rem;
+  max-width: 400px;
 }
 
-.registerform {
+
+.formGroup {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40rem;
-  height: 30rem;
-  background-color: rgb(209, 214, 209);
-  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
 
-.registerTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 8rem;
-  width: 24rem;
+.formGroup label {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
 }
 
-.registerFormP {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  font-size: 1.2rem;
-  width: 24rem;
+.formGroup input {
+  height: 45px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
+
+.createAccountBtn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 20px;
+  background-color: #222;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.createAccountBtn:hover {
+  background-color: #000;
+}
+
+
+.authMessage {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
 
 @media (max-width: 768px) {
-
-  .registerform {
-    width: 100%
+  .registerContainer {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
   }
 
-  .registerFormP {
-    width: 16rem;
+  .registerHeader {
+    padding: 1.5rem;
+  }
+
+  .registerIntro h1 {
+    font-size: 2rem;
   }
 }
 

@@ -20,65 +20,54 @@
 .RunclubCards {
   display: grid;
   grid-template-columns: 1fr;
-  border-left: 2px solid #333;
-  gap: 1rem;
+  gap: 2rem;
   padding-left: 2rem;
 }
 
 .RunclubCard {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
   min-height: 18rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   background-color: white;
-  gap: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+/* Gör innehållet flexibelt */
 .RunclubDescriptionInCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
 }
 
-.RunClubImageInCard {
-  display: flex;
-
-  img {
-    width: 100%;
-    max-width: 18rem;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+/* Bilden anpassar sig istället för att tvingas */
+.RunClubImageInCard img {
+  width: 100%;
+  max-width: 16rem;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
-
   .RunclubCards {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
     padding: 0%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 2px solid #333;
-    border-left: none;
+  }
+
+  .RunclubCard {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .RunClubImageInCard img {
+    max-width: 80%;
   }
 
   .RunclubDescriptionInCard {
-   gap: 1rem;
-  }
-  
-  .RunclubCard {
-    display: grid;
-    padding: 2rem;
-    justify-content: space-between;
-    box-sizing: border-box;
+    gap: 0.8rem;
   }
 
   .runclub-container {
