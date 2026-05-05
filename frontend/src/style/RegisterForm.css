@@ -1,9 +1,10 @@
 
 .registerPage {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa, #e4ecf3);
+  min-height: 90vh;
+  background: linear-gradient #f5f7fa;
   display: flex;
   flex-direction: column;
+  padding: 0%;
 }
 
 .registerContainer {
@@ -32,7 +33,7 @@
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 
@@ -44,7 +45,7 @@
 
 .formGroup label {
   margin-bottom: 6px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .formGroup input {
@@ -74,7 +75,7 @@
 
 .authMessage {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 

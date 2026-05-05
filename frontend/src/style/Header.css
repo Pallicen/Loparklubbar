@@ -4,7 +4,6 @@
   align-items: center;
   height: 8rem;
   gap: 10px;
-  padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -13,7 +12,7 @@
   display: flex;
   align-items: center;
   font-size: 2.4rem;
-  color: rgb(21, 43, 21);
+  color: rgb(16, 38, 7);
   font-family: "Faster One", system-ui;
   width: auto;
   white-space: nowrap;

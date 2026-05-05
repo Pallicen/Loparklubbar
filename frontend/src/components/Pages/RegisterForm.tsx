@@ -27,12 +27,22 @@ const RegisterForm = () => {
   return (
   <div className="registerPage">
 
-      <div className="login-menu">
-        <p className="logo">RunWithUs</p>
+    <nav className="login-menu">
+
+      <div className="nav-left">
+        <p className="logo">RUNWITHUS</p>
+      </div>
+
+      <div className="nav-right">
+
         <Link className="loginBtn" to="/LoginForm">
           Logga in
         </Link>
+
       </div>
+
+    </nav>
+
 
       <div className="registerContainer">
 

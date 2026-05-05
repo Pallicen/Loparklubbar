@@ -1,7 +1,9 @@
 
 import LoginMeny from "../LoginMeny";
 import image1 from "/src/assets/3.png";
-import { useAuth } from "../../auth/context";
+import { useAuth } from "../../auth/context"
+import imageStrava from "/src/assets/stravaLog.png";
+import imageNike from "/src/assets/nikeLog.png";
 
 const Home = () => {
 
@@ -32,7 +34,7 @@ const Home = () => {
 
     {/* SECOND STARTPAGE */}
 
-    <div className="home2">
+    <div className="page2">
 
       <div className="run-together-header">
           <p>Spring tillsammans - Väx tillsammans</p>
@@ -54,6 +56,54 @@ const Home = () => {
 
     </div>
 
+    {/* THIRD STARTPAGE */}
+
+    <div className="page3">
+
+      <div className="split-prenumeration-bg">
+
+
+        <div className="prenumerationDiv">
+          <div className="prenumeration-text">
+            <p>Prenumerera på våra nyhetsbrev</p>
+            <input type="text" placeholder="E-post"></input>
+            <button className="loginBtn" type="submit">Prenumerera</button>
+          </div>
+        </div>
+
+        <div className="prenumerationIMG">
+
+        </div>
+
+    </div>
+
+   </div>
+
+    {/* FOURTH STARTPAGE */}
+
+    <div className="page4">
+
+      <div className="split-contact">
+
+
+        <div className="contactDiv">
+            <strong>Kontakt</strong>
+            <p>runwithus@gmail.se</p>
+            <p>070-884 46 77</p>
+            <p>Instagram</p>
+        </div>
+
+        <div className="contactDiv">
+            <div className="partnership">
+            <span>I samarbete med</span>
+            <img src={imageStrava} alt="stravabild"/>
+            <img src={imageNike} alt="nikebild"/>
+          </div>
+        </div>
+
+    </div>
+
+   </div>
 
   </div>
 );};

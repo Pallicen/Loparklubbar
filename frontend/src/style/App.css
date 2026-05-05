@@ -24,7 +24,8 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 
@@ -196,4 +197,11 @@ header {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+}
+
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgb(76, 102, 76);
 }

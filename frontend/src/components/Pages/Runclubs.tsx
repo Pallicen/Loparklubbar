@@ -40,7 +40,7 @@ const Runclubs = () => {
 
           <div className="freeCheckbox">
             <label className="checkboxLabel"> Kostnadsfria
-            <input type="checkbox" />
+            <input className="check" type="checkbox" />
             </label>
           </div>
 
