@@ -1,36 +1,32 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/context";
+import logIMG from '../assets/Run.png'
 
 const LoginMeny = () => {
-
   const { session, logout } = useAuth();
   const isLoggedIn = !!session;
 
   return (
-
-    <div>
-
     <nav className="login-menu">
-        <div>
-          <p className="logo">RunWithUs</p>
-        </div>
-      {isLoggedIn ? (
-        <>
-      <div className="account-buttons">
+
+      <div className="nav-left">
+        {/* <p className="logo">RUNWITHUS</p> */}
+        <img className="log" src={logIMG} alt="logga"></img>
+      </div>
+
+      <div className="nav-right">
+        {isLoggedIn ? (
           <button className="logoutBtn" onClick={logout}>
             Logga ut
           </button>
-        </div>
-       </>
-    ) : (
-      <Link className="loginBtn" to="/LoginForm">
-        Logga in
-      </Link>
-    )}
+        ) : (
+          <Link className="loginBtn" to="/LoginForm">
+            Logga in
+          </Link>
+        )}
+      </div>
+
     </nav>
-
-  </div>
-
   );
 };
 
