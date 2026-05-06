@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/context";
+import logIMG from '../assets/Run.png'
 
 const LoginMeny = () => {
   const { session, logout } = useAuth();
@@ -9,7 +10,8 @@ const LoginMeny = () => {
     <nav className="login-menu">
 
       <div className="nav-left">
-        <p className="logo">RUNWITHUS</p>
+        {/* <p className="logo">RUNWITHUS</p> */}
+        <img className="log" src={logIMG} alt="logga"></img>
       </div>
 
       <div className="nav-right">

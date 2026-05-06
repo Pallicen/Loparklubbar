@@ -8,7 +8,7 @@
 }
 
 
-.logo {
+/* .logo {
   display: flex;
   align-items: center;
   font-size: 2.4rem;
@@ -16,6 +16,12 @@
   font-family: "Faster One", system-ui;
   width: auto;
   white-space: nowrap;
+} */
+
+.log {
+  border-radius: 10px;
+  width: 11.2rem;
+  height: 4.4rem;
 }
 
 
@@ -49,10 +55,6 @@
   .login-menu {
     height: auto;
     padding: 1rem;
-  }
-
-  .logo {
-    font-size: 1.8rem;
   }
 
   .loginBtn, 

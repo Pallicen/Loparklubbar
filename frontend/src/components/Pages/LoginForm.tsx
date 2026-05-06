@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/context";
+import logIMG from '../../assets/Run.png'
 
 const LoginForm = () => {
   const { login } = useAuth();
@@ -28,7 +29,7 @@ const LoginForm = () => {
       <nav className="login-menu">
 
       <div className="nav-left">
-        <p className="logo">RUNWITHUS</p>
+        <img className="log" src={logIMG} alt="logga"></img>
       </div>
 
       <div className="nav-right">
