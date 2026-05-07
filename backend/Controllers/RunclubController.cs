@@ -1,36 +1,30 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
+using backend.Service;
 
-namespace backend.Controllers
+namespace backend.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class RunclubController : ControllerBase
 {
-    [Route("api/[controller]")]
+    private readonly IRunclubService _runclubService;
 
-    [ApiController]
-
-    public class RunclubController : ControllerBase
+    public RunclubController(IRunclubService runclubService)
     {
-
-    public class EventController : ControllerBase
-    {
-        private readonly IEventService _runclubService;
-
-        public EventController(IEventService runclubService) 
-        {
-            _runclubService = runclubService;
-        }
-
-        [HttpGet("{id}")]
-        public ActionResult<RunclubDto> GetRunclub(int id) 
-        {
-            var runclub = _runclubService.GetRunclubById(id);
-
-            if (runclub == null) 
-            {
-                return NotFound();
-            }
-            return Ok(runclub);
-        }
+        _runclubService = runclubService;
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<RunclubDto> GetRunclub(int id)
+    {
+        var runclub = _runclubService.GetRunclubById(id);
+
+        if (runclub == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(runclub);
     }
 }

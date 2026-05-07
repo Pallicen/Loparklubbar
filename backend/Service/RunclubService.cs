@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
-using backend.IEventService;
 using backend.Repositories;
 
 namespace backend.Service;
