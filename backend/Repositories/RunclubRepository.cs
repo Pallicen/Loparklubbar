@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 
 namespace backend.Repositories;
@@ -20,8 +19,8 @@ public class RunclubRepository : IRunclubRepository
         }
     ];
 
-    public Runclub GetById(int id)
+    public Runclub? GetById(int id)
     {
-        return Runclubs.FirstOrDefault(r => r.Id == id) ?? new Runclub();
+        return Runclubs.FirstOrDefault(r => r.Id == id);
     }
 }

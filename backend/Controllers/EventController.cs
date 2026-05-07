@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Service;
@@ -20,6 +19,11 @@ namespace backend.Controllers
         [HttpPost]
         public IActionResult CreateEvent([FromBody] EventDto eventDto)
         {
+            if (eventDto == null)
+            {
+                return BadRequest();
+            }
+
             return Ok(eventDto);
         }
 

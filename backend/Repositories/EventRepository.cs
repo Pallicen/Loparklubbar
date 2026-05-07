@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 
 namespace backend.Repositories;
@@ -16,8 +15,8 @@ public class EventRepository : IEventRepository
         }
     ];
 
-    public Event GetById(int id)
+    public Event? GetById(int id)
     {
-        return Events.FirstOrDefault(e => e.Id == id) ?? new Event();
+        return Events.FirstOrDefault(e => e.Id == id);
     }
 }

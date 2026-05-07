@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Repositories;
 
@@ -13,9 +12,14 @@ public class RunclubService : IRunclubService
     _runclubRepository = runclubRepository;
   }
 
-  public RunclubDto GetRunclubById(int id)
+  public RunclubDto? GetRunclubById(int id)
   {
     var runclub = _runclubRepository.GetById(id);
+    if (runclub == null)
+    {
+      return null;
+    }
+
     return new RunclubDto 
     {
       Id = runclub.Id, 

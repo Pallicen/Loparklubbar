@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Repositories;
 
@@ -13,9 +12,14 @@ public class EventService : IEventService
     _eventRepository = eventRepository;
   }
 
-  public EventDto GetEventById(int id)
+  public EventDto? GetEventById(int id)
   {
     var foundEvent = _eventRepository.GetById(id);
+    if (foundEvent == null)
+    {
+      return null;
+    }
+
     return new EventDto 
     {
       Id = foundEvent.Id,
