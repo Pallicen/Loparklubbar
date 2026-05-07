@@ -7,7 +7,11 @@
   background-color: rgb(234, 234, 234);
 }
 
-.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
+main {
+  margin-bottom: 5rem;
+}
+
+.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage {
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -15,33 +19,36 @@
 /* MENY */
 
 .navbar {
-  background-color: rgb(162, 177, 162);
-  height: 6rem;
+  background-color: rgb(191, 200, 191);
+  height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 
 header {
-  position: sticky;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  top: 0;
 }
 
 
 
 
-.btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
+.btnLinkHome, .btnLinkEvent, .btnLinkRunclub, .btnLinkMyAccount, .createRunClubBtn, .createEventBtn {
   color: #333;
   text-decoration: none;
   letter-spacing: 1px;
-  font-size: 1.6rem;
   justify-content: center;
   align-items: center;
   padding: 5px;
-  width: 5rem;
+  width: 12rem;
+  text-align: center;
   display: flex;
   position: relative;
   border: none;
@@ -53,12 +60,12 @@ header {
   width: 10.5rem;
 }
 
-.btnLinkHome:hover, .btnLinkRunclub:hover, .btnLinkEvent:hover {
+.btnLinkHome:hover, .btnLinkRunclub:hover, .btnLinkEvent:hover, .createRunClubBtn:hover, .createEventBtn:hover {
   transition: all 0.5s ease;
   color: black;
 }
 
-.btnLinkHome:after, .btnLinkRunclub:after, .btnLinkEvent:after {
+.btnLinkHome:after, .btnLinkRunclub:after, .btnLinkEvent:after, .createRunClubBtn:after, .createEventBtn:after {
   position: absolute;
   content: "";
   left: 0;
@@ -71,7 +78,7 @@ header {
   transition: transform 0.4s ease;
 }
 
-.btnLinkHome:hover:after, .btnLinkRunclub:hover:after, .btnLinkEvent:hover:after {
+.btnLinkHome:hover:after, .btnLinkRunclub:hover:after, .btnLinkEvent:hover:after, .createRunClubBtn:hover:after, .createEventBtn:hover:after {
   transform: scaleX(1);
 }
 
@@ -79,17 +86,35 @@ header {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  gap: 2rem;
 }
 
 .desktop-menu a {
-  font-size: 1.6rem;
-  color: #333;
+  font-size: 1.2rem;
   text-decoration: none;
   letter-spacing: 1px;
 }
 
 .desktop-menu a:hover {
   color: black;
+}
+
+.btnLinkMyAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 20px rgb(168, 168, 168);
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+}
+
+.btnLinkMyAccount:hover {
+  background-color: #acacac;
 }
 
 
@@ -99,7 +124,7 @@ header {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
+  width: 50px;
   height: 25px;
   cursor: pointer;
   position: absolute;
@@ -145,24 +170,20 @@ header {
 }
 
 .mobile-menu a {
-  color: #333;
   text-decoration: none;
-  font-size: 2rem;
   margin: 20px 0;
   letter-spacing: 1px;
   display: block;
+  font-size: 1.6rem;
 }
 
-.mobile-menu a:hover {
-  color: black;
-}
 
 @media (max-width: 768px) {
   .navbar {
     justify-content: space-between;
   }
 
-  .btnLinkHome, .btnLinkRunclub, .btnLinkEvent {
+  .btnLinkHome, .btnLinkRunclub, .btnLinkEvent, .btnLinkMyAccount, .createRunClubBtn, .createEventBtn {
     display: none;
   }
 
@@ -172,27 +193,15 @@ header {
 }
 
 @media (max-width: 768px) {
-  .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage {
+  .home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 }
 
 
-/* FOOTER */
-
-footer {
-  height: 30rem;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5rem;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  footer {
-    font-size: 0.8rem;
-  }
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgb(76, 102, 76);
 }

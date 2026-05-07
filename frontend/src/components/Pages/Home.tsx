@@ -1,12 +1,18 @@
 
 import LoginMeny from "../LoginMeny";
-import Meny from "../Meny";
 import image1 from "/src/assets/3.png";
+import { useAuth } from "../../auth/context"
+import imageStrava from "/src/assets/stravaLog.png";
+import imageNike from "/src/assets/nikeLog.png";
 
 const Home = () => {
+
+  const { session } = useAuth();
+  const isLoggedIn = !!session;
+
+
   return (
   <div className="home1">
-
 
     {/* FIRST STARTPAGE */}
     <div className="home-page">
@@ -21,21 +27,16 @@ const Home = () => {
                     <p className="p-loparminnen">Skapa löparminnen du aldrig glömmer.</p>
                     <p>Upptäck löpargemenskapen nära dig! Vi samlar Sveriges löparklubbar & lopp på en och samma plattform så att du enkelt kan hitta rätt grupp i din stad. Oavsett om du är nybörjare, tränar inför ditt första lopp eller satsar på maraton finns det en klubb för dig.</p>
                 </div>
-             </div>
-      </div>
-      </div>
-      
-      {/* MENU-NAVIGATION */}
-          <header>
-            <Meny />
-          </header>
+              </div>
+          </div>
+    </div>
 
 
     {/* SECOND STARTPAGE */}
 
-    <div className="home">
+    <div className="page2">
 
-      <div className="meny-header">
+      <div className="run-together-header">
           <p>Spring tillsammans - Väx tillsammans</p>
       </div>
 
@@ -55,6 +56,54 @@ const Home = () => {
 
     </div>
 
+    {/* THIRD STARTPAGE */}
+
+    <div className="page3">
+
+      <div className="split-prenumeration-bg">
+
+
+        <div className="prenumerationDiv">
+          <div className="prenumeration-text">
+            <p>Prenumerera på våra nyhetsbrev</p>
+            <input type="text" placeholder="E-post"></input>
+            <button className="loginBtn" type="submit">Prenumerera</button>
+          </div>
+        </div>
+
+        <div className="prenumerationIMG">
+
+        </div>
+
+    </div>
+
+   </div>
+
+    {/* FOURTH STARTPAGE */}
+
+    <div className="page4">
+
+      <div className="split-contact">
+
+
+        <div className="contactDiv">
+            <strong>Kontakt</strong>
+            <p>runwithus@gmail.se</p>
+            <p>070-884 46 77</p>
+            <p>Instagram</p>
+        </div>
+
+        <div className="contactDiv">
+            <div className="partnership">
+            <span>I samarbete med</span>
+            <img src={imageStrava} alt="stravabild"/>
+            <img src={imageNike} alt="nikebild"/>
+          </div>
+        </div>
+
+    </div>
+
+   </div>
 
   </div>
 );};

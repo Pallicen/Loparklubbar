@@ -1,33 +1,95 @@
-
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../auth/context";
+import logIMG from '../../assets/Run.png'
 
 const RegisterForm = () => {
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState<string | null>(null);
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setMessage(null);
+
+    const res = register(username, password);
+    if (!res.ok) {
+      setMessage(res.error);
+      return;
+    }
+
+    setMessage("Konto skapat! Logga in nu.");
+    navigate("/LoginForm");
+  }
+
   return (
+  <div className="registerPage">
 
-    <div className="registerPage">
+    <nav className="login-menu">
 
-      <div className="registerform">
-        <div className="registerTitle">
-            <h1>Registrera konto</h1>
-        </div>
+      <div className="nav-left">
+        <img className="log" src={logIMG} alt="logga"></img>
+      </div>
 
-        <div className="registerFormP">
-            <p>För att lägga till din löparklubb och lopp behöver du skapa ett konto.</p>
-        </div>
+      <div className="nav-right">
 
-        <div className="loginInputs">
-          <label>Användarnamn</label>
-          <input type="text" className="username"></input>
-          <label>Lösenord</label>
-          <input type="password" className="password"></input>
-        </div>
-
-        <div className="loginFormBtn">
-            <button className="createAccountBtn">Skapa konto</button>
-        </div>
+        <Link className="loginBtn" to="/LoginForm">
+          Logga in
+        </Link>
 
       </div>
 
-  </div>
-)};
+    </nav>
+
+
+      <div className="registerContainer">
+
+        <div className="registerIntro">
+          <h1>Skapa konto</h1>
+          <p>
+            Skapa ett konto för att lägga till löparklubbar, event och hitta fler löpare i din stad.
+          </p>
+        </div>
+
+        <div className="registerCard">
+          <form onSubmit={onSubmit}>
+            <div className="formGroup">
+              <label>E-post</label>
+              <input
+                type="email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                autoComplete="username"
+                required
+              />
+            </div>
+
+            <div className="formGroup">
+              <label>Lösenord</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="new-password"
+                required
+              />
+            </div>
+
+            <button className="createAccountBtn" type="submit">
+              Skapa konto
+            </button>
+
+            {message && <p className="authMessage">{message}</p>}
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  );
+};
 
 export default RegisterForm;

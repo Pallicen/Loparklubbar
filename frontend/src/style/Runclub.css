@@ -20,64 +20,64 @@
 .RunclubCards {
   display: grid;
   grid-template-columns: 1fr;
-  border-left: 2px solid #333;
   gap: 2rem;
   padding-left: 2rem;
 }
 
 .RunclubCard {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
   min-height: 18rem;
+  max-height: 50rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   background-color: white;
-  gap: 4rem;
+  margin-bottom: 1rem;
 }
+
 
 .RunclubDescriptionInCard {
-  display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.RunClubImageInCard {
   display: flex;
-
-  img {
-    width: 100%;
-    max-width: 18rem;
-    border-radius: 10px;
-    object-fit: cover;
+  gap: 6px;
+    h3 {
+    font-weight: 600;
+  }
+  span {
+    font-weight: 600;
   }
 }
 
-@media (max-width: 768px) {
 
+.RunClubImageInCard img {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
   .RunclubCards {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
     padding: 0%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 2px solid #333;
-    border-left: none;
+  }
+
+  .RunclubCard {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .RunClubImageInCard img {
+    max-width: 40%;
   }
 
   .RunclubDescriptionInCard {
-   gap: 1rem;
-  }
-  
-  .RunclubCard {
-    display: grid;
-    padding: 2rem;
-    justify-content: space-between;
-    box-sizing: border-box;
+    gap: 0.8rem;
   }
 
   .runclub-container {
@@ -105,13 +105,23 @@
   width: 14rem;
 }
 
+.freeCheckbox {
+  display: inline-block;
+  width: 100%;
+  padding: 0%;
+}
+
+.check {
+  width: 1rem;
+}
+
 .checkboxLabel {
+  width: 100%;
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  margin-top: 2rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .selectWrapper {
@@ -121,10 +131,18 @@
   width: 12rem;
 }
 
+.selectWrapper {
+  input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 12rem;
+  }
+}
+
 .selectWrapper select {
   height: 45px;
   padding: 0 12px;
-  border-radius: 8px;
   border: 1px solid #ccc;
   background-color: white;
   font-size: 16px;
@@ -136,7 +154,7 @@ label {
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   
   .filter-container {
     display: flex;
@@ -158,17 +176,116 @@ label {
     width: 100%;
   }
 
-  .freeCheckbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
   .checkboxLabel {
     font-size: 1.2rem;
-    margin-left: 16rem;
+  }
+
+}
+
+
+/* RunclubForm */
+
+.runclubFormPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+.runclubCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+
+.runclubFormTitle {
+  margin-bottom: 2rem;
+}
+
+.runclubFormTitle h1 {
+  font-size: 2rem;
+}
+
+.runclubFormTitle p {
+  color: #555;
+}
+
+
+.splitForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input,
+textarea,
+select {
+  height: 45px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.imagePreview {
+  margin-top: 10px;
+}
+
+.imagePreview img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.runclubBtn {
+  margin-top: 2rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(76, 102, 76);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.runclubBtn:hover {
+  background-color: rgb(10, 50, 10);
+}
+
+@media (max-width: 768px) {
+
+  .runclubCard {
+    padding: 1.5rem;
+  }
+
+  .splitForm {
+    grid-template-columns: 1fr;
+  }
+
+  .runclubFormTitle h1 {
+    font-size: 1.6rem;
   }
 
 }
