@@ -11,13 +11,14 @@ const event = {
 }
 
 
-const response = await fetch('http://localhost:5001/event', {
+const response = await fetch('http://localhost:5020/event', {
   method: 'POST',
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify(event)
 });
+
 
 const data = await response.json();
 

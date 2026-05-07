@@ -1,8 +1,12 @@
+using backend.Repositories;
+using backend.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddCors(options =>
@@ -43,7 +47,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-app.MapControllerRoute();
+app.MapControllers();
 
 app.MapStaticAssets();
 

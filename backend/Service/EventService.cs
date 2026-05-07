@@ -1,30 +1,33 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
-using backend.IEventService;
 using backend.Repositories;
+using backend.DB;
 
 namespace backend.Service;
 
 public class EventService : IEventService
 {
-  private readonly IEventRepository _eventRepository;
+  private readonly AppDbContext _context;
 
-  public EventService(IEventRepository eventRepository)
+  public EventService(AppDbContext context)
   {
-    _eventRepository = eventRepository;
+    _context = context;
   }
 
   public EventDto GetEventById(int id)
   {
-    var foundEvent = _eventRepository.GetById(id);
-    return new EventDto 
-    {
-      Id = foundEvent.Id,
-      Name = foundEvent.Name, 
-      Title = foundEvent.Title, 
-      Description = foundEvent.Description, 
-      EventLink= foundEvent.EventLink
-      };
-  }
+    var eventEntity = _context.Events.FirstOrDefault(x => x.Id == id);
+
+        if (eventEntity == null)
+            return null;
+            
+      return new EventDto 
+      {
+        Id = foundEvent.Id,
+        Title = foundEvent.Title, 
+        Description = foundEvent.Description, 
+        EventLink= foundEvent.EventLink
+        };
+    }
 
 }

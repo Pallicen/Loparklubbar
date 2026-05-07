@@ -1,22 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
-using backend.IEventService;
 using backend.Repositories;
+using backend.DB;
 
 namespace backend.Service;
 
 public class RunclubService : IRunclubService
 {
-  private readonly IRunclubRepository _runclubRepository;
+    private readonly AppDbContext _context;
 
-  public RunclubService(IRunclubRepository runclubRepository)
-  {
-    _runclubRepository = runclubRepository;
-  }
+    public RunclubService(AppDbContext context)
+    {
+        _context = context;
+    }
 
-  public RunclubDto GetRunclubById(int id)
-  {
-    var runclub = _runclubRepository.GetById(id);
+    public void Add(Runclub runclub)
+    {
+        _context.Runclubs.Add(runclub);
+        _context.SaveChanges();
+    }
+
+    public RunclubDto? GetRunclubById(int id)
+    {
+        var runclub = _context.Runclubs.FirstOrDefault(x => x.Id == id);
+
+        if (runclub == null)
+            return null;
+            
     return new RunclubDto 
     {
       Id = runclub.Id, 
@@ -25,7 +35,8 @@ public class RunclubService : IRunclubService
       SocialMediaLink = runclub.SocialMediaLink, 
       City = runclub.City, 
       Time = runclub.Time, 
-      Level = runclub.Level};
+      Level = runclub.Level
+    };
   }
   
 }

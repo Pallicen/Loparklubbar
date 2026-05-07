@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
+using backend.Service;
 
 namespace backend.Controllers
 {
@@ -10,14 +11,31 @@ namespace backend.Controllers
 
     public class RunclubController : ControllerBase
     {
+        private readonly IRunclubService _runclubService;
 
-    public class EventController : ControllerBase
-    {
-        private readonly IEventService _runclubService;
-
-        public EventController(IEventService runclubService) 
+        public RunclubController(IRunclubService runclubService) 
         {
             _runclubService = runclubService;
+        }
+
+        [HttpPost]
+        public IActionResult CreateRunclub([FromBody] RunclubDto runclubDto)
+        {
+            var newRunclub = new Runclub 
+            {
+                Id = new Random().Next(1000),
+                Name = runclubDto.Name,
+                Description = runclubDto.Description,
+                SocialMediaLink = runclubDto.SocialMediaLink,
+                City = runclubDto.City,
+                Time = runclubDto.Time,
+                Level = runclubDto.Level,
+                Image = runclubDto.Image
+            };
+
+            _runclubService.Add(newRunclub);
+            
+            return Ok(newRunclub);
         }
 
         [HttpGet("{id}")]
@@ -32,5 +50,5 @@ namespace backend.Controllers
             return Ok(runclub);
         }
     }
-    }
 }
+
