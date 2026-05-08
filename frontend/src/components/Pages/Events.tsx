@@ -13,7 +13,7 @@ const Events = () => {
         const data = await api.event.list();
         setEvents(data);
       } catch (error) {
-        setErrorMessage(error instanceof Error ? error.message : "Kunde inte hämta events.");
+        setErrorMessage(error instanceof Error ? error.message : "Kunde inte hämta evenemang.");
       }
     };
 

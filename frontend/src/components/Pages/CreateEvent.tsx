@@ -22,7 +22,7 @@ const CreateEvent = () => {
         description: description.trim(),
         eventLink: eventLink.trim(),
       });
-      setSuccessMessage("Eventet har publicerats.");
+      setSuccessMessage("Evenemanget har publicerats.");
       setTitle("");
       setDescription("");
       setEventLink("");
