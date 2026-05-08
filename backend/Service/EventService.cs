@@ -31,4 +31,10 @@ public class EventService : IEventService
         };
     }
 
+     public void Add(Event @event)
+  {
+    _context.Events.Add(@event);
+    _context.SaveChanges();
+  }
+
 }

@@ -7,5 +7,6 @@ namespace backend.Service;
 
 public interface IRunclubService 
 {
-  RunclubDto GetRunclubById(int id);
+   RunclubDto? GetRunclubById(int id);
+   void Add(Models.Runclub runclub);
 }
