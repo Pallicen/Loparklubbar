@@ -21,6 +21,17 @@ public class EventService : IEventService
     _context.SaveChanges();
   }
 
+  public IEnumerable<EventDto> GetAllEvents()
+{
+    return _context.Events.Select(e => new EventDto
+    {
+        Id = e.Id,
+        Title = e.Title,
+        Description = e.Description,
+        EventLink = e.EventLink
+    }).ToList();
+}
+
   public EventDto? GetEventById(int id)
   {
     var foundEvent = _context.Events.FirstOrDefault(x => x.Id == id);
@@ -37,4 +48,8 @@ public class EventService : IEventService
         };
     }
 
+  object IEventService.GetAllEvents()
+  {
+    return GetAllEvents();
+  }
 }

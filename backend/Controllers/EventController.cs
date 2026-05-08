@@ -35,6 +35,18 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetEvent), new {id = newEvent.Id}, eventDto);
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<EventDto>> GetAllEvents() 
+        {
+            var events = _eventService.GetAllEvents();
+
+            if (events == null) 
+            {
+                return NotFound();
+            } 
+            return Ok(events);
+        }
+
         [HttpGet("{id}")]
         public ActionResult<EventDto> GetEvent(int id) 
         {

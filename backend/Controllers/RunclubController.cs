@@ -41,6 +41,18 @@ namespace backend.Controllers
             // return Ok(newRunclub);
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<EventDto>> GetAllEvents() 
+        {
+            var runclubs = _runclubService.GetAllRunclubs();
+
+            if (runclubs == null) 
+            {
+                return NotFound();
+            } 
+            return Ok(runclubs);
+        }
+
         [HttpGet("{id}")]
         public ActionResult<RunclubDto> GetRunclub(int id) 
         {

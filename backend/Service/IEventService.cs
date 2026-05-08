@@ -8,4 +8,5 @@ public interface IEventService
 {
   EventDto? GetEventById(int id);
   void Add(Models.Event @event);
+  object GetAllEvents();
 }

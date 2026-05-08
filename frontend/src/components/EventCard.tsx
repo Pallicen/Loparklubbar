@@ -17,8 +17,8 @@ const EventCard = ({
 
       <p>{description}</p>
 
-      <span>Länk till anmälan:</span>
       <a href={eventLink} target="_blank">
+      <span>Länk till anmälan: </span>{eventLink}
       </a>
     </div>
   );

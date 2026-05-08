@@ -9,4 +9,5 @@ public interface IRunclubService
 {
    RunclubDto? GetRunclubById(int id);
    void Add(Models.Runclub runclub);
+  object GetAllRunclubs();
 }

@@ -22,6 +22,21 @@ public class RunclubService : IRunclubService
         _context.SaveChanges();
     }
 
+  public IEnumerable<RunclubDto> GetAllRunclubs()
+{
+    return _context.Runclubs.Select(e => new RunclubDto
+    {
+        Id = e.Id,
+        Name = e.Name,
+        Description = e.Description,
+        City = e.City,
+        Time = e.Time,
+        Level = e.Level,
+        SocialMediaLink = e.SocialMediaLink,
+        Image = e.Image
+    }).ToList();
+}
+
   public RunclubDto? GetRunclubById(int id)
     {
         var runclub = _context.Runclubs.FirstOrDefault(x => x.Id == id);
@@ -41,5 +56,9 @@ public class RunclubService : IRunclubService
       Image = runclub.Image
     };
   }
-  
+
+  object IRunclubService.GetAllRunclubs()
+  {
+    return GetAllRunclubs();
+  }
 }

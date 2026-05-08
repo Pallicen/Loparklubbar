@@ -13,24 +13,24 @@ public class AppDbContext : DbContext
     public DbSet<Runclub> Runclubs => Set<Runclub>();
 
 
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
-  {
-    modelBuilder.Entity<Event>().HasData(
-        new Event 
-        { 
-            Id = 1, 
-            Title= "Midnattsloppet, 1 sep", 
-            Description= "Ett lopp i flera städer vid midnatt", 
-            EventLink="länk" 
-        },
-        new Event
-        { 
-            Id = 2, 
-            Title= "Midnattsloppet, 1 sep", 
-            Description= "Ett lopp i flera städer vid midnatt", 
-            EventLink="länk" 
-        }
-    );
+//   protected override void OnModelCreating(ModelBuilder modelBuilder)
+//   {
+//     modelBuilder.Entity<Event>().HasData(
+//         new Event 
+//         { 
+//             Id = 1, 
+//             Title= "Midnattsloppet, 1 sep", 
+//             Description= "Ett lopp i flera städer vid midnatt", 
+//             EventLink="länk" 
+//         },
+//         new Event
+//         { 
+//             Id = 2, 
+//             Title= "Midnattsloppet, 1 sep", 
+//             Description= "Ett lopp i flera städer vid midnatt", 
+//             EventLink="länk" 
+//         }
+//     );
   
 //     modelBuilder.Entity<Runclub>().HasData(
 //         new Runclub 
@@ -56,5 +56,5 @@ public class AppDbContext : DbContext
 //             Image = ""
 //         }
 //     );
-    }
+//    }
 }
