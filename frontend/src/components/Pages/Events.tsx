@@ -8,7 +8,7 @@ const Events = () => {
         <p>Kommande Lopp & Events</p>
       </div>
 
-      <Card title={""} description={""} link={""} />
+      <Card title={""} description={""} eventLink={""} />
 
     </div>
 )};

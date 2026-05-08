@@ -32,27 +32,29 @@ public class AppDbContext : DbContext
         }
     );
   
-    modelBuilder.Entity<Runclub>().HasData(
-        new Runclub 
-        { 
-            Id = 1, 
-            Name= "Stadslöpning + Fika", 
-            Description= "Vi är en klubb som springer 3-7 km varje torsdag kl.17.30 och tar en fika efter passet. Vi fokuserar på att få in rörelse i vardagen och gemenskap. Alla är välkomna oavsett nivå!", 
-            City="Jönköping", 
-            Level="Medel", 
-            Time="Onsdagar 18.30", 
-            SocialMediaLink="länk" 
-        },
-        new Runclub
-        { 
-            Id = 2, 
-            Name= "Stadslöpning + Fika", 
-            Description= "Vi är en klubb som springer 3-7 km varje torsdag kl.17.30 och tar en fika efter passet. Vi fokuserar på att få in rörelse i vardagen och gemenskap. Alla är välkomna oavsett nivå!", 
-            City="Jönköping", 
-            Level="Medel", 
-            Time="Onsdagar 18.30", 
-            SocialMediaLink="länk" 
-        }
-    );
-  }
+//     modelBuilder.Entity<Runclub>().HasData(
+//         new Runclub 
+//         { 
+//             Id = 1, 
+//             Name= "Stadslöpning + Fika", 
+//             Description= "Vi är en klubb som springer 3-7 km varje torsdag kl.17.30 och tar en fika efter passet. Vi fokuserar på att få in rörelse i vardagen och gemenskap. Alla är välkomna oavsett nivå!", 
+//             City="Jönköping", 
+//             Level="Medel", 
+//             Time="Onsdagar 18.30", 
+//             SocialMediaLink="länk",
+//             Image = ""
+//         },
+//         new Runclub
+//         { 
+//             Id = 2, 
+//             Name= "Stadslöpning + Fika", 
+//             Description= "Vi är en klubb som springer 3-7 km varje torsdag kl.17.30 och tar en fika efter passet. Vi fokuserar på att få in rörelse i vardagen och gemenskap. Alla är välkomna oavsett nivå!", 
+//             City="Jönköping", 
+//             Level="Medel", 
+//             Time="Onsdagar 18.30", 
+//             SocialMediaLink="länk",
+//             Image = ""
+//         }
+//     );
+    }
 }

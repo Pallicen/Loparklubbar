@@ -1,26 +1,58 @@
+const BASE_URL = "http://localhost:5020";
 
+//POST
+async function postJson<T>(path: string, body: unknown): Promise<T> {
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const res = await fetch(`${BASE_URL}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", 
+    Accept: "application/json" },
+    body: JSON.stringify(body),
+  });
 
+  if (!res.ok) {
+    throw new Error(await res.text());
+  } 
 
-// const event = {
-//   title: "Midnattsloppet, 1 september",
-//   description: "Ett lopp i Göteborg vid midnatt",
-//   eventLink: "https://midnattsloppet.com"
-// }
-
-
-const response = await fetch('http://localhost:5020/event', {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(event)
-});
-
-
-const data = await response.json();
-
-console.log("data:", data);
+  return res.json() as Promise<T>;
 }
+
+//GET
+async function getJson<T>(path: string): Promise<T> {
+  const res = await fetch(`${BASE_URL}${path}`);
+
+  if (!res.ok) {
+    throw new Error(await res.text());
+  } 
+
+  return res.json() as Promise<T>;
+}
+
+
+//TYPES
+export type EventCreate = { 
+  title: string; description: string; eventLink: string };
+
+export type EventDto = {
+  id: number; title: string; description: string; eventLink: string };
+
+export type RunclubCreate = {
+  name: string; description: string; city: string; level: string; time: string; socialMediaLink: string;
+};
+
+export type RunclubDto = {
+  id: number; name: string; description: string; city: string; time: string; level: string; socialMediaLink: string; image: string };
+
+
+export const api = {
+
+  createEvent: (payload: EventCreate) => 
+    postJson("/api/event", payload),
+  createRunclub: (payload: RunclubCreate) => 
+    postJson("api//runclub", payload),
+
+  getEvents: () => 
+    getJson<EventDto[]> ("/api/event"),
+  getRunclubs: () => 
+    getJson<RunclubDto[]> ("/api/runclub"),
+};

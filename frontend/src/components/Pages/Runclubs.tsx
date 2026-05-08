@@ -49,7 +49,7 @@ const Runclubs = () => {
       </div>
 
       <div>
-        <RunclubCard title={""} description={""} city={""} level={""} when={""} socialMediaLink={""} image={""} />
+        <RunclubCard name={""} description={""} city={""} level={""} time={""} socialMediaLink={""} image={""} />
       </div>
     </div>
 
