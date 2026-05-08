@@ -27,7 +27,11 @@ const CreateEvent = () => {
       setDescription("");
       setEventLink("");
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "Något gick fel.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Något gick fel vid skapande av evenemanget. Kontrollera dina uppgifter och försök igen."
+      );
     } finally {
       setIsSubmitting(false);
     }

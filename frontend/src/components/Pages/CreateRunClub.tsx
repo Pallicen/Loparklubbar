@@ -60,7 +60,11 @@ const CreateRunClub = () => {
       setImage("");
       setPreview(null);
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "Något gick fel.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Något gick fel vid skapande av löparklubben. Kontrollera dina uppgifter och försök igen."
+      );
     } finally {
       setIsSubmitting(false);
     }

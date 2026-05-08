@@ -14,7 +14,11 @@ const Runclubs = () => {
         const data = await api.runclub.list();
         setRunclubs(data);
       } catch (error) {
-        setErrorMessage(error instanceof Error ? error.message : "Kunde inte hämta löparklubbar.");
+        setErrorMessage(
+          error instanceof Error
+            ? error.message
+            : "Kunde inte hämta löparklubbar. Kontrollera din anslutning och försök igen."
+        );
       }
     };
 
