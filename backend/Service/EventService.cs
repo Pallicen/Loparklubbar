@@ -15,7 +15,18 @@ public class EventService : IEventService
     _context = context;
   }
 
-       public void Add(Event @event)
+  public IEnumerable<EventDto> GetAllEvents()
+  {
+    return _context.Events.Select(foundEvent => new EventDto
+    {
+      Id = foundEvent.Id,
+      Title = foundEvent.Title,
+      Description = foundEvent.Description,
+      EventLink = foundEvent.EventLink,
+    });
+  }
+
+  public void Add(Event @event)
   {
     _context.Events.Add(@event);
     _context.SaveChanges();
@@ -25,16 +36,16 @@ public class EventService : IEventService
   {
     var foundEvent = _context.Events.FirstOrDefault(x => x.Id == id);
 
-        if (foundEvent == null)
-            return null;
-            
-      return new EventDto 
-      {
-        Id = foundEvent.Id,
-        Title = foundEvent.Title, 
-        Description = foundEvent.Description, 
-        EventLink= foundEvent.EventLink
-        };
-    }
+    if (foundEvent == null)
+      return null;
+             
+    return new EventDto
+    {
+      Id = foundEvent.Id,
+      Title = foundEvent.Title,
+      Description = foundEvent.Description,
+      EventLink = foundEvent.EventLink
+    };
+  }
 
 }

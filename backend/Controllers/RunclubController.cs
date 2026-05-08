@@ -6,6 +6,7 @@ using backend.Models;
 
 namespace backend.Controllers
 {
+    [Route("[controller]")]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -16,6 +17,13 @@ namespace backend.Controllers
         public RunclubController(IRunclubService runclubService) 
         {
             _runclubService = runclubService;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<RunclubDto>> GetRunclubs()
+        {
+            var runclubs = _runclubService.GetAllRunclubs();
+            return Ok(runclubs);
         }
 
         [HttpPost]
@@ -55,4 +63,3 @@ namespace backend.Controllers
         }
     }
 }
-

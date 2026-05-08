@@ -6,6 +6,7 @@ using backend.Models;
 
 namespace backend.Controllers
 {
+    [Route("[controller]")]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -16,6 +17,13 @@ namespace backend.Controllers
         public EventController(IEventService eventService) 
         {
             _eventService = eventService;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<EventDto>> GetEvents()
+        {
+            var events = _eventService.GetAllEvents();
+            return Ok(events);
         }
 
         [HttpPost]

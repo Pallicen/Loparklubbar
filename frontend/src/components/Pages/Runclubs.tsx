@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
 import RunclubCard from "../RunclubCard";
+import { api } from "../../../api";
+import type { RunclubDto } from "../../../api";
 
 
 const Runclubs = () => {
+  const [runclubs, setRunclubs] = useState<RunclubDto[]>([]);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    const loadRunclubs = async () => {
+      try {
+        const data = await api.runclub.list();
+        setRunclubs(data);
+      } catch (error) {
+        setErrorMessage(error instanceof Error ? error.message : "Kunde inte hämta löparklubbar.");
+      }
+    };
+
+    void loadRunclubs();
+  }, []);
+
   return (
     <div className="runclub">
 
@@ -49,7 +68,19 @@ const Runclubs = () => {
       </div>
 
       <div>
-        <RunclubCard title={""} description={""} city={""} level={""} when={""} socialMediaLink={""} image={""} />
+        {errorMessage && <p>{errorMessage}</p>}
+        {runclubs.map((runclub) => (
+          <RunclubCard
+            key={runclub.id}
+            title={runclub.name}
+            description={runclub.description}
+            city={runclub.city}
+            level={runclub.level}
+            when={runclub.time}
+            socialMediaLink={runclub.socialMediaLink}
+            image={runclub.image}
+          />
+        ))}
       </div>
     </div>
 

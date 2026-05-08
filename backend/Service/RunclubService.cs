@@ -16,6 +16,21 @@ public class RunclubService : IRunclubService
         _context = context;
     }
 
+    public IEnumerable<RunclubDto> GetAllRunclubs()
+    {
+        return _context.Runclubs.Select(runclub => new RunclubDto
+        {
+            Id = runclub.Id,
+            Name = runclub.Name,
+            Description = runclub.Description,
+            SocialMediaLink = runclub.SocialMediaLink,
+            City = runclub.City,
+            Time = runclub.Time,
+            Level = runclub.Level,
+            Image = runclub.Image
+        });
+    }
+
     public void Add(Runclub runclub)
     {
         _context.Runclubs.Add(runclub);

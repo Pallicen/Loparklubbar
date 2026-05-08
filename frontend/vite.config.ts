@@ -8,4 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  server: {
+    proxy: {
+      "/event": "http://localhost:5020",
+      "/runclub": "http://localhost:5020",
+    },
+  },
 })

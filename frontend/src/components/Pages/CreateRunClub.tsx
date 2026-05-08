@@ -1,29 +1,69 @@
-import { useState } from 'react';
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
+import { api } from "../../../api";
 
 const CreateRunClub = () => {
-  const [image, setImage] = useState<File | null>(null)
-  const [preview, setPreview] = useState<string | null>(null)
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [socialMediaLink, setSocialMediaLink] = useState("");
+  const [city, setCity] = useState("");
+  const [time, setTime] = useState("");
+  const [level, setLevel] = useState("Lätt");
+  const [image, setImage] = useState("");
+  const [preview, setPreview] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    
+
     if (!file) return;
     if (!file.type.startsWith("image/")) {
       alert("Endast bilder är tillåtna!");
       return;
     }
 
-    setImage(file)
-    setPreview(URL.createObjectURL(file))
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = typeof reader.result === "string" ? reader.result : "";
+      setImage(result);
+      setPreview(result);
+    };
+    reader.readAsDataURL(file);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+    setIsSubmitting(true);
 
-    const formData = new FormData();
-    if (image) formData.append("image", image);
+    try {
+      await api.runclub.create({
+        name: name.trim(),
+        description: description.trim(),
+        socialMediaLink: socialMediaLink.trim(),
+        city: city.trim(),
+        time: time.trim(),
+        level,
+        image,
+      });
 
-    console.log("Skickar:", formData);
+      setSuccessMessage("Löparklubben har skapats.");
+      setName("");
+      setDescription("");
+      setSocialMediaLink("");
+      setCity("");
+      setTime("");
+      setLevel("Lätt");
+      setImage("");
+      setPreview(null);
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Något gick fel.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,25 +83,51 @@ const CreateRunClub = () => {
             {/* LEFT */}
             <div className="formColumn">
               <label>Namn på löparklubb</label>
-              <input type="text" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
 
               <label>Beskrivning</label>
-              <textarea maxLength={200} placeholder="Max 50 ord" />
+              <textarea
+                maxLength={200}
+                placeholder="Max 50 ord"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
 
               <label>Sociala medier</label>
-              <input type="text" />
+              <input
+                type="url"
+                value={socialMediaLink}
+                onChange={(e) => setSocialMediaLink(e.target.value)}
+                required
+              />
             </div>
 
             {/* RIGHT */}
             <div className="formColumn">
               <label>Stad & Plats</label>
-              <input type="text" />
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                required
+              />
 
               <label>Dag & Tid</label>
-              <input type="text" />
+              <input
+                type="text"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                required
+              />
 
               <label>Nivå</label>
-              <select>
+              <select value={level} onChange={(e) => setLevel(e.target.value)}>
                 <option>Lätt</option>
                 <option>Medel</option>
                 <option>Svår</option>
@@ -79,7 +145,10 @@ const CreateRunClub = () => {
 
           </div>
 
-          <button className="runclubBtn" type="submit">
+          {errorMessage && <p>{errorMessage}</p>}
+          {successMessage && <p>{successMessage}</p>}
+
+          <button className="runclubBtn" type="submit" disabled={isSubmitting}>
             Lägg till klubb
           </button>
 
