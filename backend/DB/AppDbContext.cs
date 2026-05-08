@@ -10,4 +10,5 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Event> Events => Set<Event>();
+    public DbSet<Runclub> Runclubs => Set<Runclub>();
 }

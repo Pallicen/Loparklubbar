@@ -1,4 +1,5 @@
 using backend.DB;
+using backend.Models;
 using backend.Repositories;
 using backend.Service;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,25 @@ builder.Services.AddScoped<IRunclubRepository, RunclubRepository>();
 
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    if (!dbContext.Runclubs.Any())
+    {
+        dbContext.Runclubs.Add(new Runclub
+        {
+            Name = "Loparklubbar",
+            Description = "Sample runclub",
+            SocialMediaLink = "https://example.com",
+            City = "Stockholm",
+            Time = "18:00",
+            Level = "All",
+            Image = string.Empty
+        });
+        dbContext.SaveChanges();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
