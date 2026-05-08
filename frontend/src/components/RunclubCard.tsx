@@ -29,7 +29,7 @@ const RunclubCard: React.FC<CardPropsRunclub> = ({
           <p><span>Stad:</span> {city}</p>
           <p><span>Nivå:</span> {level}</p>
           <p><span>Dag & Tid:</span> {when}</p>
-          <p><span>Social Media:</span>{" "} <a href={socialMediaLink} target="_blank" rel="noreferrer">Länk</a></p>
+          <p><span>Social Media:</span>{" "} <a href={socialMediaLink} target="_blank" rel="noreferrer">Besök sociala medier (öppnas i ny flik)</a></p>
         </div>
         {image && (
           <div className="RunClubImageInCard">

@@ -31,7 +31,7 @@ const Events = () => {
         <p>Kommande Lopp & Events</p>
       </div>
 
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p role="alert">{errorMessage}</p>}
       {events.map((event) => (
         <Card
           key={event.id}

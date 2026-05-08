@@ -72,7 +72,7 @@ const Runclubs = () => {
       </div>
 
       <div>
-        {errorMessage && <p>{errorMessage}</p>}
+        {errorMessage && <p role="alert">{errorMessage}</p>}
         {runclubs.map((runclub) => (
           <RunclubCard
             key={runclub.id}

@@ -12,7 +12,7 @@ const EventCard: React.FC<CardPropsEvent> = ({ title, description, link }) => {
       <div className="EventCard">
         <h3>{title}</h3>
         <p>{description}</p>
-        <a href={link} target="_blank" rel="noreferrer">Länk till anmälan</a>
+        <a href={link} target="_blank" rel="noreferrer">Länk till anmälan (öppnas i ny flik)</a>
       </div>
     </div>
   );

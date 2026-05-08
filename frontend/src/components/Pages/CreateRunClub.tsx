@@ -149,8 +149,8 @@ const CreateRunClub = () => {
 
           </div>
 
-          {errorMessage && <p>{errorMessage}</p>}
-          {successMessage && <p>{successMessage}</p>}
+          {errorMessage && <p role="alert">{errorMessage}</p>}
+          {successMessage && <p role="status">{successMessage}</p>}
 
           <button className="runclubBtn" type="submit" disabled={isSubmitting}>
             Lägg till klubb

@@ -86,8 +86,8 @@ const CreateEvent = () => {
 
           </div>
 
-          {errorMessage && <p>{errorMessage}</p>}
-          {successMessage && <p>{successMessage}</p>}
+          {errorMessage && <p role="alert">{errorMessage}</p>}
+          {successMessage && <p role="status">{successMessage}</p>}
 
           <button className="eventBtn" type="submit" disabled={isSubmitting}>
             Posta event
