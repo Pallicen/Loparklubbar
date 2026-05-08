@@ -1,9 +1,18 @@
+using backend.DB;
+using backend.Repositories;
+using backend.Service;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddRazorPages();
-builder.Services.AddOpenApi();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseInMemoryDatabase("LoparklubbarDb"));
 
 builder.Services.AddCors(options =>
 {
@@ -30,9 +39,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
+{
     app.UseExceptionHandler("/Error");
     app.UseHsts();
-    app.MapOpenApi();
 }
 
 app.UseCors("AllowReact");
@@ -43,12 +56,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-app.MapControllerRoute();
-
-app.MapStaticAssets();
-
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapControllers();
+app.MapRazorPages();
 
 app.Run();
-

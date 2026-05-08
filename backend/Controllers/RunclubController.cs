@@ -1,21 +1,16 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
+using backend.Service;
+using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
-
     [ApiController]
-
     public class RunclubController : ControllerBase
     {
-
-    public class EventController : ControllerBase
-    {
-        private readonly IEventService _runclubService;
-
-        public EventController(IEventService runclubService) 
+        private readonly IRunclubService _runclubService;
+        
+        public RunclubController(IRunclubService runclubService) 
         {
             _runclubService = runclubService;
         }
@@ -29,8 +24,8 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
+
             return Ok(runclub);
         }
-    }
     }
 }
