@@ -31,10 +31,8 @@ namespace backend.Controllers
 
             _eventService.Add(newEvent);
 
-            var createdEvent = _eventService.CreateEvent(eventDto);
-            return CreatedAtAction(nameof(GetEvent), new {id = createdEvent.Id}, createdEvent);
-
-            return Ok(eventDto);
+            eventDto.Id = newEvent.Id;
+            return CreatedAtAction(nameof(GetEvent), new {id = newEvent.Id}, eventDto);
         }
 
         [HttpGet("{id}")]
