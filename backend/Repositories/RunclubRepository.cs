@@ -1,27 +1,27 @@
 
+using backend.DB;
 using backend.Models;
 
 namespace backend.Repositories;
 
 public class RunclubRepository : IRunclubRepository
 {
-    private static readonly List<Runclub> Runclubs =
-    [
-        new Runclub
-        {
-            Id = 1,
-            Name = "Löparklubb Stockholm",
-            Description = "Gemensamma pass för alla nivåer.",
-            SocialMediaLink = "https://example.com/loparklubb-stockholm",
-            City = "Stockholm",
-            Time = "18:00",
-            Level = "Medel",
-            Image = string.Empty
-        }
-    ];
 
+    private readonly AppDbContext _dbContext;
+
+    public RunclubRepository(AppDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
     public Runclub? GetById(int id)
     {
-        return Runclubs.FirstOrDefault(runclub => runclub.Id == id);
+        return _dbContext.Runclubs.Find(id);
+    }
+
+    public Runclub Add(Runclub runclub)
+    {
+        _dbContext.Runclubs.Add(runclub);
+        _dbContext.SaveChanges();
+        return runclub;
     }
 }

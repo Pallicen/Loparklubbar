@@ -19,7 +19,7 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateRunclub([FromBody] RunclubDto runclubDto)
+        public ActionResult<RunclubDto> CreateRunclub([FromBody] RunclubDto runclubDto)
         {
             var newRunclub = new Runclub 
             {
@@ -34,8 +34,11 @@ namespace backend.Controllers
             };
 
             _runclubService.Add(newRunclub);
+
+            runclubDto.Id = newRunclub.Id;
+            return CreatedAtAction(nameof(GetRunclub), new {id = newRunclub.Id}, runclubDto);
             
-            return Ok(newRunclub);
+            // return Ok(newRunclub);
         }
 
         [HttpGet("{id}")]

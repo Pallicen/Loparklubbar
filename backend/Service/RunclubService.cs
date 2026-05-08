@@ -22,7 +22,7 @@ public class RunclubService : IRunclubService
         _context.SaveChanges();
     }
 
-  public RunclubDto GetRunclubById(int id)
+  public RunclubDto? GetRunclubById(int id)
     {
         var runclub = _context.Runclubs.FirstOrDefault(x => x.Id == id);
 

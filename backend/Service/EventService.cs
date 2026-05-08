@@ -15,6 +15,12 @@ public class EventService : IEventService
     _context = context;
   }
 
+       public void Add(Event @event)
+  {
+    _context.Events.Add(@event);
+    _context.SaveChanges();
+  }
+
   public EventDto? GetEventById(int id)
   {
     var foundEvent = _context.Events.FirstOrDefault(x => x.Id == id);
@@ -30,11 +36,5 @@ public class EventService : IEventService
         EventLink= foundEvent.EventLink
         };
     }
-
-     public void Add(Event @event)
-  {
-    _context.Events.Add(@event);
-    _context.SaveChanges();
-  }
 
 }
