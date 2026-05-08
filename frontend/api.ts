@@ -4,11 +4,11 @@ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
 
-const event = {
-  title: "Midnattsloppet, 1 september",
-  description: "Ett lopp i Göteborg vid midnatt",
-  eventLink: "https://midnattsloppet.com"
-}
+// const event = {
+//   title: "Midnattsloppet, 1 september",
+//   description: "Ett lopp i Göteborg vid midnatt",
+//   eventLink: "https://midnattsloppet.com"
+// }
 
 
 const response = await fetch('http://localhost:5020/event', {

@@ -10,6 +10,8 @@ const Home = () => {
   const { session } = useAuth();
   const isLoggedIn = !!session;
 
+  console.log("Inloggad: ", isLoggedIn);
+
 
   return (
   <div className="home1">
