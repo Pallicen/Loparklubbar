@@ -11,23 +11,6 @@ const CreateRunClub = () => {
   const [socialMediaLink, setSocialMediaLink] = useState("");
   const [image, setImage] = useState("");
 
-  const [image, setImage] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-
-    if (!file) return;
-
-    if (!file.type.startsWith("image/")) {
-      alert("Endast bilder är tillåtna!");
-      return;
-    }
-
-    setImage(file);
-    setPreview(URL.createObjectURL(file));
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -51,9 +34,7 @@ const CreateRunClub = () => {
       setLevel("Lätt");
       setTime("");
       setSocialMediaLink("");
-
-      setImage(null);
-      setPreview(null);
+      setImage("");
 
     } catch (err) {
       console.error(err);
@@ -129,18 +110,13 @@ const CreateRunClub = () => {
                 <option value="Svår">Svår</option>
               </select>
 
-              <label>Ladda upp bild</label>
+              <label>Bild (URL)</label>
               <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
+                type="text"
+                placeholder="https://..."
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
               />
-
-              {preview && (
-                <div className="imagePreview">
-                  <img src={preview} alt="Preview" />
-                </div>
-              )}
 
             </div>
 

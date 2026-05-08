@@ -1,4 +1,4 @@
-import RunclubCard from "../RunclubCard";
+import RunclubList from "../RunclubList";
 
 
 const Runclubs = () => {
@@ -49,7 +49,7 @@ const Runclubs = () => {
       </div>
 
       <div>
-        <RunclubCard name={""} description={""} city={""} level={""} time={""} socialMediaLink={""} image={""} />
+        <RunclubList />
       </div>
     </div>
 

@@ -1,4 +1,4 @@
-import { Heart, MessageCircle, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import profileImage from '../../assets/1.png'
 
 const MyAccount = () => {

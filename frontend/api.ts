@@ -37,7 +37,7 @@ export type EventDto = {
   id: number; title: string; description: string; eventLink: string };
 
 export type RunclubCreate = {
-  name: string; description: string; city: string; level: string; time: string; socialMediaLink: string;
+  name: string; description: string; city: string; level: string; time: string; socialMediaLink: string; image?: string;
 };
 
 export type RunclubDto = {
@@ -49,7 +49,7 @@ export const api = {
   createEvent: (payload: EventCreate) => 
     postJson("/api/event", payload),
   createRunclub: (payload: RunclubCreate) => 
-    postJson("api//runclub", payload),
+    postJson("/api/runclub", payload),
 
   getEvents: () => 
     getJson<EventDto[]> ("/api/event"),
