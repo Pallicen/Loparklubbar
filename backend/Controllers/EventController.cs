@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Service;
+using backend.Models;
 
 namespace backend.Controllers
 {
@@ -18,7 +19,7 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEvent([FromBody] EventDto eventDto)
+        public ActionResult<EventDto> CreateEvent([FromBody] EventDto eventDto)
         {
             var newEvent = new Event 
             {
@@ -27,8 +28,11 @@ namespace backend.Controllers
                 Description = eventDto.Description,
                 EventLink = eventDto.EventLink
             };
-            
+
             _eventService.Add(newEvent);
+
+            var createdEvent = _eventService.CreateEvent(eventDto);
+            return CreatedAtAction(nameof(GetEvent), new {id = createdEvent.Id}, createdEvent);
 
             return Ok(eventDto);
         }

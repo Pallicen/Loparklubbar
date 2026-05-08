@@ -1,7 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
+
 using backend.DTO;
 using backend.Repositories;
 using backend.DB;
+using backend.Service;
+using backend.Models;
 
 namespace backend.Service;
 
@@ -20,12 +22,12 @@ public class RunclubService : IRunclubService
         _context.SaveChanges();
     }
 
-    public RunclubDto? GetRunclubById(int id)
+  public RunclubDto GetRunclubById(int id)
     {
         var runclub = _context.Runclubs.FirstOrDefault(x => x.Id == id);
 
         if (runclub == null)
-            return null;
+            return null!;
             
     return new RunclubDto 
     {
@@ -35,7 +37,8 @@ public class RunclubService : IRunclubService
       SocialMediaLink = runclub.SocialMediaLink, 
       City = runclub.City, 
       Time = runclub.Time, 
-      Level = runclub.Level
+      Level = runclub.Level,
+      Image = runclub.Image
     };
   }
   

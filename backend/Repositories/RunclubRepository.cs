@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+
 using backend.Models;
 
 namespace backend.Repositories;
@@ -16,12 +16,12 @@ public class RunclubRepository : IRunclubRepository
             City = "Stockholm",
             Time = "18:00",
             Level = "Medel",
-            Image = "https://example.com/runclub.jpg"
+            Image = string.Empty
         }
     ];
 
-    public Runclub GetById(int id)
+    public Runclub? GetById(int id)
     {
-        return Runclubs.FirstOrDefault(r => r.Id == id) ?? new Runclub();
+        return Runclubs.FirstOrDefault(runclub => runclub.Id == id);
     }
 }

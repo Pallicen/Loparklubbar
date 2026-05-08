@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Repositories;
 using backend.DB;
+using backend.Models;
 
 namespace backend.Service;
 
@@ -14,11 +15,11 @@ public class EventService : IEventService
     _context = context;
   }
 
-  public EventDto GetEventById(int id)
+  public EventDto? GetEventById(int id)
   {
-    var eventEntity = _context.Events.FirstOrDefault(x => x.Id == id);
+    var foundEvent = _context.Events.FirstOrDefault(x => x.Id == id);
 
-        if (eventEntity == null)
+        if (foundEvent == null)
             return null;
             
       return new EventDto 

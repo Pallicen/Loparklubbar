@@ -1,23 +1,27 @@
-using Microsoft.AspNetCore.Mvc;
+
+using backend.DB;
 using backend.Models;
 
 namespace backend.Repositories;
 
 public class EventRepository : IEventRepository
 {
-    private static readonly List<Event> Events =
-    [
-        new Event
-        {
-            Id = 1,
-            Title = "Stockholm Marathon",
-            Description = "Löpning genom Stockholm.",
-            EventLink = "https://example.com/stockholm-marathon"
-        }
-    ];
 
-    public Event GetById(int id)
+    private readonly AppDbContext _dbContext;
+
+    public EventRepository(AppDbContext dbContext)
     {
-        return Events.FirstOrDefault(e => e.Id == id) ?? new Event();
+        _dbContext = dbContext;
+    }
+    public Event? GetById(int id)
+    {
+        return _dbContext.Events.Find(id);
+    }
+
+    public Event Add(Event @event)
+    {
+        _dbContext.Events.Add(@event);
+        _dbContext.SaveChanges();
+        return @event;
     }
 }
