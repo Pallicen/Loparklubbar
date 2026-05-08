@@ -1,4 +1,5 @@
-import Card from "../EventCard";
+
+import EventList from "../EventList";
 
 const Events = () => {
   return (
@@ -8,7 +9,7 @@ const Events = () => {
         <p>Kommande Lopp & Events</p>
       </div>
 
-      <Card title={""} description={""} eventLink={""} />
+      <EventList />
 
     </div>
 )};
