@@ -44,16 +44,13 @@ const RunclubCard = ({
         <p>
           <span>Social Media:</span>{" "}
           <a href={socialMediaLink} target="_blank">
-            Social media/webb länk
           </a>
         </p>
 
       </div>
 
       <div className="RunClubImageInCard">
-
         <img src={image} alt={name} />
-
       </div>
 
     </div>

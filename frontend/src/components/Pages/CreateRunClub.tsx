@@ -9,7 +9,10 @@ const CreateRunClub = () => {
   const [level, setLevel] = useState("Lätt");
   const [time, setTime] = useState("");
   const [socialMediaLink, setSocialMediaLink] = useState("");
-  const [image, setImage] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState("");
+
+  console.log("Vald fil: ", selectedFile);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,7 +26,7 @@ const CreateRunClub = () => {
         level,
         time,
         socialMediaLink,
-        image
+        image : previewUrl
       });
 
       alert("Runclub skapad!");
@@ -34,8 +37,8 @@ const CreateRunClub = () => {
       setLevel("Lätt");
       setTime("");
       setSocialMediaLink("");
-      setImage("");
-
+      setSelectedFile(null);
+      setPreviewUrl("");
     } catch (err) {
       console.error(err);
       alert("Något gick fel");
@@ -112,11 +115,21 @@ const CreateRunClub = () => {
 
               <label>Bild (URL)</label>
               <input
-                type="text"
-                placeholder="https://..."
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+
+                  setSelectedFile(file);
+                  setPreviewUrl(URL.createObjectURL(file));
+                }}
               />
+              {previewUrl && (
+                <div>
+                  <img src={previewUrl} alt="Förhandsvisning" width={150} />
+                </div>
+              )}
 
             </div>
 

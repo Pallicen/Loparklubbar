@@ -58,6 +58,18 @@ namespace backend.Controllers
             } 
             return Ok(foundEvent);
         }
+
+        // [HttpDelete("{id}")]
+        // public ActionResult<EventDto> DeleteEvent(int id) 
+        // {
+        //     var DeleteEv = _eventService.DeleteEventById(id);
+
+        //     if (DeleteEv == null) 
+        //     {
+        //         return NotFound();
+        //     } 
+        //     return Ok(DeleteEv);
+        // }
     }
 
 }

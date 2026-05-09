@@ -47,6 +47,15 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+//Seeded data
+using (var scope = app.Services.CreateScope()) 
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+    DbSeeder.Seed(db);
+}
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -63,6 +72,7 @@ else
 app.UseCors("AllowReact");
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
