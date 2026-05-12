@@ -35,7 +35,7 @@ const RunclubCard = ({
           <span className="RunclubBadge">🕐 {time}</span>
         </div>
 
-        <a className="RunclubLink" href={socialMediaLink} target="_blank">
+        <a className="RunclubLink" href={socialMediaLink} target="_blank" rel="noopener noreferrer">
           Sociala medier →
         </a>
 

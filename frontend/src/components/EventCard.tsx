@@ -23,7 +23,7 @@ const EventCard = ({
 
       <p className="EventDescription">{description}</p>
 
-      <a className="EventLink" href={eventLink} target="_blank">
+      <a className="EventLink" href={eventLink} target="_blank" rel="noopener noreferrer">
         Anmäl dig →
       </a>
 
