@@ -27,23 +27,16 @@ const RunclubCard = ({
 
         <h3>{name}</h3>
 
-        <p>{description}</p>
+        <p className="RunclubDescription">{description}</p>
 
-        <p>
-          <span>Stad:</span> {city}
-        </p>
+        <div className="RunclubMeta">
+          <span className="RunclubBadge">📍 {city}</span>
+          <span className="RunclubBadge">🏃 {level}</span>
+          <span className="RunclubBadge">🕐 {time}</span>
+        </div>
 
-        <p>
-          <span>Nivå:</span> {level}
-        </p>
-
-        <p>
-          <span>Dag & Tid:</span> {time}
-        </p>
-
-
-        <a href={socialMediaLink} target="_blank">
-        <span>Social Media: </span>{socialMediaLink}
+        <a className="RunclubLink" href={socialMediaLink} target="_blank">
+          Sociala medier →
         </a>
 
       </div>

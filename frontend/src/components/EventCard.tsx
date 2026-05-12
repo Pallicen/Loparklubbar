@@ -15,15 +15,18 @@ const EventCard = ({
 
   return (
     <div className="EventCard">
-      <h3>{title}</h3>
 
-      <p>{description}</p>
+      <div className="EventCardHeader">
+        <h3>{title}</h3>
+        <span className="EventDistanceBadge">{distance}</span>
+      </div>
 
-      <p>{distance}</p>
+      <p className="EventDescription">{description}</p>
 
-      <a href={eventLink} target="_blank">
-      <span>Länk till anmälan: </span>{eventLink}
+      <a className="EventLink" href={eventLink} target="_blank">
+        Anmäl dig →
       </a>
+
     </div>
   );
 };

@@ -8,15 +8,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 10rem;
-  font-size: 2.6rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #1e4a1e 0%, #4c664c 60%, #6b8f6b 100%);
+  color: white;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.eventTitle p {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.event-filter-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-filter-container .selectWrapper {
+  max-width: 14rem;
 }
 
 .EventCards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding-top: 2rem;
+  gap: 1.4rem;
+  padding-top: 0.5rem;
   padding-bottom: 2rem;
 }
 
@@ -24,39 +47,91 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border: 0.8px solid rgb(19, 79, 19);
-  margin-bottom: 2rem;
-  border-radius: 8px;
-  min-height: 14rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 0.8rem;
+  padding: 1.6rem;
+  border: none;
+  border-top: 5px solid #4c664c;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   h3 {
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e3a1e;
   }
 }
 
 .EventCard:hover {
-  box-sizing: border-box;
-  box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.2);
-  transition: 0.4s ease-in-out;
-  min-height: 14.2rem;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
 }
 
+.EventCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.EventDistanceBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #f0f4f0;
+  color: #2d5a27;
+  border: 1px solid #c8d8c8;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.EventDescription {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.EventLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  border: 2px solid #4c664c;
+  color: #4c664c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.EventLink:hover {
+  background-color: #4c664c;
+  color: white;
+}
 
 @media (max-width: 768px) {
+  .eventTitle {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
   .EventCards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.2rem;
   }
   
   .EventCard {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     margin: 0;
   }
 }
