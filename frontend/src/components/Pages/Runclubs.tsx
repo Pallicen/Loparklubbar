@@ -12,6 +12,7 @@ const Runclubs = () => {
 
     <div className="runclub-container">
       <div className="filter-container">
+        <p className="filter-heading">🔍 FILTER</p>
         <div className="filter">
 
           <div className="selectWrapper">

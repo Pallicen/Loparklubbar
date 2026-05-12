@@ -13,8 +13,6 @@
   color: white;
   border-radius: 0 0 2rem 2rem;
   margin-bottom: 2rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
 }
 
 .eventTitle p {
@@ -118,11 +116,6 @@
 }
 
 @media (max-width: 768px) {
-  .eventTitle {
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
-
   .EventCards {
     display: grid;
     grid-template-columns: 1fr;
