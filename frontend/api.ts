@@ -31,10 +31,10 @@ async function getJson<T>(path: string): Promise<T> {
 
 //TYPES
 export type EventCreate = { 
-  title: string; description: string; eventLink: string };
+  title: string; description: string; distance: string; eventLink: string };
 
 export type EventDto = {
-  id: number; title: string; description: string; eventLink: string };
+  id: number; title: string; description: string; distance: string; eventLink: string };
 
 export type RunclubCreate = {
   name: string; description: string; city: string; level: string; time: string; socialMediaLink: string; image?: string;

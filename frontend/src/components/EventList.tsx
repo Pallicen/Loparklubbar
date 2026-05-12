@@ -33,6 +33,7 @@ const EventList = () => {
           key={event.id}
           title={event.title}
           description={event.description}
+          distance={event.distance}
           eventLink={event.eventLink}
         />
       ))}

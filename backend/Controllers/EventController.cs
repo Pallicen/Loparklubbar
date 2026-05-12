@@ -26,6 +26,7 @@ namespace backend.Controllers
                 Id = new Random().Next(1000),
                 Title = eventDto.Title,
                 Description = eventDto.Description,
+                Distance = eventDto.Distance,
                 EventLink = eventDto.EventLink
             };
 

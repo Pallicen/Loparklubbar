@@ -28,6 +28,7 @@ public class EventService : IEventService
         Id = e.Id,
         Title = e.Title,
         Description = e.Description,
+        Distance = e.Distance,
         EventLink = e.EventLink
     }).ToList();
 }
@@ -44,6 +45,7 @@ public class EventService : IEventService
         Id = foundEvent.Id,
         Title = foundEvent.Title, 
         Description = foundEvent.Description, 
+        Distance = foundEvent.Distance, 
         EventLink= foundEvent.EventLink
         };
     }

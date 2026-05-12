@@ -41,11 +41,10 @@ const RunclubCard = ({
           <span>Dag & Tid:</span> {time}
         </p>
 
-        <p>
-          <span>Social Media:</span>{" "}
-          <a href={socialMediaLink} target="_blank">
-          </a>
-        </p>
+
+        <a href={socialMediaLink} target="_blank">
+        <span>Social Media: </span>{socialMediaLink}
+        </a>
 
       </div>
 

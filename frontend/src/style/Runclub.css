@@ -20,22 +20,27 @@
 .RunclubCards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
   padding-left: 2rem;
 }
 
 .RunclubCard {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 3.6rem;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 0.8px solid rgb(19, 79, 19);
   border-radius: 8px;
-  min-height: 18rem;
+  min-height: 20rem;
   max-height: 50rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.RunclubCard:hover {
+  box-sizing: border-box;
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -43,8 +48,10 @@
   flex: 1;
   flex-direction: column;
   display: flex;
+  justify-content: space-between;
   gap: 8px;
     h3 {
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 14px;
   }
@@ -199,6 +206,7 @@ label {
 .runclubCard {
   background: white;
   padding: 2rem;
+  border: 0.8px solid rgb(19, 79, 19);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   width: 100%;

@@ -7,5 +7,6 @@ public interface IEvent
   int Id { get; set; }
   string Title { get; set; }
   string Description { get; set; }
+  string Distance { get; set; }
   string EventLink { get; set; }
 }

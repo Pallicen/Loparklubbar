@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { useAuth } from "../auth/context";
+import { useEffect } from "react";
 
 const Meny = () => {
 
@@ -12,6 +13,18 @@ const Meny = () => {
 
   const { session } = useAuth();
   const isLoggedIn = !!session;
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [menuOpen]);
     
 
   return (
@@ -32,9 +45,9 @@ const Meny = () => {
           <Link className="btnLinkHome" onClick={toggleMenu} to="/">Hem</Link>
           <Link className="btnLinkRunclub" onClick={toggleMenu} to="/Runclubs">Löparklubbar</Link>
           <Link className="btnLinkEvent" onClick={toggleMenu} to="/Events">Event</Link>
-          <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
-          <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
-          <Link className="btnLinkMyAccount" to="/MyAccount">Profil</Link>
+          <Link className="createRunClubBtn" onClick={toggleMenu} to="/CreateRunClub">+ Löparklubb</Link>
+          <Link className="createEventBtn" onClick={toggleMenu} to="/CreateEvent">+ Lopp</Link>
+          <Link className="btnLinkMyAccount" onClick={toggleMenu} to="/MyAccount">Profil</Link>
        </div>
         </>
       ) : (

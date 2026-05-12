@@ -10,7 +10,6 @@ const LoginMeny = () => {
     <nav className="login-menu">
 
       <div className="nav-left">
-        {/* <p className="logo">RUNWITHUS</p> */}
         <img className="log" src={logIMG} alt="logga"></img>
       </div>
 

@@ -42,7 +42,7 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<EventDto>> GetAllEvents() 
+        public ActionResult<IEnumerable<EventDto>> GetAllRunclubs() 
         {
             var runclubs = _runclubService.GetAllRunclubs();
 

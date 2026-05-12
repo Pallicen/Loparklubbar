@@ -6,6 +6,7 @@ const CreateEvent = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [distance, setDistance] = useState("");
   const [eventLink, setEventLink] = useState("");
 
   async function handleSubmit(e: React.FormEvent)
@@ -17,12 +18,14 @@ const CreateEvent = () => {
       await api.createEvent({
         title,
         description,
+        distance,
         eventLink
       })
         alert("Event skapat!");
 
         setTitle(""),
         setDescription(""),
+        setDistance(""),
         setEventLink("")
       } catch (err) {
         console.error(err)
@@ -60,6 +63,16 @@ const CreateEvent = () => {
               maxLength={200} 
               placeholder="Max 50 ord"
               value={description}
+              onChange={(e) => setDescription(e.target.value)}
+               />
+            </div>
+
+            <div className="formGroup">
+              <label>Distans</label>
+              <input 
+              maxLength={20} 
+              placeholder="Ex: 10km"
+              value={distance}
               onChange={(e) => setDescription(e.target.value)}
                />
             </div>
