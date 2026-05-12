@@ -15,6 +15,7 @@
   text-align: center;
   height: 10rem;
   font-size: 2.6rem;
+  margin-top: 4rem;
 }
 
 .RunclubCards {
@@ -29,7 +30,7 @@
   gap: 3.6rem;
   padding: 20px;
   border: 0.8px solid rgb(19, 79, 19);
-  border-radius: 8px;
+  border-radius: 22px;
   min-height: 20rem;
   max-height: 50rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -58,6 +59,20 @@
   span {
     font-weight: 600;
   }
+}
+
+.subscribe-runclub-btn {
+  border: 1px solid #ddd;
+  background: rgb(197, 209, 197);
+  padding: 8.8px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.subscribe-runclub-btn:hover {
+  background-color: rgb(19, 70, 19);
+  color: white;
+  transition: 0.4s ease;
 }
 
 
@@ -119,33 +134,33 @@
   padding: 0%;
 }
 
-.check {
-  width: 1rem;
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.checkboxLabel {
-  width: 100%;
-  padding: 0;
-  display: flex;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 1.4rem;
+.check {
+  width: 18px;
+  height: 18px;
 }
+
 
 .selectWrapper {
   display: flex;
   flex-direction: column;
   gap: 6px;
   width: 12rem;
-}
-
-.selectWrapper {
+  
   input {
     display: flex;
     flex-direction: column;
     gap: 6px;
     width: 12rem;
   }
+  
 }
 
 .selectWrapper select {
@@ -195,11 +210,11 @@ label {
 
 .runclubFormPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa, #e4ecf3);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
+  margin-top: 4rem;
 }
 
 

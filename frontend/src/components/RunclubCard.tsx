@@ -27,7 +27,7 @@ const RunclubCard = ({
 
         <h3>{name}</h3>
 
-        <p>{description}</p>
+        <p className="RunclubDescription">{description}</p>
 
         <p>
           <span>Stad:</span> {city}
@@ -45,6 +45,10 @@ const RunclubCard = ({
         <a href={socialMediaLink} target="_blank">
         <span>Social Media: </span>{socialMediaLink}
         </a>
+
+        <p>
+          <button className="subscribe-runclub-btn">Gå med</button>
+        </p>
 
       </div>
 

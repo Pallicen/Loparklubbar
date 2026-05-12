@@ -6,8 +6,9 @@ const MyAccount = () => {
     <div className="AccountPage">
     <div className="container">
 
-      <div>
+      <div className="searchUser">
         <input placeholder="Sök användare"></input>
+        <button className="searchUserBtn">Sök</button>
       </div>
 
         {/* PROFILE CARD */}

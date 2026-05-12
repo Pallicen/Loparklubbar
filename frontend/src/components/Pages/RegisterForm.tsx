@@ -7,6 +7,7 @@ const RegisterForm = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
@@ -60,6 +61,17 @@ const RegisterForm = () => {
               <label>E-post</label>
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            <div className="formGroup">
+              <label>Användarnamn</label>
+              <input
+                type="name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 autoComplete="username"

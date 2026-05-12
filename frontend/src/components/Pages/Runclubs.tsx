@@ -26,6 +26,7 @@ const Runclubs = () => {
             <option value="Sundsvall">Sundsvall</option>
             <option value="Luleå">Luleå</option>
             <option value="Malmö">Malmö</option>
+            <option value="Malmö">Örebro</option>
           </select>
           </div>
 

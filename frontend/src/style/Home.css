@@ -1,7 +1,7 @@
 /* HEM */
 
 .home-page {
-  height: 87vh;
+  min-height: 90vh;
   position: relative;
   overflow: visible;
 }
@@ -16,7 +16,7 @@
 }
 
 .overlay {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background-color: rgba(25, 25, 25, 0.45);
 }
@@ -33,6 +33,15 @@
   max-width: 50rem;
   height: 20rem;
   line-height: 1.6;
+}
+
+.createBtns {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+  padding-right: 2rem;
 }
 
 .title {
@@ -176,7 +185,6 @@
 }
 
 .prenumerationDiv {
-  /* width: 50%; */
   height: 30rem;
   display: flex;
   justify-content: center;
@@ -200,7 +208,6 @@
 }
 
 .prenumerationIMG {
-  /* width: 50%; */
   height: 30rem;
   background-image: url('/src/assets/prenumerationIMG.png');
   background-size: cover;
@@ -217,7 +224,7 @@
 }
 
 .page4 {
-  min-height: 80vh;
+  min-height: 60vh;
   font-size: 1.2rem;
 }
 
@@ -238,8 +245,17 @@
   padding: 2rem;
 }
 
-.partnership {
+.icon {
   display: flex;
+  gap: 2rem;
+  img {
+    width: 2rem;
+  }
+}
+
+.partnership {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
   flex-direction: column;
   justify-content: center;
   object-fit: cover;

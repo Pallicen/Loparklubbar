@@ -4,6 +4,13 @@ import image1 from "/src/assets/3.png";
 import { useAuth } from "../../auth/context"
 import imageStrava from "/src/assets/stravaLog.png";
 import imageNike from "/src/assets/nikeLog.png";
+import imageGbv from "/src/assets/gbv-event.png";
+import imagenordicwellness from "/src/assets/nordicwellness.png";
+import imagelidingoloppet from "/src/assets/lidingoloppet.png";
+import instaIcon from "/src/assets/instagram-2.png";
+import mailIcon from "/src/assets/mail.png";
+import messageIcon from "/src/assets/messenger.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -23,6 +30,18 @@ const Home = () => {
               <div className="overlay">
 
                 <LoginMeny />
+
+        {isLoggedIn ? (
+        <>
+        <div className="createBtns">
+          <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
+          <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
+        </div>
+          </>
+          ) : (
+          <div>
+          </div>
+          )}
 
                 <div className="text-overlay">
                     <h1 className="title">Sveriges Löparklubbar</h1>
@@ -90,9 +109,9 @@ const Home = () => {
 
         <div className="contactDiv">
             <strong>Kontakt</strong>
-            <p>runwithus@gmail.se</p>
-            <p>070-884 46 77</p>
-            <p>Instagram</p>
+            <div className="icon"><img src={mailIcon} alt="E-post Ikon"/><p>runwithus@gmail.se</p></div>
+            <div className="icon"><img src={messageIcon} alt="Meddelande Ikon"/><p>070-884 46 77</p></div>
+            <div className="icon"><img src={instaIcon} alt="Instagram Ikon"/><p>Instagram</p></div>
         </div>
 
         <div className="contactDiv">
@@ -100,6 +119,9 @@ const Home = () => {
             <span>I samarbete med</span>
             <img src={imageStrava} alt="stravabild"/>
             <img src={imageNike} alt="nikebild"/>
+            <img src={imageGbv} alt="göteborgsvarvetbild"/>
+            <img src={imagenordicwellness} alt="nordicwellnessbild"/>
+            <img src={imagelidingoloppet} alt="lidingoloppetbild"/>
           </div>
         </div>
 

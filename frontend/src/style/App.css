@@ -11,7 +11,7 @@ main {
   margin-bottom: 5rem;
 }
 
-.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage {
+.home, .event, .runclub, .login-menu, .text-overlay, .loginPage, .registerPage, .AccountPage, .registerContainer {
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -21,4 +21,14 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: rgb(76, 102, 76);
+}
+
+footer {
+  height: 60vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(71, 71, 71);
+  color: white;
 }

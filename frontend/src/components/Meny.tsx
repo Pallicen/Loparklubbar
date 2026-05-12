@@ -28,14 +28,15 @@ const Meny = () => {
     
 
   return (
+    <div className="navbarDiv">
 
     <nav className="navbar">
 
       <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
         <div className="bars">
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
+            <div></div>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
         </div>
       </div>
 
@@ -65,8 +66,6 @@ const Meny = () => {
           <Link className="btnLinkHome" to="/">Hem</Link>
           <Link className="btnLinkRunclub" to="/Runclubs">Löparklubbar</Link>
           <Link className="btnLinkEvent" to="/Events">Event</Link>
-          <Link className="createRunClubBtn" to="/CreateRunClub">+ Löparklubb</Link>
-          <Link className="createEventBtn" to="/CreateEvent">+ Lopp</Link>
           <Link className="btnLinkMyAccount" to="/MyAccount">Profil</Link>
         </div>
       </>
@@ -80,6 +79,7 @@ const Meny = () => {
       )}
 
     </nav>
+    </div>
   );
 };
 
