@@ -71,7 +71,7 @@ public static class DbSeeder
             Level="Medel", 
             Time="Torsdagar 17.30", 
             SocialMediaLink="länk", 
-            Image = "/Images/runclubimg1.png"
+            Image = "runclubimg3.png"
         },
         new Runclub
         { 
@@ -82,7 +82,7 @@ public static class DbSeeder
             Level="Medel", 
             Time="Onsdagar 18.30", 
             SocialMediaLink="länk",
-            Image = "/Images/runclubimg2.png"
+            Image = "6.png"
         },
         new Runclub
         { 
@@ -93,7 +93,7 @@ public static class DbSeeder
             Level="Svår", 
             Time="Lördagar 10.00", 
             SocialMediaLink="länk",
-            Image = "/Images/runclubimg3.png"
+            Image = "runclubimg1.png"
         },
         new Runclub
         { 
@@ -104,7 +104,7 @@ public static class DbSeeder
             Level="Svår", 
             Time="Sista lördagen i månaden, 10.00", 
             SocialMediaLink="länk",
-            Image = "/Images/runclubimg4.png"
+            Image = "5.png"
         }
       );
     }

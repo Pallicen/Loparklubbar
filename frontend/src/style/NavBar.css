@@ -27,14 +27,12 @@ header {
 }
 
 
-.btnLinkHome, .btnLinkEvent, .btnLinkRunclub, .btnLinkMyAccount, .createRunClubBtn, .createEventBtn {
+.btnLinkHome, .btnLinkEvent, .btnLinkRunclub {
   color: #092c0b;
   text-decoration: none;
   letter-spacing: 1px;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  width: 12rem;
   text-align: center;
   display: flex;
   position: relative;
@@ -43,16 +41,34 @@ header {
   transition: all 0.4s ease;
 }
 
-.btnLinkRunclub {
-  width: 10.5rem;
+.btnLinkEvent, .btnLinkHome {
+  width: 4rem;
 }
 
-.btnLinkHome:hover, .btnLinkRunclub:hover, .btnLinkEvent:hover, .createRunClubBtn:hover, .createEventBtn:hover {
+.createRunClubBtn, .createEventBtn {
+  padding: 8px 24px;
+  border-radius: 2rem;
+  background-color: rgb(58, 58, 58);
+  color: white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.createRunClubBtn:hover, .createEventBtn:hover {
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+
+.btnLinkHome:hover, .btnLinkRunclub:hover, .btnLinkEvent:hover {
   transition: all 0.5s ease;
   color: black;
 }
 
-.btnLinkHome:after, .btnLinkRunclub:after, .btnLinkEvent:after, .createRunClubBtn:after, .createEventBtn:after {
+.btnLinkHome:after, .btnLinkRunclub:after, .btnLinkEvent:after {
   position: absolute;
   content: "";
   left: 0;
@@ -65,7 +81,7 @@ header {
   transition: transform 0.4s ease;
 }
 
-.btnLinkHome:hover:after, .btnLinkRunclub:hover:after, .btnLinkEvent:hover:after, .createRunClubBtn:hover:after, .createEventBtn:hover:after {
+.btnLinkHome:hover:after, .btnLinkRunclub:hover:after, .btnLinkEvent:hover:after {
   transform: scaleX(1);
 }
 
@@ -91,17 +107,17 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
+  letter-spacing: 1px;
   color: black;
   background-color: white;
   box-sizing: border-box;
   box-shadow: 5px 5px 20px rgb(168, 168, 168);
-  width: 10rem;
-  height: 3rem;
+  padding: 6px 26px;
   border-radius: 2rem;
 }
 
 .btnLinkMyAccount:hover {
-  background-color: #acacac;
+  background-color: #c9c9c9;
 }
 
 

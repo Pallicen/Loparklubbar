@@ -89,12 +89,36 @@ const CreateRunClub = () => {
             {/* RIGHT */}
             <div className="formColumn">
 
-              <label>Stad & Plats</label>
-              <input
-                type="text"
+              <label>Stad</label>
+              <select
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-              />
+              >
+                <option value="Jönköping">Jönköping</option>
+                <option value="Göteborg">Göteborg</option>
+                <option value="Värnamo">Värnamo</option>
+                <option value="Stockholm">Stockholm</option>
+                <option value="Linköping">Linköping</option>
+                <option value="Gävle">Gävle</option>
+                <option value="Sundsvall">Sundsvall</option>
+                <option value="Luleå">Luleå</option>
+                <option value="Malmö">Malmö</option>
+                <option value="Örebro">Örebro</option>
+                <option value="Karlstad">Karlstad</option>
+                <option value="Lidköping">Lidköping</option>
+                <option value="Piteå">Piteå</option>
+                <option value="Borås">Borås</option>
+                <option value="Lund">Lund</option>
+                <option value="Kristianstad">Kristianstad</option>
+                <option value="Uddevalla">Uddevallla</option>
+                <option value="Halmstad">Halmstad</option>
+                <option value="Västerås">Västerås</option>
+                <option value="Kalmar">Kalmar</option>
+                <option value="Karlskrona">Karlskrona</option>
+                <option value="Leksand">Leksand</option>
+                <option value="Idre">Idre</option>
+                <option value="Uppsala">Uppsala</option>
+              </select>
 
               <label>Dag & Tid</label>
               <input

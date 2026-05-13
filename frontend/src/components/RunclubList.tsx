@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import RunclubCard from "./RunclubCard";
 import { api, type RunclubDto } from "../../api";
 
-const RunclubList = () => {
+interface RunclubListProps {
+  selectedCity: string;
+  selectedLevel: string;
+}
+
+
+const RunclubList = ({ selectedCity, selectedLevel }: RunclubListProps) => {
 
   const [runclubs, setRunclubs] = useState<RunclubDto[]>([]);
 
@@ -25,10 +31,21 @@ const RunclubList = () => {
 
   }, []);
 
+  const filteredRunclubs = runclubs.filter((runclub) => {
+
+    const cityMatch = 
+      selectedCity === "" || runclub.city === selectedCity;
+
+    const levelMatch = 
+      selectedLevel === "" || runclub.level === selectedLevel;
+
+    return cityMatch && levelMatch;
+  });
+
   return (
     <div className="RunclubCards">
 
-      {runclubs.map((runclub) => (
+      {filteredRunclubs.map((runclub) => (
         <RunclubCard
           key={runclub.id}
           name={runclub.name}
@@ -37,7 +54,8 @@ const RunclubList = () => {
           city={runclub.city} 
           level={runclub.level} 
           time={runclub.time} 
-          image={runclub.image}        />
+          image={runclub.image}
+         />
       ))}
 
     </div>

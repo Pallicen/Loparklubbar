@@ -1,5 +1,4 @@
 
-
 interface CardPropsRunclub {
   name: string;
   description: string;
@@ -43,7 +42,7 @@ const RunclubCard = ({
 
 
         <a href={socialMediaLink} target="_blank">
-        <span>Social Media: </span>{socialMediaLink}
+        <span>Social Media/Gym: </span>{socialMediaLink}
         </a>
 
         <p>
@@ -53,7 +52,7 @@ const RunclubCard = ({
       </div>
 
       <div className="RunClubImageInCard">
-        <img src={image} alt={name} />
+        <img src={`http://localhost:5020/Images/${image}`} alt={name} />
       </div>
 
     </div>

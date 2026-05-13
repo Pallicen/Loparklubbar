@@ -2,6 +2,7 @@ using backend.DB;
 using backend.Repositories;
 using backend.Service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +47,13 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// app.UseStaticFiles(new StaticFileOptions
+// {
+// FileProvider = new PhysicalFileProvider(
+// Path.Combine(builder.Environment.ContentRootPath, "public")),
+// RequestPath = ""
+// });
 
 //Seeded data
 using (var scope = app.Services.CreateScope()) 
