@@ -6,8 +6,7 @@ using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -48,12 +47,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// app.UseStaticFiles(new StaticFileOptions
-// {
-// FileProvider = new PhysicalFileProvider(
-// Path.Combine(builder.Environment.ContentRootPath, "public")),
-// RequestPath = ""
-// });
 
 //Seeded data
 using (var scope = app.Services.CreateScope()) 

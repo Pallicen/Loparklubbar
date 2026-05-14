@@ -13,10 +13,12 @@ public class RunclubRepository : IRunclubRepository
     {
         _dbContext = dbContext;
     }
+
+    public IEnumerable<Runclub> GetAll()
+        => _dbContext.Runclubs.ToList();
+
     public Runclub? GetById(int id)
-    {
-        return _dbContext.Runclubs.Find(id);
-    }
+        => _dbContext.Runclubs.Find(id);
 
     public Runclub Add(Runclub runclub)
     {

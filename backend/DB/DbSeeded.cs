@@ -93,7 +93,7 @@ public static class DbSeeder
             Level="Svår", 
             Time="Lördagar 10.00", 
             SocialMediaLink="länk",
-            Image = "runclubimg1.png"
+            Image = "runclubimg2.png"
         },
         new Runclub
         { 

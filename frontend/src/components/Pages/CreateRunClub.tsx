@@ -120,9 +120,10 @@ const CreateRunClub = () => {
                 <option value="Uppsala">Uppsala</option>
               </select>
 
-              <label>Dag & Tid</label>
+              <label>Dag, tid & plats</label>
               <input
                 type="text"
+                placeholder="Ex: Onsdagar 17.00, Slottsparken"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />

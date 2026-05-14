@@ -8,50 +8,61 @@ namespace backend.Service;
 
 public class EventService : IEventService
 {
-  private readonly AppDbContext _context;
+    private readonly IEventRepository _repository;
 
-  public EventService(AppDbContext context)
-  {
-    _context = context;
-  }
-
-       public void Add(Event @event)
-  {
-    _context.Events.Add(@event);
-    _context.SaveChanges();
-  }
-
-  public IEnumerable<EventDto> GetAllEvents()
-{
-    return _context.Events.Select(e => new EventDto
+    public EventService(IEventRepository repository)
     {
-        Id = e.Id,
-        Title = e.Title,
-        Description = e.Description,
-        Distance = e.Distance,
-        EventLink = e.EventLink
-    }).ToList();
-}
+        _repository = repository;
+    }
 
-  public EventDto? GetEventById(int id)
-  {
-    var foundEvent = _context.Events.FirstOrDefault(x => x.Id == id);
+    public IEnumerable<EventDto> GetAllEvents()
+    {
+        return _repository.GetAll()
+            .Select(e => new EventDto
+            {
+                Id = e.Id,
+                Title = e.Title,
+                Description = e.Description,
+                Distance = e.Distance,
+                EventLink = e.EventLink
+            });
+    }
 
-        if (foundEvent == null)
-            return null;
-            
-      return new EventDto 
-      {
-        Id = foundEvent.Id,
-        Title = foundEvent.Title, 
-        Description = foundEvent.Description, 
-        Distance = foundEvent.Distance, 
-        EventLink= foundEvent.EventLink
+    public EventDto? GetEventById(int id)
+    {
+        var e = _repository.GetById(id);
+
+        if (e == null) return null;
+
+        return new EventDto
+        {
+            Id = e.Id,
+            Title = e.Title,
+            Description = e.Description,
+            Distance = e.Distance,
+            EventLink = e.EventLink
         };
     }
 
-  object IEventService.GetAllEvents()
-  {
-    return GetAllEvents();
-  }
+    public EventDto Add(EventDto dto)
+    {
+        var entity = new Event
+        {
+            Title = dto.Title,
+            Description = dto.Description,
+            Distance = dto.Distance,
+            EventLink = dto.EventLink
+        };
+
+        var created = _repository.Add(entity);
+
+        return new EventDto
+        {
+            Id = created.Id,
+            Title = created.Title,
+            Description = created.Description,
+            Distance = created.Distance,
+            EventLink = created.EventLink
+        };
+    }
 }

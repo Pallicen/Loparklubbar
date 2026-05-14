@@ -21,24 +21,14 @@ namespace backend.Controllers
         [HttpPost]
         public ActionResult<RunclubDto> CreateRunclub([FromBody] RunclubDto runclubDto)
         {
-            var newRunclub = new Runclub 
-            {
-                Id = new Random().Next(1000),
-                Name = runclubDto.Name,
-                Description = runclubDto.Description,
-                SocialMediaLink = runclubDto.SocialMediaLink,
-                City = runclubDto.City,
-                Time = runclubDto.Time,
-                Level = runclubDto.Level,
-                Image = runclubDto.Image
-            };
+            var createdRunclub = _runclubService.Add(runclubDto);
 
-            _runclubService.Add(newRunclub);
-
-            runclubDto.Id = newRunclub.Id;
-            return CreatedAtAction(nameof(GetRunclub), new {id = newRunclub.Id}, runclubDto);
+                return CreatedAtAction(
+                    nameof(GetRunclub),
+                    new { id = createdRunclub.Id },
+                    createdRunclub
+                );
             
-            // return Ok(newRunclub);
         }
 
         [HttpGet]
@@ -46,10 +36,6 @@ namespace backend.Controllers
         {
             var runclubs = _runclubService.GetAllRunclubs();
 
-            if (runclubs == null) 
-            {
-                return NotFound();
-            } 
             return Ok(runclubs);
         }
 

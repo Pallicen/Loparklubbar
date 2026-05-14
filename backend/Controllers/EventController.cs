@@ -21,30 +21,21 @@ namespace backend.Controllers
         [HttpPost]
         public ActionResult<EventDto> CreateEvent([FromBody] EventDto eventDto)
         {
-            var newEvent = new Event 
-            {
-                Id = new Random().Next(1000),
-                Title = eventDto.Title,
-                Description = eventDto.Description,
-                Distance = eventDto.Distance,
-                EventLink = eventDto.EventLink
-            };
+            var createdEvent = _eventService.Add(eventDto);
 
-            _eventService.Add(newEvent);
-
-            eventDto.Id = newEvent.Id;
-            return CreatedAtAction(nameof(GetEvent), new {id = newEvent.Id}, eventDto);
+                return CreatedAtAction(
+                    nameof(GetEvent),
+                    new { id = createdEvent.Id },
+                    createdEvent
+                );
         }
+        
 
         [HttpGet]
         public ActionResult<IEnumerable<EventDto>> GetAllEvents() 
         {
             var events = _eventService.GetAllEvents();
 
-            if (events == null) 
-            {
-                return NotFound();
-            } 
             return Ok(events);
         }
 
@@ -59,18 +50,6 @@ namespace backend.Controllers
             } 
             return Ok(foundEvent);
         }
-
-        // [HttpDelete("{id}")]
-        // public ActionResult<EventDto> DeleteEvent(int id) 
-        // {
-        //     var DeleteEv = _eventService.DeleteEventById(id);
-
-        //     if (DeleteEv == null) 
-        //     {
-        //         return NotFound();
-        //     } 
-        //     return Ok(DeleteEv);
-        // }
     }
 
 }

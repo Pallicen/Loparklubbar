@@ -73,7 +73,7 @@ const CreateEvent = () => {
               maxLength={20} 
               placeholder="Ex: 10km"
               value={distance}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setDistance(e.target.value)}
                />
             </div>
 

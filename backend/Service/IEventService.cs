@@ -6,7 +6,7 @@ namespace backend.Service;
 
 public interface IEventService
 {
-  EventDto? GetEventById(int id);
-  void Add(Models.Event @event);
-  object GetAllEvents();
+    IEnumerable<EventDto> GetAllEvents();
+    EventDto? GetEventById(int id);
+    EventDto Add(EventDto dto);
 }

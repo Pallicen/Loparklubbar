@@ -1,4 +1,3 @@
-
 interface CardPropsRunclub {
   name: string;
   description: string;
@@ -49,6 +48,7 @@ const RunclubCard = ({
           <button className="subscribe-runclub-btn">Gå med</button>
         </p>
 
+
       </div>
 
       <div className="RunClubImageInCard">
@@ -60,3 +60,5 @@ const RunclubCard = ({
 };
 
 export default RunclubCard;
+
+        

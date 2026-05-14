@@ -9,56 +9,77 @@ namespace backend.Service;
 
 public class RunclubService : IRunclubService
 {
-    private readonly AppDbContext _context;
+    private readonly IRunclubRepository _repository;
 
-    public RunclubService(AppDbContext context)
+    public RunclubService(IRunclubRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
-    public void Add(Runclub runclub)
+    public IEnumerable<RunclubDto> GetAllRunclubs()
     {
-        _context.Runclubs.Add(runclub);
-        _context.SaveChanges();
+        return _repository.GetAll()
+            .Select(e => new RunclubDto
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Description = e.Description,
+                City = e.City,
+                Time = e.Time,
+                Level = e.Level,
+                SocialMediaLink = e.SocialMediaLink,
+                Image = e.Image
+            });
     }
 
-  public IEnumerable<RunclubDto> GetAllRunclubs()
-{
-    return _context.Runclubs.Select(e => new RunclubDto
-    {
-        Id = e.Id,
-        Name = e.Name,
-        Description = e.Description,
-        City = e.City,
-        Time = e.Time,
-        Level = e.Level,
-        SocialMediaLink = e.SocialMediaLink,
-        Image = e.Image
-    }).ToList();
-}
 
   public RunclubDto? GetRunclubById(int id)
     {
-        var runclub = _context.Runclubs.FirstOrDefault(x => x.Id == id);
 
-        if (runclub == null)
-            return null!;
-            
-    return new RunclubDto 
+      var runclub = _repository.GetById(id);
+
+        if (runclub == null) return null;
+
+        return new RunclubDto
+        {
+            Id = runclub.Id, 
+            Name = runclub.Name, 
+            Description = runclub.Description, 
+            SocialMediaLink = runclub.SocialMediaLink, 
+            City = runclub.City, 
+            Time = runclub.Time, 
+            Level = runclub.Level,
+            Image = runclub.Image
+        };
+
+  }
+
+      public RunclubDto Add(RunclubDto dto)
     {
-      Id = runclub.Id, 
-      Name = runclub.Name, 
-      Description = runclub.Description, 
-      SocialMediaLink = runclub.SocialMediaLink, 
-      City = runclub.City, 
-      Time = runclub.Time, 
-      Level = runclub.Level,
-      Image = runclub.Image
-    };
-  }
+        var runclub = new Runclub
+        {
+            Name = dto.Name, 
+            Description = dto.Description, 
+            SocialMediaLink = dto.SocialMediaLink, 
+            City = dto.City, 
+            Time = dto.Time, 
+            Level = dto.Level,
+            Image = dto.Image
+        };
 
-  object IRunclubService.GetAllRunclubs()
-  {
-    return GetAllRunclubs();
-  }
+        var created = _repository.Add(runclub);
+
+        return new RunclubDto
+        {
+            Id = created.Id, 
+            Name = created.Name, 
+            Description = created.Description, 
+            SocialMediaLink = created.SocialMediaLink, 
+            City = created.City, 
+            Time = created.Time, 
+            Level = created.Level,
+            Image = created.Image
+        };
+    }
+
 }
