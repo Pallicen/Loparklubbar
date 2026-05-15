@@ -51,8 +51,8 @@ export const api = {
   createRunclub: (payload: RunclubCreate) => 
     postJson("/api/runclub", payload),
 
-  getEvents: () => 
+  getEvent: () => 
     getJson<EventDto[]> ("/api/event"),
-  getRunclubs: () => 
+  getRunclub: () => 
     getJson<RunclubDto[]> ("/api/runclub"),
 };
