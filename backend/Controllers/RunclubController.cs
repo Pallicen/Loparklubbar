@@ -6,7 +6,7 @@ using backend.Models;
 
 namespace backend.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
 
     public class RunclubController : ControllerBase

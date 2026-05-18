@@ -8,7 +8,6 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
@@ -16,7 +15,7 @@ const RegisterForm = () => {
     e.preventDefault();
     setMessage(null);
 
-    const res = register(username, password);
+    const res = register(email, password);
     if (!res.ok) {
       setMessage(res.error);
       return;
@@ -64,17 +63,6 @@ const RegisterForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
-                required
-              />
-            </div>
-
-            <div className="formGroup">
-              <label>Användarnamn</label>
-              <input
-                type="name"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                autoComplete="username"
                 required
               />
             </div>

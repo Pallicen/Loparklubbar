@@ -27,7 +27,7 @@ const Runclubs = () => {
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
           >
-            <option>Välj</option>
+            <option value="">Välj</option>
             <option value="Jönköping">Jönköping</option>
             <option value="Göteborg">Göteborg</option>
             <option value="Värnamo">Värnamo</option>
@@ -61,7 +61,7 @@ const Runclubs = () => {
               value={selectedLevel}
               onChange={(e) => setSelectedLevel(e.target.value)}
           >
-            <option>Välj</option>
+            <option value="">Välj</option>
             <option value="Lätt">Lätt</option>
             <option value="Medel">Medel</option>
             <option value="Svår">Svår</option>
