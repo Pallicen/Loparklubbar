@@ -19,7 +19,7 @@ const EventCard = ({
 
       <p>{description}</p>
 
-      <p>{distance}</p>
+      <span><p>{distance}Km</p></span>
 
       <a href={eventLink} target="_blank">
       <span>Länk till anmälan: </span>{eventLink}

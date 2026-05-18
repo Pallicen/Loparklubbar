@@ -161,3 +161,21 @@
     align-items: flex-start;
   }
 }
+
+.post-activity-Btn {
+  border: 1px solid #ddd;
+  background: rgb(0, 0, 0);
+  padding: 8.8px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.message-btn {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  background: rgb(255, 255, 255);
+  padding: 4px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+}

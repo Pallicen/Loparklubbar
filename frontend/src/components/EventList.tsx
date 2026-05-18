@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import { api, type EventDto } from "../../api";
 
-const EventList = () => {
+interface EventListProps {
+  selectedDistance: string;
+}
+
+const EventList = ({ selectedDistance }: EventListProps) => {
 
   const [events, setEvents] = useState<EventDto[]>([]);
 
@@ -25,10 +29,18 @@ const EventList = () => {
 
   }, []);
 
+    const filteredEvents = events.filter((event) => {
+
+    const distanceMatch = 
+      selectedDistance === "" || event.distance === selectedDistance;
+
+    return distanceMatch;
+  });
+
   return (
     <div className="EventCards">
 
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <EventCard
           key={event.id}
           title={event.title}

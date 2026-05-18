@@ -14,7 +14,7 @@ public static class DbSeeder
             Id = 1, 
             Title= "Vårruset, våren 2026", 
             Description= "Sveriges största motionsturné för tjejer!", 
-            Distance= "5km",
+            Distance= "5",
             EventLink="https://varruset.se" 
         },
         new Event 
@@ -22,7 +22,7 @@ public static class DbSeeder
             Id = 2, 
             Title= "Göteborgsvarvet, 23 maj", 
             Description= "En stad och ett publikstöd som måste upplevas!", 
-            Distance= "21km",
+            Distance= "21",
             EventLink="https://www.goteborgsvarvet.se" 
         },
         new Event
@@ -30,7 +30,7 @@ public static class DbSeeder
             Id = 3, 
             Title= "Ultravasan, 15 Augusti", 
             Description= "Naturupplevelsen med ljusa tallskogar, ringlande vattendrag, upptrampade stigar och pittoreska fäbodmiljöer", 
-            Distance= "92km",
+            Distance= "92",
             EventLink="https://vasaloppet.se/lopning/ultravasan-90/" 
         },
         new Event
@@ -38,7 +38,7 @@ public static class DbSeeder
             Id = 4, 
             Title= "Jönköping Marathon, 29 Augisti", 
             Description= "Spring genom vackra Jönköping och huskvarna för att sedan gå i målgång mitt på munksjöbron", 
-            Distance= "21km",
+            Distance= "21",
             EventLink="https://jonkopingmarathon.se" 
         },
         new Event
@@ -46,7 +46,7 @@ public static class DbSeeder
             Id = 5, 
             Title= "Midnattsloppet, 1 sep 2026", 
             Description= "Ett lopp i flera städer vid midnatt", 
-            Distance= "10km",
+            Distance= "10",
             EventLink="https://midnattsloppet.com" 
         },
         new Event
@@ -54,7 +54,7 @@ public static class DbSeeder
             Id = 6, 
             Title= "Lidingöloppet, 25 sep", 
             Description= "Anta utmaningen i Sveriges största terränglopp!", 
-            Distance= "30km",
+            Distance= "30",
             EventLink="https://www.lidingoloppet.se" 
         }
       );

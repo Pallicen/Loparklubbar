@@ -6,7 +6,7 @@ const CreateRunClub = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [city, setCity] = useState("");
-  const [level, setLevel] = useState("Lätt");
+  const [level, setLevel] = useState("");
   const [time, setTime] = useState("");
   const [socialMediaLink, setSocialMediaLink] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

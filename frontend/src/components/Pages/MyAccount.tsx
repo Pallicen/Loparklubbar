@@ -34,6 +34,7 @@ const MyAccount = () => {
               <p className="bio">
                 Tränar för halvmaraton 🏃‍♀️
               </p>
+              <button className="message-btn">Meddelande</button>
             </div>
           </div>
         </div>
@@ -49,6 +50,11 @@ const MyAccount = () => {
               <span className="muted">Igår</span>
               <p>Gick med i Jönköping Running Club</p>
             </div>
+
+            <div>
+              <button className="post-activity-Btn">Posta inlägg</button>
+            </div>
+  
           </div>
 
         {/* SIDEBAR */}

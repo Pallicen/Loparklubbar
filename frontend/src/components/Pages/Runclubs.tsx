@@ -80,9 +80,9 @@ const Runclubs = () => {
       </div>
 
       <div>
-        <RunclubList selectedCity={selectedCity} selectedLevel={selectedLevel}/>
+          <RunclubList selectedCity={selectedCity} selectedLevel={selectedLevel}/>
+        </div>
       </div>
-    </div>
 
     </div>
 
