@@ -23,6 +23,11 @@ namespace backend.Controllers
         {
             var createdRunclub = _runclubService.Add(runclubDto);
 
+            if (createdRunclub == null) 
+            {
+                return BadRequest();
+            }
+
                 return CreatedAtAction(
                     nameof(GetRunclub),
                     new { id = createdRunclub.Id },
@@ -35,6 +40,11 @@ namespace backend.Controllers
         public ActionResult<IEnumerable<EventDto>> GetAllRunclubs() 
         {
             var runclubs = _runclubService.GetAllRunclubs();
+
+            if (runclubs == null) 
+            {
+                return NotFound();
+            }
 
             return Ok(runclubs);
         }

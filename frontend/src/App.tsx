@@ -18,10 +18,13 @@ import RegisterForm from './components/Pages/RegisterForm'
 import CreateEvent from './components/Pages/CreateEvent'
 import CreateRunClub from './components/Pages/CreateRunClub'
 import MyAccount from './components/Pages/MyAccount'
+import ErrorBoundary from './components/ErrorBoundory'
 
 function App() {
 
   return (
+    <ErrorBoundary>
+
     <div className='main-container'>
 
       <ScrollToTop />
@@ -51,6 +54,7 @@ function App() {
       </footer>
 
     </div>
+  </ErrorBoundary>
   )
 }
 

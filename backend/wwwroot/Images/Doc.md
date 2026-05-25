@@ -1,0 +1,1 @@
+5. EventCard går att återanvända enkelt för framtida enkla formulär, det är bara att byta ut namnen på vad som ska finnas i forumläret till kommande projekt. 

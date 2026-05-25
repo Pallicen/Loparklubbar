@@ -1,4 +1,5 @@
 
+//Deklarerar typen för komponentens props
 interface CardPropsEvent {
   title: string;
   description: string;
@@ -6,6 +7,7 @@ interface CardPropsEvent {
   eventLink: string;
 }
 
+//EventCard tar emot props i Card
 const EventCard = ({
   title,
   description,
@@ -13,6 +15,7 @@ const EventCard = ({
   eventLink
 }: CardPropsEvent) => {
 
+  //Returnerar det som ska synas(UI) i Card
   return (
     <div className="EventCard">
       <h3>{title}</h3>
