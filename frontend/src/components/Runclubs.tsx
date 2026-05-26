@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import RunclubList from "../RunclubList";
+import RunclubList from "./RunclubList";
 
 
 const Runclubs = () => {

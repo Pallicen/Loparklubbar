@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../auth/context";
+import { useAuth } from "../auth/context";
 import logIMG from '../../assets/Run.png'
 
-const LoginForm = () => {
-  const { login } = useAuth();
+const RegisterForm = () => {
+  const { register } = useAuth();
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
@@ -15,51 +15,54 @@ const LoginForm = () => {
     e.preventDefault();
     setMessage(null);
 
-    const res = login(username, password);
+    const res = register(email, password);
     if (!res.ok) {
       setMessage(res.error);
       return;
     }
-    navigate("/");
+
+    setMessage("Konto skapat! Logga in nu.");
+    navigate("/LoginForm");
   }
 
   return (
-    <div className="registerPage">
+  <div className="registerPage">
 
-      <nav className="login-menu">
+    <nav className="login-menu">
 
       <div className="nav-left">
         <img className="log" src={logIMG} alt="logga"></img>
       </div>
 
       <div className="nav-right">
-          <Link className="loginBtn" to="/RegisterForm">
-          Skapa konto
+
+        <Link className="loginBtn" to="/LoginForm">
+          Logga in
         </Link>
 
       </div>
-      </nav>
+
+    </nav>
+
 
       <div className="registerContainer">
 
         <div className="registerIntro">
-          <h1>Välkommen</h1>
+          <h1>Skapa konto</h1>
           <p>
-            Logga in för att hantera din löparklubb, skapa events och hitta nya löpare.
+            Skapa ett konto för att lägga till löparklubbar, event och hitta fler löpare i din stad.
           </p>
         </div>
 
-
         <div className="registerCard">
           <form onSubmit={onSubmit}>
-
             <div className="formGroup">
               <label>E-post</label>
               <input
                 type="email"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                autoComplete="username"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
                 required
               />
             </div>
@@ -70,28 +73,23 @@ const LoginForm = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
+                autoComplete="new-password"
                 required
               />
             </div>
 
             <button className="createAccountBtn" type="submit">
-              Logga in
+              Skapa konto
             </button>
 
             {message && <p className="authMessage">{message}</p>}
-
-            <div className="switchAuth">
-              <p>Saknar du konto?</p>
-              <Link to="/RegisterForm">Registrera dig</Link>
-            </div>
-
           </form>
         </div>
 
       </div>
     </div>
+
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
