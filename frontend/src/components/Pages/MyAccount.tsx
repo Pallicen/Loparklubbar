@@ -1,5 +1,6 @@
 import {  MapPin } from "lucide-react";
 import profileImage from '../../assets/1.png'
+import { Link } from "react-router-dom";
 
 const MyAccount = () => {
   return (
@@ -52,7 +53,9 @@ const MyAccount = () => {
             </div>
 
             <div>
-              <button className="post-activity-Btn">Posta inlägg</button>
+              <Link to="/CreatePostForAccount" className="post-activity-Btn">
+              Posta inlägg
+              </Link>
             </div>
   
           </div>

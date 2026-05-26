@@ -18,12 +18,13 @@ import RegisterForm from './components/Pages/RegisterForm'
 import CreateEvent from './components/Pages/CreateEvent'
 import CreateRunClub from './components/Pages/CreateRunClub'
 import MyAccount from './components/Pages/MyAccount'
-import ErrorBoundary from './components/ErrorBoundory'
+import ErrorBoundory from './components/ErrorBoundory'
+import CreatePostForAccount from './components/Pages/CreatePostForAccount'
 
 function App() {
 
   return (
-    <ErrorBoundary>
+    <ErrorBoundory>
 
     <div className='main-container'>
 
@@ -45,6 +46,7 @@ function App() {
             <Route path='/CreateEvent' element={<CreateEvent /> } />
             <Route path='/CreateRunClub' element={<CreateRunClub />} />
             <Route path='/MyAccount' element={<MyAccount />} />
+            <Route path='/CreatePostForAccount' element={<CreatePostForAccount />} />
             <Route path="*" element={<h1>404 Not Found</h1>}></Route>
         </Routes>
       </main>
@@ -54,7 +56,7 @@ function App() {
       </footer>
 
     </div>
-  </ErrorBoundary>
+  </ErrorBoundory>
   )
 }
 

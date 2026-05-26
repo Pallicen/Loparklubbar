@@ -171,6 +171,13 @@
   color: white;
 }
 
+.post-activity-Btn:hover {
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 20px rgb(197, 197, 197);
+}
+
 .message-btn {
   margin-top: 10px;
   border: 1px solid #ddd;
@@ -178,4 +185,41 @@
   padding: 4px 24px;
   border-radius: 14px;
   cursor: pointer;
+}
+
+.create-post-form-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-post-form {
+  margin-top: 8rem;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  max-width: 40rem;
+  min-width: 40rem;
+  max-height: 50rem;
+  min-height: 26rem;
+  background-color: white;
+  padding: 2rem;
+  gap: 4rem;
+
+  label, input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+
+.post-btn {
+  display: flex;
+  justify-content: flex-end;
 }
