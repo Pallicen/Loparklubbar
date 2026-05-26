@@ -19,7 +19,7 @@ import CreateEvent from './components/Pages/CreateEvent'
 import CreateRunClub from './components/Pages/CreateRunClub'
 import MyAccount from './components/Pages/MyAccount'
 import ErrorBoundory from './components/ErrorBoundory'
-import CreatePostForAccount from './components/Pages/CreatePostForAccount'
+import CreatePostForAccount from './components/Pages/PostForm'
 
 function App() {
 
