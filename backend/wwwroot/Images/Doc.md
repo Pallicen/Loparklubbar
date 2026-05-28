@@ -11,3 +11,6 @@
 7. Det finns minst 4 endpoints, och dessa är dokumenterade i readme.md-filen. 
 
 8. REST-API är väl avgränsade från UI-logiken/komponenterna. Det finns en felhantering med kodstatus för REST-API vid oväntad svar/ej tillgänglig endpoint.
+
+10. Jag har valt att göra komponenten PostForm.tsx återanvändningasbar. Syftet med komponenten i den här applikationen är att man ska kunna lägga till en bild och en beskrivande text i ett formulär. 
+Den kan vara återanvändningsbar i andra applikationer där man vill kunna använda ett formulär för bild och text inmatning. Det finns standardvärden för rubrik, placeholder och submit-knapp, som är frivilliga att ha med då propsen har ett frågetecken, där det i andra applikationer går att ändra utifrån vad som passar. 
