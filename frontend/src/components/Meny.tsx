@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-import { useAuth } from "../auth/context";
+import { useAuth } from "../auth/useAuth";
 import { useEffect } from "react";
 
 const Meny = () => {

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Service;
-using backend.Models;
 
 namespace backend.Controllers
 {
@@ -23,11 +22,6 @@ namespace backend.Controllers
         {
             var createdRunclub = _runclubService.Add(runclubDto);
 
-            if (createdRunclub == null) 
-            {
-                return BadRequest();
-            }
-
                 return CreatedAtAction(
                     nameof(GetRunclub),
                     new { id = createdRunclub.Id },
@@ -37,14 +31,9 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<EventDto>> GetAllRunclubs() 
+        public ActionResult<IEnumerable<RunclubDto>> GetAllRunclubs() 
         {
             var runclubs = _runclubService.GetAllRunclubs();
-
-            if (runclubs == null) 
-            {
-                return NotFound();
-            }
 
             return Ok(runclubs);
         }
@@ -63,4 +52,3 @@ namespace backend.Controllers
         }
     }
 }
-

@@ -1,18 +1,15 @@
 import { useState } from "react";
-import { api } from "../../api";
+import { api, resolveRunclubImageUrl } from "../../api";
 
 const CreateRunClub = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [city, setCity] = useState("");
-  const [level, setLevel] = useState("");
+  const [city, setCity] = useState("Jönköping");
+  const [level, setLevel] = useState("Lätt");
   const [time, setTime] = useState("");
   const [socialMediaLink, setSocialMediaLink] = useState("");
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState("");
-
-  console.log("Vald fil: ", selectedFile);
+  const [image, setImage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,19 +23,18 @@ const CreateRunClub = () => {
         level,
         time,
         socialMediaLink,
-        image : previewUrl
+        image
       });
 
       alert("Runclub skapad!");
 
       setName("");
       setDescription("");
-      setCity("");
+      setCity("Jönköping");
       setLevel("Lätt");
       setTime("");
       setSocialMediaLink("");
-      setSelectedFile(null);
-      setPreviewUrl("");
+      setImage("");
     } catch (err) {
       console.error(err);
       alert("Något gick fel");
@@ -67,6 +63,7 @@ const CreateRunClub = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
 
               <label>Beskrivning</label>
@@ -75,6 +72,7 @@ const CreateRunClub = () => {
                 placeholder="Max 50 ord"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                required
               />
 
               <label>Sociala medier</label>
@@ -82,6 +80,7 @@ const CreateRunClub = () => {
                 type="text"
                 value={socialMediaLink}
                 onChange={(e) => setSocialMediaLink(e.target.value)}
+                required
               />
 
             </div>
@@ -126,6 +125,7 @@ const CreateRunClub = () => {
                 placeholder="Ex: Onsdagar 17.00, Slottsparken"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
+                required
               />
 
               <label>Nivå</label>
@@ -138,21 +138,20 @@ const CreateRunClub = () => {
                 <option value="Svår">Svår</option>
               </select>
 
-              <label>Bild (URL)</label>
+              <label>Bild (URL eller filnamn)</label>
               <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (!file) return;
-
-                  setSelectedFile(file);
-                  setPreviewUrl(URL.createObjectURL(file));
-                }}
+                type="text"
+                placeholder="Ex: 2.png eller https://..."
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
               />
-              {previewUrl && (
+              <small>
+                Prototypen sparar en bildsträng. Använd ett filnamn från backend/wwwroot/Images
+                eller en fullständig bild-URL.
+              </small>
+              {image && (
                 <div>
-                  <img src={previewUrl} alt="Förhandsvisning" width={150} />
+                  <img src={resolveRunclubImageUrl(image)} alt="Förhandsvisning" width={150} />
                 </div>
               )}
 

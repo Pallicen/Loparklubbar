@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type PostFormValues = {
   description: string;
@@ -38,7 +38,7 @@ type PostFormProps = {
 //  - lokal bildförhandsvisning
  
 
-const PostForm = ( {
+const PostForm = ({
   title = "Skapa inlägg",
   submitLabel = "Publicera",
   descriptionPlaceholder = "Skriv något... ",
@@ -48,18 +48,6 @@ const PostForm = ( {
   const [description, setDescription] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState("");
-
-useEffect(() => {
-  if (!selectedFile) {
-    setPreviewUrl("");
-    return;
-  }
-
-  const objectUrl = URL.createObjectURL(selectedFile);
-  setPreviewUrl(objectUrl);
-
-  return () => URL.revokeObjectURL(objectUrl)
-}, [selectedFile]);
 
 async function handleSubmit(e: React.FormEvent) {
   e.preventDefault();
@@ -96,10 +84,20 @@ async function handleSubmit(e: React.FormEvent) {
             accept="image/*"
             onChange={(e) => {
             const file = e.target.files?.[0] ?? null;
-              if (!file) return;
 
+              if (!file) {
+                setSelectedFile(null);
+                setPreviewUrl("");
+                return;
+              }
+
+              if (previewUrl) {
+                URL.revokeObjectURL(previewUrl);
+              }
+
+              const objectUrl = URL.createObjectURL(file);
               setSelectedFile(file);
-              setPreviewUrl(URL.createObjectURL(file));
+              setPreviewUrl(objectUrl);
             }}
           />
           {previewUrl && (

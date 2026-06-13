@@ -1,8 +1,6 @@
 
 using backend.DTO;
 using backend.Repositories;
-using backend.DB;
-using backend.Service;
 using backend.Models;
 
 namespace backend.Service;
@@ -58,13 +56,13 @@ public class RunclubService : IRunclubService
     {
         var runclub = new Runclub
         {
-            Name = dto.Name, 
-            Description = dto.Description, 
-            SocialMediaLink = dto.SocialMediaLink, 
-            City = dto.City, 
-            Time = dto.Time, 
-            Level = dto.Level,
-            Image = dto.Image
+            Name = dto.Name.Trim(), 
+            Description = dto.Description.Trim(), 
+            SocialMediaLink = dto.SocialMediaLink.Trim(), 
+            City = dto.City.Trim(), 
+            Time = dto.Time.Trim(), 
+            Level = dto.Level.Trim(),
+            Image = dto.Image.Trim()
         };
 
         var created = _repository.Add(runclub);

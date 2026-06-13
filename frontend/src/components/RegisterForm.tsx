@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../auth/context";
-import logIMG from '../../assets/Run.png'
+import { useAuth } from "../auth/useAuth";
+import logIMG from "../assets/Run.png";
 
 const RegisterForm = () => {
   const { register } = useAuth();

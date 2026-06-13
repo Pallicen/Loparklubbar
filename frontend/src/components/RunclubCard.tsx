@@ -1,3 +1,5 @@
+import { resolveRunclubImageUrl } from "../../api";
+
 interface CardPropsRunclub {
   name: string;
   description: string;
@@ -17,6 +19,7 @@ const RunclubCard = ({
   socialMediaLink,
   image
 }: CardPropsRunclub) => {
+  const imageUrl = resolveRunclubImageUrl(image);
 
   return (
     <div className="RunclubCard">
@@ -52,7 +55,7 @@ const RunclubCard = ({
       </div>
 
       <div className="RunClubImageInCard">
-        <img src={`http://localhost:5020/Images/${image}`} alt={name} />
+        {imageUrl ? <img src={imageUrl} alt={name} /> : <p>Ingen bild angiven</p>}
       </div>
 
     </div>

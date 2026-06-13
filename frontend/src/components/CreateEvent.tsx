@@ -6,7 +6,7 @@ const CreateEvent = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [distance, setDistance] = useState("");
+  const [distance, setDistance] = useState("4");
   const [eventLink, setEventLink] = useState("");
 
   async function handleSubmit(e: React.FormEvent)
@@ -22,11 +22,10 @@ const CreateEvent = () => {
         eventLink
       })
         alert("Event skapat!");
-
-        setTitle(""),
-        setDescription(""),
-        setDistance(""),
-        setEventLink("")
+        setTitle("");
+        setDescription("");
+        setDistance("4");
+        setEventLink("");
       } catch (err) {
         console.error(err)
         alert("Något gick fel");
@@ -54,6 +53,7 @@ const CreateEvent = () => {
               placeholder="Ex: Jönköping Trail 12 juni" 
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              required
               />
             </div>
 
@@ -64,6 +64,7 @@ const CreateEvent = () => {
               placeholder="Max 50 ord"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              required
                />
             </div>
 
@@ -98,6 +99,7 @@ const CreateEvent = () => {
               placeholder="https://..." 
               value={eventLink}
               onChange={(e) => setEventLink(e.target.value)}
+              required
               />
             </div>
 

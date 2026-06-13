@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Repositories;
-using backend.DB;
 using backend.Models;
 
 namespace backend.Service;
@@ -48,10 +46,10 @@ public class EventService : IEventService
     {
         var entity = new Event
         {
-            Title = dto.Title,
-            Description = dto.Description,
-            Distance = dto.Distance,
-            EventLink = dto.EventLink
+            Title = dto.Title.Trim(),
+            Description = dto.Description.Trim(),
+            Distance = dto.Distance.Trim(),
+            EventLink = dto.EventLink.Trim()
         };
 
         var created = _repository.Add(entity);

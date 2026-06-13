@@ -2,12 +2,10 @@ using backend.DB;
 using backend.Repositories;
 using backend.Service;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
@@ -20,7 +18,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReact",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173")
+            policy.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
@@ -32,18 +30,6 @@ builder.Services.AddScoped<IEventRepository, EventRepository>();
 //Runclub
 builder.Services.AddScoped<IRunclubService, RunclubService>();
 builder.Services.AddScoped<IRunclubRepository, RunclubRepository>();
-
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReact",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5173")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
-});
 
 var app = builder.Build();
 
@@ -80,7 +66,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapRazorPages();
 
 app.Run();
-

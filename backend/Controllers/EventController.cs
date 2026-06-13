@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.DTO;
 using backend.Service;
-using backend.Models;
 
 namespace backend.Controllers
 {
@@ -23,11 +22,6 @@ namespace backend.Controllers
         {
             var createdEvent = _eventService.Add(eventDto);
 
-            if (createdEvent == null) 
-            {
-                return BadRequest();
-            }
-
                 return CreatedAtAction(
                     nameof(GetEvent),
                     new { id = createdEvent.Id },
@@ -40,10 +34,6 @@ namespace backend.Controllers
         public ActionResult<IEnumerable<EventDto>> GetAllEvents() 
         {
             var events = _eventService.GetAllEvents();
-
-            if (events == null) {
-                return NotFound();
-            }
 
             return Ok(events);
         }

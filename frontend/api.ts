@@ -1,4 +1,26 @@
-const BASE_URL = "http://localhost:5020";
+export const BASE_URL = "http://localhost:5020";
+
+export function resolveRunclubImageUrl(image: string): string {
+  const trimmedImage = image.trim();
+
+  if (!trimmedImage) {
+    return "";
+  }
+
+  if (
+    trimmedImage.startsWith("http://") ||
+    trimmedImage.startsWith("https://") ||
+    trimmedImage.startsWith("data:")
+  ) {
+    return trimmedImage;
+  }
+
+  if (trimmedImage.startsWith("/")) {
+    return `${BASE_URL}${trimmedImage}`;
+  }
+
+  return `${BASE_URL}/Images/${trimmedImage}`;
+}
 
 //POST
 async function postJson<T>(path: string, body: unknown): Promise<T> {

@@ -1,14 +1,14 @@
 @backend_HostAddress = http://localhost:5020
 
-// Hämta alla event
+### 1) Hämta seedade event (motsvarar Events-sidan i frontend)
 GET {{backend_HostAddress}}/api/event
 Accept: application/json
 
-// Hämta event med id
+### 2) Hämta ett enskilt event
 GET {{backend_HostAddress}}/api/event/1
 Accept: application/json
 
-// Skapa nytt event
+### 3) Skapa nytt event (motsvarar CreateEvent i frontend)
 POST {{backend_HostAddress}}/api/event
 Content-Type: application/json
 Accept: application/json
@@ -20,15 +20,15 @@ Accept: application/json
   "eventLink": "https://example.com/event"
 }
 
-// Hämta alla runclubs
+### 4) Hämta seedade runclubs (motsvarar Runclubs-sidan i frontend)
 GET {{backend_HostAddress}}/api/runclub
 Accept: application/json
 
-// Hämta runclub med id
+### 5) Hämta en enskild runclub
 GET {{backend_HostAddress}}/api/runclub/1
 Accept: application/json
 
-// Skapa ny runclub
+### 6) Skapa ny runclub (motsvarar CreateRunClub i frontend)
 POST {{backend_HostAddress}}/api/runclub
 Content-Type: application/json
 Accept: application/json
@@ -40,5 +40,5 @@ Accept: application/json
   "city": "Jönköping",
   "time": "Onsdagar 18:00",
   "level": "Medel",
-  "image": "test.png"
+  "image": "2.png"
 }

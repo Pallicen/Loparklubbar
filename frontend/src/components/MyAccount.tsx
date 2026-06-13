@@ -1,5 +1,5 @@
 import {  MapPin } from "lucide-react";
-import profileImage from '../../assets/1.png'
+import profileImage from "../assets/1.png";
 import { Link } from "react-router-dom";
 
 const MyAccount = () => {
