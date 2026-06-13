@@ -94,6 +94,7 @@ async function handleSubmit(e: React.FormEvent) {
 
               if (!file) {
                 setSelectedFile(null);
+                revokeBlobUrl(previewUrl);
                 setPreviewUrl("");
                 return;
               }
