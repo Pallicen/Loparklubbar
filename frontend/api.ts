@@ -1,4 +1,8 @@
-export const BASE_URL = "http://localhost:5020";
+const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
+
+export const BASE_URL = configuredBaseUrl
+  ? configuredBaseUrl.replace(/\/$/, "")
+  : "";
 
 const supportedImageExtensions = /\.(png|jpe?g|webp|gif)$/i;
 
@@ -36,7 +40,7 @@ export function resolveRunclubImageUrl(image: string): string {
     return `${BASE_URL}${trimmedImage}`;
   }
 
-  return `${BASE_URL}/Images/${trimmedImage}`;
+  return BASE_URL ? `${BASE_URL}/Images/${trimmedImage}` : `/Images/${trimmedImage}`;
 }
 
 //POST

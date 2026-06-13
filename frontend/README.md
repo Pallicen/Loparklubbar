@@ -10,7 +10,10 @@ Frontend ansvarar för användargränssnittet och kommunicerar med backend-API:t
 - skapa nya lopp
 
 ## Koppling till backend
-Frontend använder fetch via filen `frontend/api.ts` och anropar backend på `http://localhost:5020`.
+Frontend använder fetch via filen `frontend/api.ts`.
+
+- Lokalt proxas `/api` och `/Images` automatiskt från Vite till `http://localhost:5020`
+- Vid separat deployment kan backend-adressen sättas via `VITE_API_BASE_URL`
 
 Anrop som används:
 - GET /api/event
@@ -31,7 +34,7 @@ npm run dev
 Frontend startar normalt på "http://localhost:5173"
 
 ## Viktigt vid lokal körning
-För att frontend ska fungera behöver backend köras samtidigt på "http://localhost:5020", eftersom frontendens API-anrop är kopplade dit.
+För att frontend ska fungera behöver backend köras samtidigt på `http://localhost:5020`, eftersom Vites utvecklingsserver proxyar vidare API- och bildanrop dit.
 
 ## Bildhantering i nuvarande prototyp
 Runclub-formuläret använder nu samma kontrakt som backend redan stödjer: fältet `image` sparas som en sträng.
