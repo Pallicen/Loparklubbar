@@ -82,4 +82,4 @@ Frontend körs lokalt på:
 - Projektet är en fungerande prototyp där huvudflödet för att hämta och skapa data finns på plats.
 
 ## Live-app
-- https://loparklubb-app-kbj78.ondigitalocean.app/
+https://loparklubb-app-kbj78.ondigitalocean.app/

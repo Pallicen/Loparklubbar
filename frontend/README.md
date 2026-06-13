@@ -1,6 +1,6 @@
 # Frontend – Loparklubbar
 
-Detta är frontend-delen av projektet Loparklubbar, byggd med React**, Vite och TypeScript.
+Detta är frontend-delen av projektet Loparklubbar, byggd med React, Vite och TypeScript.
 
 ## Syfte
 Frontend ansvarar för användargränssnittet och kommunicerar med backend-API:t för att:
@@ -19,10 +19,10 @@ Anrop som används:
 - POST /api/runclub
 
 ## Viktiga komponenter
-- src/components/EventList.tsx som hämtar och visar event
-- src/components/RunclubList.tsx som hämtar och visar runclubs
-- src/components/CreateEvent.tsx som skickar formulär för att skapa event
-- src/components/CreateRunClub.tsx` som skickar formulär för att skapa runclub
+- src/components/EventList.tsx - hämtar och visar event
+- src/components/RunclubList.tsx - hämtar och visar runclubs
+- src/components/CreateEvent.tsx - formulär för att skapa event
+- src/components/CreateRunClub.tsx - formulär för att skapa runclub
 
 ## Starta frontend lokalt
 npm install

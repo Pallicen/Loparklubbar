@@ -2,7 +2,6 @@
 
 Mitt git-repo är samma som tidigare. Jag lade till två brancher utöver main, som är "vecka-3" och "next". jag jobbar i vecka-3 branchen och skickar det till next och sedan när allt från veckan är klart i next branchen så skickar jag det till main. Till varje kommande vecka gör jag en ny branch, t.ex. vecka-4, vecka-5 osv, som sedan skickas till next innan main. 
 
-
 2.	Ditt inlämnade git-repo ska innehålla en readme.md fil som kort beskriver vad som behöver göras för att man ska kunna bygga och besöka applikationen via webbläsaren. Den givna beskrivningen ska vara utförlig och korrekt.
 
 Jag har i README.md filen beskrivit vad det är för typ av projekt och hur man bygger och startar det i webbläsaren. 
