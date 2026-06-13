@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# Frontend – Loparklubbar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Detta är frontend-delen av projektet Loparklubbar, byggd med React**, Vite och TypeScript.
 
-Currently, two official plugins are available:
+## Syfte
+Frontend ansvarar för användargränssnittet och kommunicerar med backend-API:t för att:
+- hämta löparklubbar
+- hämta event/lopp
+- skapa nya löparklubbar
+- skapa nya lopp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Koppling till backend
+Frontend använder fetch via filen api.ts och anropar backend på "http://localhost:5020".
 
-## React Compiler
+Anrop som används:
+- GET /api/event
+- POST /api/event
+- GET /api/runclub
+- POST /api/runclub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Viktiga komponenter
+- src/components/EventList.tsx som hämtar och visar event
+- src/components/RunclubList.tsx som hämtar och visar runclubs
+- src/components/CreateEvent.tsx som skickar formulär för att skapa event
+- src/components/CreateRunClub.tsx` som skickar formulär för att skapa runclub
 
-## Expanding the ESLint configuration
+## Starta frontend lokalt
+npm install
+npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Frontend startar normalt på "http://localhost:5173"
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Viktigt vid lokal körning
+För att frontend ska fungera behöver backend köras samtidigt på "http://localhost:5020", eftersom frontendens API-anrop är kopplade dit.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Nuvarande begränsning
+Bilderna för runclubs är inte helt implementerat som riktig filuppladdning till backend. Just nu finns ett formulärfält för bildval i frontend, men backend tar inte emot och sparar uppladdade bildfiler korrekt.

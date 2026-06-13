@@ -1,6 +1,44 @@
 @backend_HostAddress = http://localhost:5020
 
-GET {{backend_HostAddress}}/weatherforecast/
+// Hämta alla event
+GET {{backend_HostAddress}}/api/event
 Accept: application/json
 
-###
+// Hämta event med id
+GET {{backend_HostAddress}}/api/event/1
+Accept: application/json
+
+// Skapa nytt event
+POST {{backend_HostAddress}}/api/event
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Testlopp 10 km",
+  "description": "Ett testevent för att verifiera API-flödet mellan frontend och backend.",
+  "distance": "10",
+  "eventLink": "https://example.com/event"
+}
+
+// Hämta alla runclubs
+GET {{backend_HostAddress}}/api/runclub
+Accept: application/json
+
+// Hämta runclub med id
+GET {{backend_HostAddress}}/api/runclub/1
+Accept: application/json
+
+// Skapa ny runclub
+POST {{backend_HostAddress}}/api/runclub
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Test Run Club",
+  "description": "En testklubb för att verifiera kopplingen mellan frontend och backend.",
+  "socialMediaLink": "https://instagram.com/testrunclub",
+  "city": "Jönköping",
+  "time": "Onsdagar 18:00",
+  "level": "Medel",
+  "image": "test.png"
+}

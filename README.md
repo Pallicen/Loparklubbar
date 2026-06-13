@@ -1,51 +1,85 @@
-# Loparklubbar
-En plattform för Sveriges löparklubbar och lopp att synliggöra sig
+En plattform för Sveriges löparklubbar och lopp att synliggöra sig.
 
-# Projektnamn
+## Projektnamn
 RunWithUs
 
-## Beskrivning
-Detta är en React-applikation byggd med Vite och Typescript. Applikationen är en prototyp på delar av produktidén som visar hur designen kommer se ut och huvudsyftet med vad applikationen kommer användas för. Det finns en startsida med beskrivande och inspirerande text om sidan för användare, det finns en knapp för att skapa konto och för att logga in, sedan finns det en meny för att komma till löparklubbar och arrangerade lopp. Som inloggad användare finns det en funktion för att lägga till löparklubbar och lopp, samt att en prototyp av en profil visas.
+## Om projektet
+Detta projekt består av en frontend byggd med React, Vite och TypeScript, samt en backend byggd med ASP.NET Core Web API och Entity Framework Core.
 
-## Funktioner
-- Visar UI på hemsidan
-- Navigering mellan sidor
-- Enkel interaktion
+Syftet med applikationen är att visa upp löparklubbar och lopp, samt göra det möjligt att lägga till nya löparklubbar och event/lopp via formulär i frontend som skickar data till backend-API:t.
 
-## Installation
-1. Klona projektet
-2. Öppna 2 terminaler
-3. I första terminal - gå till frontend-mappen:
-   cd frontend
-   npm install
-   npm run build
-   npm run dev
-4. I andra terminal - gå till backned-mappen:
-   cd backned
-   dotnet run
+## Projektstruktur
+- Frontend är en React-applikation med användargränssnitt
+- Backend består av ASP.NET Core Web API med controllers, services, repositories och seedad data.
+
+## Hur frontend och backend hänger ihop
+Frontend kommunicerar med backend via fetch i filen frontend/api.ts.
+
+Frontend använder följande API-anrop:
+- GET /api/event – hämtar alla events/lopp
+- POST /api/event – skapar ett nytt event/lopp
+- GET /api/runclub – hämtar alla löparklubbar
+- POST /api/runclub – skapar en ny löparklubb
+
+Dessa anrop används i frontend-komponenterna:
+- EventList.tsx – hämtar och visar lopp
+- RunclubList.tsx – hämtar och visar löparklubbar
+- CreateEvent.tsx – skickar formulärdata till backend för att skapa ett lopp
+- CreateRunClub.tsx – skickar formulärdata till backend för att skapa en löparklubb
+
+## Backend-arkitektur
+Backend är uppdelad i flera lager för att göra lösningen tydlig:
+- Controllers tar emot HTTP-anrop.
+- Services innehåller logik och mappar mellan modeller och DTO:er.
+- Repositories ansvarar för dataåtkomst
+- AppDbContext hanterar databasen via Entity Framework Core
+
+Projektet använder en InMemory-databas, vilket betyder att datan lagras i minnet när applikationen körs. Vid omstart återställs databasen och den seedade datan läser in igen.
+
+## API-endpoints
+## Event
+- GET /api/event
+- GET /api/event/{id}
+- POST /api/event
+
+## Runclub
+- GET /api/runclub
+- GET /api/runclub/{id}
+- POST /api/runclub
+
+## Så kör du projektet lokalt
+Frontend och backend körs i varsin terminal.
+
+## 1. Starta backend
+cd backend
+dotnet restore
+dotnet run
+
+Backend körs lokalt på:
+- http://localhost:5020
+
+## 2. Starta frontend
+cd frontend
+npm install
+npm run dev
+
+Frontend körs lokalt på:
+- http://localhost:5173
+
 
 ## Tekniker
 - React
 - TypeScript
 - Vite
-- Dotnet
+- ASP.NET Core Web API
 - C#
+- Entity Framework Core
+- InMemory Database
 
-## Frontend + Backend
-Hur samverkar dessa?
-React-frontend tar hand om användargränssnittet, medans MVC-backend är ett api som levererar data. 
-Frontend gör HTTP-anrop med fecth till api-endponts och backend tar emot dessa anrop, bearbetar datan och returnerar data som JSON. 
+## Begränsningar i nuvarande version
+- Backend använder en InMemory-databas och sparar därför inte data permanent.
+- Runclub-bilder är ännu inte uppladdade till backend som riktiga filer. Fältet "image" skickas idag som text, vilket betyder att bildhanteringen inte är fullt färdigkopplad mellan frontend och backend.
+- Projektet är en fungerande prototyp där huvudflödet för att hämta och skapa data finns på plats.
 
-## Endpoints
-API Anrop: 
-
-Hämta alla lopp: api/event
-Hämta ett lopp: api/event/{id}
-Posta ett lopp: api/event
-
-Hämta alla löparklubbar: api/runclub
-Hämta en löparklubb: api/runclub/{id}
-Posta en löparklubb: api/runclub
-
-# Live-App
-https://loparklubb-app-kbj78.ondigitalocean.app/
+## Live-app
+- https://loparklubb-app-kbj78.ondigitalocean.app/
