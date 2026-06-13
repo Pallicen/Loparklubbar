@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { api, resolveRunclubImageUrl } from "../../api";
+import { api, isSupportedImageReference, resolveRunclubImageUrl } from "../../api";
 
 const CreateRunClub = () => {
 
@@ -10,11 +10,16 @@ const CreateRunClub = () => {
   const [time, setTime] = useState("");
   const [socialMediaLink, setSocialMediaLink] = useState("");
   const [image, setImage] = useState("");
+  const previewImageUrl = resolveRunclubImageUrl(image);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
+      if (image && !isSupportedImageReference(image)) {
+        alert("Ange en bild-URL eller ett filnamn som slutar på .png, .jpg, .jpeg, .webp eller .gif.");
+        return;
+      }
 
       await api.createRunclub({
         name,
@@ -149,9 +154,12 @@ const CreateRunClub = () => {
                 Prototypen sparar en bildsträng. Använd ett filnamn från backend/wwwroot/Images
                 eller en fullständig bild-URL.
               </small>
-              {image && (
+              {!previewImageUrl && image && (
+                <small>Ange en .png, .jpg, .jpeg, .webp eller .gif för att visa förhandsvisning.</small>
+              )}
+              {previewImageUrl && (
                 <div>
-                  <img src={resolveRunclubImageUrl(image)} alt="Förhandsvisning" width={150} />
+                  <img src={previewImageUrl} alt="Förhandsvisning" width={150} />
                 </div>
               )}
 

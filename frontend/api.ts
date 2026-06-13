@@ -1,17 +1,34 @@
 export const BASE_URL = "http://localhost:5020";
 
-export function resolveRunclubImageUrl(image: string): string {
+const supportedImageExtensions = /\.(png|jpe?g|webp|gif)$/i;
+
+export function isSupportedImageReference(image: string): boolean {
   const trimmedImage = image.trim();
 
   if (!trimmedImage) {
+    return false;
+  }
+
+  if (trimmedImage.startsWith("http://") || trimmedImage.startsWith("https://")) {
+    try {
+      const url = new URL(trimmedImage);
+      return supportedImageExtensions.test(url.pathname);
+    } catch {
+      return false;
+    }
+  }
+
+  return supportedImageExtensions.test(trimmedImage);
+}
+
+export function resolveRunclubImageUrl(image: string): string {
+  const trimmedImage = image.trim();
+
+  if (!trimmedImage || !isSupportedImageReference(trimmedImage)) {
     return "";
   }
 
-  if (
-    trimmedImage.startsWith("http://") ||
-    trimmedImage.startsWith("https://") ||
-    trimmedImage.startsWith("data:")
-  ) {
+  if (trimmedImage.startsWith("http://") || trimmedImage.startsWith("https://")) {
     return trimmedImage;
   }
 

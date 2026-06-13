@@ -4,6 +4,12 @@ import { useState } from "react";
 type PostFormValues = {
   description: string;
   file: File | null;
+};
+
+function revokeBlobUrl(url: string) {
+  if (url.startsWith("blob:")) {
+    URL.revokeObjectURL(url);
+  }
 }
 
 type PostFormProps = {
@@ -63,6 +69,7 @@ async function handleSubmit(e: React.FormEvent) {
 
   setDescription("")
   setSelectedFile(null);
+  revokeBlobUrl(previewUrl);
   setPreviewUrl("");
 }
 
@@ -92,7 +99,7 @@ async function handleSubmit(e: React.FormEvent) {
               }
 
               if (previewUrl) {
-                URL.revokeObjectURL(previewUrl);
+                revokeBlobUrl(previewUrl);
               }
 
               const objectUrl = URL.createObjectURL(file);
