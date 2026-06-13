@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import RunclubCard from "./RunclubCard";
-import { api, type RunclubDto } from "../../api";
+import { api, type RunclubDto } from "../api";
 
 interface RunclubListProps {
   selectedCity: string;

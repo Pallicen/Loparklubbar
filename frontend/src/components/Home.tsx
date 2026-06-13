@@ -1,7 +1,7 @@
 
-import LoginMeny from "../LoginMeny";
+import LoginMeny from "./LoginMeny";
 import image1 from "/src/assets/3.png";
-import { useAuth } from "../../auth/context"
+import { useAuth } from "../auth/context"
 import imageStrava from "/src/assets/stravaLog.png";
 import imageNike from "/src/assets/nikeLog.png";
 import imageGbv from "/src/assets/gbv-event.png";

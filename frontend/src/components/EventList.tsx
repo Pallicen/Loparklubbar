@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import EventCard from "./EventCard";
-import { api, type EventDto } from "../../api";
+import { api, type EventDto } from "../api";
 
 interface EventListProps {
   selectedDistance: string;

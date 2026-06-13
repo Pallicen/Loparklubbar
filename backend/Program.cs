@@ -15,14 +15,6 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("LoparklubbarDb"));
 
-//Event
-builder.Services.AddScoped<IEventService, EventService>();
-builder.Services.AddScoped<IEventRepository, EventRepository>();
-//Runclub
-builder.Services.AddScoped<IRunclubService, RunclubService>();
-builder.Services.AddScoped<IRunclubRepository, RunclubRepository>();
-
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",
@@ -33,6 +25,14 @@ builder.Services.AddCors(options =>
                   .AllowAnyMethod();
         });
 });
+
+//Event
+builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+//Runclub
+builder.Services.AddScoped<IRunclubService, RunclubService>();
+builder.Services.AddScoped<IRunclubRepository, RunclubRepository>();
+
 
 var app = builder.Build();
 
